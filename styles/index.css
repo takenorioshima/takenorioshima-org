@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.global-nav-logo {
+    width: 60px;
+}
+.global-nav-logo .st0{
+    fill: #29ABE2;
+}
+.global-nav-logo .st1{
+    fill:#FF5A6A;
+}
