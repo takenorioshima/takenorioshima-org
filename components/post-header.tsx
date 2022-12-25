@@ -1,32 +1,32 @@
-import Avatar from "./avatar";
 import DateFormatter from "./date-formatter";
-import CoverImage from "./cover-image";
 import PostTitle from "./post-title";
-import type Author from "../interfaces/author";
+import Image from "next/image";
 
 type Props = {
   title: string;
   coverImage: string;
   date: string;
-  author: Author;
 };
 
-const PostHeader = ({ title, coverImage, date, author }: Props) => {
+const PostHeader = ({ title, coverImage, date }: Props) => {
   return (
     <>
-      <PostTitle>{title}</PostTitle>
-      <div className="hidden md:block md:mb-12">
-        <Avatar name={author.name} picture={author.picture} />
-      </div>
-      <div className="mb-8 md:mb-16 sm:mx-0">
-        <CoverImage title={title} src={coverImage} />
-      </div>
-      <div className="max-w-2xl mx-auto">
-        <div className="block md:hidden mb-6">
-          <Avatar name={author.name} picture={author.picture} />
+      <div className="post-header relative h-[500px]">
+        <div className="absolute top-0 left-0 w-full -z-10">
+          <Image
+            src={coverImage}
+            alt={`Cover Image for ${title}`}
+            className="block w-full h-[500px] object-cover object-center"
+            title={title}
+            width={1200}
+            height={630}
+          />
         </div>
-        <div className="mb-6 text-lg">
-          <DateFormatter dateString={date} />
+        <div className="container mx-auto flex flex-col h-full justify-center">
+          <PostTitle>{title}</PostTitle>
+          <div className="">
+            <DateFormatter dateString={date} className="text-white" />
+          </div>
         </div>
       </div>
     </>

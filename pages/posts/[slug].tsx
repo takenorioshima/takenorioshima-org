@@ -45,12 +45,14 @@ export default function Post({ post, morePosts, preview }: Props) {
                 date={post.date}
                 author={post.author}
               />
-              <div className="grid grid-cols-12 gap-4 prose">
-                <div className="col-span-9">
-                  <PostBody content={post.content} />
-                </div>
-                <div className="col-span-3">
-                  <Sidebar />
+              <div className="container mx-auto my-10">
+                <div className="grid grid-cols-12 gap-4">
+                  <div className="col-span-9">
+                    <PostBody content={post.content} />
+                  </div>
+                  <div className="col-span-3">
+                    <Sidebar />
+                  </div>
                 </div>
               </div>
             </article>
