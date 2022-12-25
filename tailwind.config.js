@@ -48,8 +48,72 @@ module.exports = {
                 },
               },
               li: {
-                marginTop: "0.25rem",
-                marginBottom: "0.25rem",
+                margin: 0,
+              },
+              "li > ul": {
+                listStyle: "none",
+                paddingLeft: "0.25rem",
+                borderLeft: "4px solid #ddd",
+              },
+            },
+          ],
+        },
+        sm: {
+          css: [
+            {
+              li: {
+                margin: 0,
+              },
+              "li > ul": {
+                paddingLeft: "0.25rem",
+              },
+            },
+          ],
+        },
+        base: {
+          css: [
+            {
+              li: {
+                margin: 0,
+              },
+              "li > ul": {
+                paddingLeft: "0.25rem",
+              },
+            },
+          ],
+        },
+        lg: {
+          css: [
+            {
+              li: {
+                margin: 0,
+              },
+              "li > ul": {
+                paddingLeft: "0.25rem",
+              },
+            },
+          ],
+        },
+        xl: {
+          css: [
+            {
+              li: {
+                margin: 0,
+              },
+              "li > ul": {
+                paddingLeft: "0.25rem",
+              },
+            },
+          ],
+        },
+        "2xl": {
+          css: [
+            {
+              li: {
+                margin: "0 0 0.25rem 0",
+              },
+              "li > ul": {
+                paddingLeft: "0.25rem",
               },
             },
           ],

@@ -43,15 +43,16 @@ export default function Post({ post, morePosts, preview }: Props) {
                 title={post.title}
                 coverImage={post.coverImage}
                 date={post.date}
-                author={post.author}
               />
-              <div className="container mx-auto my-10">
-                <div className="grid grid-cols-12 gap-4">
-                  <div className="col-span-9">
-                    <PostBody content={post.content} />
-                  </div>
-                  <div className="col-span-3">
-                    <Sidebar />
+              <div className="max-w-screen-lg mx-auto">
+                <div className="container mx-auto my-10">
+                  <div className="lg:grid grid-cols-7 gap-4">
+                    <div className="lg:col-span-5">
+                      <PostBody content={post.content} />
+                    </div>
+                    <div className="lg:col-span-2 px-4">
+                      <Sidebar />
+                    </div>
                   </div>
                 </div>
               </div>

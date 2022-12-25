@@ -24,8 +24,8 @@ Stylelint とルールセットを yarn でプロジェクトディレクトリ�
 
 - Stylelint
 - ルールセットを 2 つ
-  -- stylelint-config-standard-scss
-  -- stylelint-config-twbs-bootstrap
+  - stylelint-config-standard-scss
+  - stylelint-config-twbs-bootstrap
 
 ```
 ❯ yarn add -D stylelint stylelint-config-standard-scss stylelint-config-twbs-bootstrap

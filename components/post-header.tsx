@@ -22,7 +22,7 @@ const PostHeader = ({ title, coverImage, date }: Props) => {
             height={630}
           />
         </div>
-        <div className="container mx-auto flex flex-col h-full justify-center">
+        <div className="container mx-auto flex flex-col h-full justify-center px-4">
           <PostTitle>{title}</PostTitle>
           <div className="">
             <DateFormatter dateString={date} className="text-white" />
