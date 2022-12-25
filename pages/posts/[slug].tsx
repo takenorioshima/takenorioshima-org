@@ -12,6 +12,7 @@ import Head from "next/head";
 import { CMS_NAME } from "../../lib/constants";
 import markdownToHtml from "../../lib/markdownToHtml";
 import type PostType from "../../interfaces/post";
+import * as tocbot from "tocbot";
 
 type Props = {
   post: PostType;

@@ -1,10 +1,27 @@
+import React, { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { AUTHOR_PROFILES } from "../lib/constants";
+import * as tocbot from "tocbot";
 
 const Sidebar = () => {
   const links = AUTHOR_PROFILES.links;
+
+  useEffect(() => {
+    tocbot.init({
+      // Where to render the table of contents.
+      tocSelector: ".js-toc",
+      // Where to grab the headings to build the table of contents.
+      contentSelector: ".js-toc-content",
+      // Which headings to grab inside of the contentSelector element.
+      headingSelector: "h1, h2, h3",
+      // For headings inside relative or absolute positioned containers within content.
+      hasInnerContainers: true,
+    });
+    return () => tocbot.destroy();
+  }, []);
+
   return (
     <>
       <div className="sidebar-profile relative">
@@ -40,6 +57,7 @@ const Sidebar = () => {
           </div>
         </div>
       </div>
+      <div className="js-toc"></div>
     </>
   );
 };
