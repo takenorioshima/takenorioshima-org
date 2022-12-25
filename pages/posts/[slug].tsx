@@ -5,6 +5,7 @@ import PostBody from "../../components/post-body";
 import Header from "../../components/header";
 import PostHeader from "../../components/post-header";
 import Layout from "../../components/layout";
+import Sidebar from "../../components/sidebar";
 import { getPostBySlug, getAllPosts } from "../../lib/api";
 import PostTitle from "../../components/post-title";
 import Head from "next/head";
@@ -44,7 +45,14 @@ export default function Post({ post, morePosts, preview }: Props) {
                 date={post.date}
                 author={post.author}
               />
-              <PostBody content={post.content} />
+              <div className="grid grid-cols-12 gap-4 prose">
+                <div className="col-span-9">
+                  <PostBody content={post.content} />
+                </div>
+                <div className="col-span-3">
+                  <Sidebar />
+                </div>
+              </div>
             </article>
           </>
         )}
