@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <div className="global-nav fixed top-0 left-0 right-0 bg-white z-50">
       <nav className="container flex items-center justify-between mx-auto flex-nowrap p-3 h-12">
-        <div className="flex items-center mr-0">
+        <Link href={"/"} className="flex items-center mr-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="global-nav-logo mr-3"
@@ -35,7 +35,7 @@ const Header = () => {
             </g>
           </svg>
           <span className="text-sm tracking-tight">まなぶ・つくる・あそぶ</span>
-        </div>
+        </Link>
         <div className="block">GitHub Twitter Facebook</div>
       </nav>
     </div>
