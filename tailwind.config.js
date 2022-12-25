@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "accent-1": "#FAFAFA",
-        "accent-2": "#EAEAEA",
+        "accent-1": "#FF5A6A",
+        "accent-2": "#29ABE2",
         "accent-7": "#333",
         success: "#0070f3",
         cyan: "#79FFE1",
@@ -29,7 +29,33 @@ module.exports = {
         sm: "0 5px 10px rgba(0, 0, 0, 0.12)",
         md: "0 8px 30px rgba(0, 0, 0, 0.12)",
       },
+      typography: ({ theme }) => ({
+        DEFAULT: {
+          css: [
+            {
+              h2: {
+                position: "relative",
+                paddingBottom: "1rem",
+                "&::after": {
+                  position: "absolute",
+                  bottom: 0,
+                  left: 0,
+                  width: "4rem",
+                  height: "4px",
+                  content: '""',
+                  background: theme("colors.accent-1"),
+                  borderRadius: "2px",
+                },
+              },
+              li: {
+                marginTop: "0.25rem",
+                marginBottom: "0.25rem",
+              },
+            },
+          ],
+        },
+      }),
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };
