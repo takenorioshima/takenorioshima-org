@@ -19,7 +19,7 @@ const CoverImage = ({ title, src, slug }: Props) => {
       width={1300}
       height={630}
     />
-  )
+  );
   return (
     <div className="sm:mx-0">
       {slug ? (
@@ -33,5 +33,4 @@ const CoverImage = ({ title, src, slug }: Props) => {
   );
 };
 
-export default CoverImage
 export default CoverImage;
