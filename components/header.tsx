@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Header = () => {
   return (
-    <div className="global-nav fixed top-0 left-0 right-0 bg-white">
+    <div className="global-nav fixed top-0 left-0 right-0 bg-white z-50">
       <nav className="container flex items-center justify-between mx-auto flex-nowrap p-3 h-12">
         <div className="flex items-center mr-0">
           <svg
