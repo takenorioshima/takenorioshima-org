@@ -24,3 +24,44 @@
   border-radius: 1rem;
   transform: translate(-50%, -50%) rotate(5deg);
 }
+
+.toc-list {
+  @apply relative p-0 text-sm font-semibold list-none;
+}
+
+.toc-list::before {
+  @apply absolute top-[10px] bottom-[10px] left-[10px] w-[2px] bg-[#fdb3bb] content-[''];
+}
+
+.toc-list .toc-list-item {
+  @apply relative pl-[2rem] my-[0.5rem];
+}
+
+.toc-list .toc-list-item .toc-list-item {
+  @apply p-0 my-4;
+}
+
+.toc-list .toc-list-item::before {
+  @apply absolute block top-[5px] left-[7px] w-[8px] h-[8px] content-[''] bg-[#f99] rounded-full;
+}
+
+.toc-list.is-collapsible .toc-list-item::before {
+  @apply hidden;
+}
+
+.toc-link {
+  color: var(--tw-prose-headings);
+  @apply no-underline opacity-60 duration-200;
+}
+
+.toc-link:hover {
+  color: var(--tw-prose-headings);
+}
+
+.toc-list .toc-list-item .toc-list-item .toc-link {
+  @apply font-semibold;
+}
+
+.toc-list .is-active-li .toc-link {
+  @apply opacity-100;
+}

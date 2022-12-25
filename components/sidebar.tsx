@@ -18,13 +18,15 @@ const Sidebar = () => {
       headingSelector: "h1, h2, h3",
       // For headings inside relative or absolute positioned containers within content.
       hasInnerContainers: true,
+      headingsOffset: 60,
+      scrollSmoothOffset: -60,
     });
     return () => tocbot.destroy();
   }, []);
 
   return (
     <>
-      <div className="sidebar-profile relative">
+      <div className="sidebar-profile relative mb-4">
         <div className="bg-white p-5 drop-shadow rounded-lg relative z-10">
           <div className="flex items-center">
             <Image
@@ -57,7 +59,10 @@ const Sidebar = () => {
           </div>
         </div>
       </div>
-      <div className="js-toc"></div>
+      <div className="sticky top-[80px]">
+        <h4 className="text-gray-700 font-semibold text-sm">目次</h4>
+        <div className="js-toc"></div>
+      </div>
     </>
   );
 };
