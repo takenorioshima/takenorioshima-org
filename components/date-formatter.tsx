@@ -2,7 +2,7 @@ import { parseISO, format } from "date-fns";
 
 type Props = {
   dateString: string;
-  className: string;
+  className?: string;
 };
 
 const DateFormatter = ({ dateString, className }: Props) => {
