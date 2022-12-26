@@ -33,7 +33,7 @@ export default function Post({ post, morePosts, preview }: Props) {
           <PostTitle>Loading…</PostTitle>
         ) : (
           <>
-            <article className="mb-32">
+            <article className="mb-32 pt-12">
               <Head>
                 <title>
                   {post.title} | Next.js Blog Example with {CMS_NAME}
@@ -48,7 +48,7 @@ export default function Post({ post, morePosts, preview }: Props) {
               <div className="max-w-screen-lg mx-auto">
                 <div className="container mx-auto my-10">
                   <div className="lg:grid grid-cols-7 gap-4">
-                    <div className="lg:col-span-5">
+                    <div className="lg:col-span-5 mb-20 lg:mb-0">
                       <PostBody content={post.content} />
                     </div>
                     <div className="lg:col-span-2 px-4">
