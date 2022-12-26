@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import "bootstrap-icons/font/bootstrap-icons.css";
 
 export default function HeroUnit() {
   useEffect(() => {
