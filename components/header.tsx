@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { AUTHOR_PROFILES } from "../lib/constants";
 
 const Header = () => {
   return (
@@ -36,7 +37,19 @@ const Header = () => {
           </svg>
           <span className="text-sm tracking-tight">まなぶ・つくる・あそぶ</span>
         </Link>
-        <div className="block">GitHub Twitter Facebook</div>
+        <div className="block">
+          {Object.keys(AUTHOR_PROFILES.links).map((key) => {
+            const klass = `bi bi-${key}`;
+            return (
+              <Link
+                href={AUTHOR_PROFILES.links[key]}
+                className="mx-1 text-lg lg:text-xl lg:mx-2 text-center"
+              >
+                <i className={klass}></i>
+              </Link>
+            );
+          })}
+        </div>
       </nav>
     </div>
   );
