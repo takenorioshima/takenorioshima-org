@@ -7,6 +7,7 @@ import Layout from "../components/layout";
 import { getAllPosts } from "../lib/api";
 import Head from "next/head";
 import Post from "../interfaces/post";
+import { SITE_NAME } from "../lib/constants";
 
 type Props = {
   allPosts: Post[];
@@ -19,7 +20,7 @@ export default function Index({ allPosts }: Props) {
     <>
       <Layout>
         <Head>
-          <title>大島 武宜 | Takenori Oshima</title>
+          <title>{SITE_NAME}</title>
         </Head>
         <HeroUnit />
         <Container>
