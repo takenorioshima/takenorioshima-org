@@ -6,8 +6,6 @@ import { AUTHOR_PROFILES } from "../lib/constants";
 import * as tocbot from "tocbot";
 
 const Sidebar = () => {
-  const links = AUTHOR_PROFILES.links;
-
   useEffect(() => {
     tocbot.init({
       // Where to render the table of contents.
@@ -48,10 +46,13 @@ const Sidebar = () => {
 
           <div className="text-sm my-2">{AUTHOR_PROFILES.description}</div>
           <div className="flex align-center w-full">
-            {Object.keys(links).map((key) => {
+            {Object.keys(AUTHOR_PROFILES.links).map((key) => {
               const klass = `bi bi-${key}`;
               return (
-                <Link href={links[key]} className="flex-1 text-center">
+                <Link
+                  href={AUTHOR_PROFILES.links[key]}
+                  className="flex-1 text-center"
+                >
                   <i className={klass}></i>
                 </Link>
               );
