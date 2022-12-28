@@ -1,6 +1,20 @@
-import { AppProps } from 'next/app'
-import '../styles/index.css'
+import { AppProps } from "next/app";
+import { useEffect } from "react";
+import "../styles/index.css";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  const handleScroll = () => {
+    const globalNav = document.querySelector(".global-nav");
+    if (window.pageYOffset > 500) {
+      globalNav.classList.add("is-scrolled", "bg-white");
+    } else {
+      globalNav.classList.remove("is-scrolled", "bg-white");
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+  }, []);
+
+  return <Component {...pageProps} />;
 }
