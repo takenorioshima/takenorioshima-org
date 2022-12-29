@@ -3,7 +3,7 @@ import { AUTHOR_PROFILES } from "../lib/constants";
 
 const Header = () => {
   return (
-    <div className="global-nav fixed top-0 left-0 right-0 bg-white z-50">
+    <div className="global-nav fixed top-0 left-0 right-0 z-50">
       <nav className="container flex items-center justify-between mx-auto flex-nowrap p-3 h-12">
         <Link href={"/"} className="flex items-center mr-0">
           <svg
