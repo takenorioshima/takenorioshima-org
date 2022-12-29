@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build": "next build && next export && next-export-optimize-images",
     "start": "next start",
     "typecheck": "tsc"
   },
@@ -30,6 +30,7 @@
     "@types/react-dom": "^18.0.6",
     "@types/three": "^0.146.0",
     "autoprefixer": "^10.4.7",
+    "next-export-optimize-images": "^2.0.0",
     "next-transpile-modules": "^10.0.0",
     "postcss": "^8.4.14",
     "rehype-slug": "^5.1.0",

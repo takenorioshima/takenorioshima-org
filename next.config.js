@@ -1,2 +1,8 @@
 const withTM = require("next-transpile-modules")(["three"]);
-module.exports = withTM();
+const withExportImages = require("next-export-optimize-images");
+
+module.exports = withTM(
+  withExportImages({
+    trailingSlash: true,
+  })
+);
