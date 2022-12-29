@@ -16,8 +16,8 @@ const CoverImage = ({ title, src, slug }: Props) => {
       className={cn("w-full aspect-[2/1] object-cover object-center", {
         "hover:shadow-lg transition-shadow duration-200": slug,
       })}
-      width={1300}
-      height={630}
+      width={1280}
+      height={640}
     />
   );
   return (
