@@ -35,7 +35,9 @@ const Header = () => {
               />
             </g>
           </svg>
-          <span className="text-sm tracking-tight">まなぶ・つくる・あそぶ</span>
+          <span className="text-xs lg:text-sm tracking-tight">
+            まなぶ・つくる・あそぶ
+          </span>
         </Link>
         <div className="block">
           {Object.keys(AUTHOR_PROFILES.links).map((key) => {

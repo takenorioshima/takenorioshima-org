@@ -23,19 +23,6 @@ export default function Index({ allPosts }: Props) {
           <title>{SITE_NAME}</title>
         </Head>
         <HeroUnit />
-        <Container>
-          <Intro />
-          {heroPost && (
-            <HeroPost
-              title={heroPost.title}
-              coverImage={heroPost.coverImage}
-              date={heroPost.date}
-              slug={heroPost.slug}
-              excerpt={heroPost.excerpt}
-            />
-          )}
-          {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-        </Container>
       </Layout>
     </>
   );
