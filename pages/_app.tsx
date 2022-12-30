@@ -1,5 +1,6 @@
 import { AppProps } from "next/app";
 import { useEffect } from "react";
+import { GoogleAnalytics } from "nextjs-google-analytics";
 import "../styles/index.css";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
@@ -16,5 +17,10 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     window.addEventListener("scroll", handleScroll);
   }, []);
 
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <GoogleAnalytics trackPageViews />
+      <Component {...pageProps} />
+    </>
+  );
 }
