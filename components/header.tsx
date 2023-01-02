@@ -1,10 +1,16 @@
 import Link from "next/link";
 import { AUTHOR_PROFILES } from "../lib/constants";
+import { useRouter } from "next/router";
 
 const Header = () => {
+  const router = useRouter();
+  let klass = "";
+  if (router.pathname === "/") {
+    klass = "home";
+  }
   return (
-    <div className="global-nav fixed top-0 left-0 right-0 bg-white z-50">
-      <nav className="container flex items-center justify-between mx-auto flex-nowrap p-3 h-12">
+    <div className={`${klass} global-nav fixed top-0 left-0 right-0 z-50`}>
+      <nav className="container max-w-screen-lg flex items-center justify-between mx-auto flex-nowrap p-3 h-12">
         <Link href={"/"} className="flex items-center mr-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -30,7 +36,7 @@ const Header = () => {
             </g>
             <g>
               <path
-                className="logo-o"
+                className="logo-o fill-white"
                 d="M432.47,68.97c45.82,0,83.6,35.9,86,81.73c1.21,23-6.62,45.1-22.03,62.22c-15.41,17.12-36.57,27.21-59.58,28.42 c-1.54,0.08-3.1,0.12-4.63,0.12c-45.83,0-83.6-35.9-86.01-81.73c-1.21-23,6.62-45.1,22.03-62.22 c15.41-17.12,36.57-27.21,59.58-28.42c1.54-0.08,3.1-0.12,4.58-0.12h0.03H432.47 M432.47,18.97c-2.4,0-4.82,0.06-7.25,0.19 C350.08,23.1,292.36,87.21,296.3,162.35c3.81,72.71,63.96,129.11,135.94,129.11c2.4,0,4.82-0.06,7.25-0.19 c75.14-3.94,132.86-68.04,128.92-143.18C564.6,75.37,504.44,18.97,432.47,18.97L432.47,18.97z"
               />
             </g>

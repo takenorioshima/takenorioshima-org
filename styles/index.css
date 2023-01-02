@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.global-nav {
+  color: white;
+}
+
 .global-nav-logo {
   width: 60px;
 }
@@ -10,6 +14,16 @@
 }
 .global-nav-logo .st1 {
   fill: #ff5a6a;
+}
+
+.global-nav.home,
+.global-nav.is-scrolled {
+  color: black;
+}
+
+.global-nav.home .logo-o,
+.global-nav.is-scrolled .logo-o {
+  fill: black;
 }
 
 .sidebar-profile::before {
@@ -23,6 +37,19 @@
   background: linear-gradient(to right bottom, #ff5a6a, #29abe2);
   border-radius: 1rem;
   transform: translate(-50%, -50%) rotate(5deg);
+}
+
+.post-header::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #ff5a6a;
+  mix-blend-mode: multiply;
 }
 
 .toc-list {
