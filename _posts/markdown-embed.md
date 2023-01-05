@@ -14,12 +14,13 @@ ogImage:
 
 ## Markdown 変換系で入れている package
 
+Next.js は v13.1.0 です。
+
 - remark-rehype 10.1.0
 - remark-parse 10.0.1
 - rehype-autolink-headings 6.1.1
 - rehype-slug 5.1.0
 - rehype-stringify 9.0.3
-  ( Next.js は v13.1.0 )
 
 ## rehype-raw の追加
 
@@ -31,7 +32,7 @@ remark-rehype 公式のリポジトリで紹介されていた rehype-raw をイ
 
 ## 変換処理の設定
 
-rehypeRaw を追加し、remarkRehype にオプション `allowDangerousHtml: true` を追加。
+Markdown から html への変換処理に rehypeRaw を追加し、remarkRehype にオプション `allowDangerousHtml: true` を追加。
 
 ```
  import { unified } from "unified";
@@ -58,7 +59,7 @@ rehypeRaw を追加し、remarkRehype にオプション `allowDangerousHtml: tr
 
 ## 埋め込み要素のスタイル調整
 
-本文中にキレイに埋め込まれるようにスタイルを追加します。
+本文中にキレイに埋め込まれるようにスタイルを調整します。
 
 ```
 // Apple Music
@@ -102,6 +103,55 @@ iframe[src*="youtube.com/embed"] {
   }
   .instagram-embed iframe {
     margin: 0 auto !important;
+  }
+}
+```
+
+## Twitter / Instagram の JavaScript が発火しない問題
+
+埋め込みがあるページを初回に読み込む場合は問題ないですが、SPAで「トップページ → Twitter埋め込みがあるページ」のような画面遷移を行った場合に JavaScript による初期化が行われません。
+
+- _app.js で Twitter / Instagram の JavaScript を読み込んでおく
+- 記事ページの useEffect フックでそれぞれの初期化関数を呼び出す
+
+として対応しました。
+
+・_app.js への変更
+
+```
+import Script from "next/script";
+
+export default function MyApp({ Component, pageProps }: AppProps) {
+  return (
+    <>
+      <Script src="https://platform.twitter.com/widgets.js" />
+      <Script src="https://www.instagram.com/embed.js" />
+      <Component {...pageProps} />
+    </>
+  );
+}
+```
+
+・posts/[slug].tsx への変更
+
+```
+useEffect(()=>{
+  if( window.instgrm ){
+    window.instgrm.Embeds.process();
+  }
+  if( window.twttr ){
+    window.twttr.widgets.load();
+  }
+}, [post])
+```
+
+型もこんな感じで追加しておきます。
+
+```
+declare global {
+  interface Window {
+    twttr: { widgets: { load: () => void } },
+    instgrm: { Embeds: { process: () => void } }
   }
 }
 ```

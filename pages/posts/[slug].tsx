@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import ErrorPage from "next/error";
 import Container from "../../components/container";
 import PostBody from "../../components/post-body";
@@ -18,11 +19,30 @@ type Props = {
   preview?: boolean;
 };
 
+declare global {
+  interface Window {
+    twttr: { widgets: { load: () => void } },
+    instgrm: { Embeds: { process: () => void } }
+  }
+}
+
 export default function Post({ post, morePosts, preview }: Props) {
   const router = useRouter();
   if (!router.isFallback && !post?.slug) {
     return <ErrorPage statusCode={404} />;
   }
+
+  useEffect(()=>{
+    if( window.instgrm ){
+      window.instgrm.Embeds.process();
+    }
+    if( window.twttr ){
+      window.twttr.widgets.load();
+    }
+  }, [post])
+
+  const title = `${post.title} - ${SITE_NAME}`;
+
   return (
     <Layout preview={preview}>
       {router.isFallback ? (
@@ -31,9 +51,7 @@ export default function Post({ post, morePosts, preview }: Props) {
         <>
           <article className="mb-32">
             <Head>
-              <title>
-                {post.title} - {SITE_NAME}
-              </title>
+              <title>{title}</title>
               <meta property="og:image" content={post.ogImage.url} />
             </Head>
             <PostHeader

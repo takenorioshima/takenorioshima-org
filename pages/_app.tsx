@@ -1,5 +1,6 @@
 import { AppProps } from "next/app";
 import { useEffect } from "react";
+import Script from "next/script";
 import "../styles/index.css";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
@@ -16,5 +17,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     window.addEventListener("scroll", handleScroll);
   }, []);
 
-  return <Component {...pageProps} />;
+  return (
+    <>
+      <Script src="https://platform.twitter.com/widgets.js" />
+      <Script src="https://www.instagram.com/embed.js" />
+      <Component {...pageProps} />
+    </>
+  );
 }
