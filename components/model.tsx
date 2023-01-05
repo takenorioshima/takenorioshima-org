@@ -76,7 +76,6 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
       const offsetMeshes = ["glassL", "glassR", "lipTop", "lipBottom"];
       if (offsetMeshes.includes(child.name)) {
         child.userData.initialPosition = child.position.clone();
-        console.log(child.name);
       }
       if (child.material) {
         child.userData.initialMaterial = child.material;
