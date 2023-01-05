@@ -34,6 +34,7 @@
     "next-export-optimize-images": "^2.0.0",
     "next-transpile-modules": "^10.0.0",
     "postcss": "^8.4.14",
+    "rehype-prism-plus": "^1.5.0",
     "rehype-slug": "^5.1.0",
     "rehype-stringify": "^9.0.3",
     "remark-rehype": "^10.1.0",
