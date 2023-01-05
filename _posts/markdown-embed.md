@@ -1,6 +1,6 @@
 ---
-title: "Markdown 内に Twitter や YouTube を埋め込みたい"
-excerpt: "Next.js + Markdown なこのブログの記事中に Twitter や YouTube などを埋め込むために行った作業メモ。"
+title: "Next.js + Markdown なブログ記事中に Twitter や YouTube を埋め込みたい"
+excerpt: "Next.js + Markdown なブログの記事中に Twitter や YouTube などを埋め込むために行った作業メモ。"
 coverImage: "/assets/blog/stylelint/cover.jpg"
 date: "2022-12-28"
 author:
@@ -14,19 +14,19 @@ ogImage:
 
 ## Markdown 変換系で入れている package
 
-Next.js は v13.1.0 です。
-
 - remark-rehype 10.1.0
 - remark-parse 10.0.1
 - rehype-autolink-headings 6.1.1
 - rehype-slug 5.1.0
 - rehype-stringify 9.0.3
 
+Next.js のバージョンは v13.1.0 です。
+
 ## rehype-raw の追加
 
 remark-rehype 公式のリポジトリで紹介されていた rehype-raw をインストール。バージョン `6.1.1` がインストールされました。
 
-```
+```bash
 % yarn add rehype-raw
 ```
 
@@ -34,7 +34,7 @@ remark-rehype 公式のリポジトリで紹介されていた rehype-raw をイ
 
 Markdown から html への変換処理に rehypeRaw を追加し、remarkRehype にオプション `allowDangerousHtml: true` を追加。
 
-```
+```diff-tsx:markdownToHtml.ts
  import { unified } from "unified";
  import remarkParse from "remark-parse";
  import remarkRehype from "remark-rehype";
@@ -61,20 +61,20 @@ Markdown から html への変換処理に rehypeRaw を追加し、remarkRehype
 
 本文中にキレイに埋め込まれるようにスタイルを調整します。
 
-```
-// Apple Music
+```css
+/* Apple Music */
 iframe[src*="embed.music.apple.com"] {
   max-width: 100% !important;
 }
 
-// YouTube
+/* YouTube */
 iframe[src*="youtube.com/embed"] {
   aspect-ratio: 16 / 9;
   width: 100%;
   height: auto;
 }
 
-// Twitter
+/* Twitter */
 .twitter-tweet {
   max-width: 100% !important;
 }
@@ -92,7 +92,7 @@ iframe[src*="youtube.com/embed"] {
   }
 }
 
-// Instagram
+/* Instagram */
 @media screen and (min-width: calc(550px - 2rem)) {
   .instagram-embed {
     padding: 1rem;
@@ -109,16 +109,14 @@ iframe[src*="youtube.com/embed"] {
 
 ## Twitter / Instagram の JavaScript が発火しない問題
 
-埋め込みがあるページを初回に読み込む場合は問題ないですが、SPAで「トップページ → Twitter埋め込みがあるページ」のような画面遷移を行った場合に JavaScript による初期化が行われません。
+埋め込みがあるページを初回に読み込む場合は問題ないですが、SPA で「トップページ → Twitter 埋め込みがあるページ」のような画面遷移を行った場合に JavaScript による初期化が行われません。
 
-- _app.js で Twitter / Instagram の JavaScript を読み込んでおく
+- \_app.js で Twitter / Instagram の JavaScript を読み込んでおく
 - 記事ページの useEffect フックでそれぞれの初期化関数を呼び出す
 
-として対応しました。
+ことで対応しました。
 
-・_app.js への変更
-
-```
+```tsx:pages/_app.js
 import Script from "next/script";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
@@ -132,26 +130,24 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 }
 ```
 
-・posts/[slug].tsx への変更
-
-```
-useEffect(()=>{
-  if( window.instgrm ){
+```tsx:posts/[slug].tsx
+useEffect(() => {
+  if (window.instgrm) {
     window.instgrm.Embeds.process();
   }
-  if( window.twttr ){
+  if (window.twttr) {
     window.twttr.widgets.load();
   }
-}, [post])
+}, [post]);
 ```
 
 型もこんな感じで追加しておきます。
 
-```
+```tsx:posts/[slug].tsx
 declare global {
   interface Window {
-    twttr: { widgets: { load: () => void } },
-    instgrm: { Embeds: { process: () => void } }
+    twttr: { widgets: { load: () => void } };
+    instgrm: { Embeds: { process: () => void } };
   }
 }
 ```
