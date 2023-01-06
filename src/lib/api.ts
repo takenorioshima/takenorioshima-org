@@ -46,6 +46,18 @@ export function getAllPosts(fields: string[] = []) {
   return posts;
 }
 
+export function getRecentPosts(fields: string[] = []) {
+  const slugs = getPostSlugs();
+  const publishedSlugs = slugs.filter((slug)=>{
+    return ( slug.slice(0, 1) !== '+' );
+  })
+  const posts = publishedSlugs
+    .map((slug) => getPostBySlug(slug, fields))
+    // sort posts by date in descending order
+    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+  return posts;
+}
+
 const worksDirectory = join(process.cwd(), "src/data/works");
 
 export function getWorkSlugs() {

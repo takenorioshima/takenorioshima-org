@@ -2,20 +2,19 @@ import Container from "../components/container";
 import MoreStories from "../components/more-stories";
 import HeroUnit from "../components/hero-unit";
 import HeroPost from "../components/hero-post";
-import Intro from "../components/intro";
 import Layout from "../components/layout";
-import { getAllPosts } from "../lib/api";
+import { getRecentPosts } from "../lib/api";
 import Head from "next/head";
 import Post from "../interfaces/post";
 import { SITE_NAME } from "../lib/constants";
 
 type Props = {
-  allPosts: Post[];
+  recentPosts: Post[];
 };
 
-export default function Index({ allPosts }: Props) {
-  const heroPost = allPosts[0];
-  const morePosts = allPosts.slice(1);
+export default function Index({ recentPosts }: Props) {
+  const heroPost = recentPosts[0];
+  const morePosts = recentPosts.slice(1);
   return (
     <>
       <Layout>
@@ -44,7 +43,7 @@ export default function Index({ allPosts }: Props) {
 }
 
 export const getStaticProps = async () => {
-  const allPosts = getAllPosts([
+  const recentPosts = getRecentPosts([
     "title",
     "date",
     "slug",
@@ -54,6 +53,6 @@ export const getStaticProps = async () => {
   ]);
 
   return {
-    props: { allPosts },
+    props: { recentPosts },
   };
 };
