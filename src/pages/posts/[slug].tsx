@@ -32,11 +32,11 @@ export default function Post({ post, morePosts, preview }: Props) {
     return <ErrorPage statusCode={404} />;
   }
 
-  useEffect(()=>{
-    if( window.instgrm ){
+  useEffect(() => {
+    if (window.instgrm) {
       window.instgrm.Embeds.process();
     }
-    if( window.twttr ){
+    if (window.twttr) {
       window.twttr.widgets.load();
     }
   }, [post])

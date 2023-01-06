@@ -8,6 +8,14 @@ const Header = () => {
   if (router.pathname === "/") {
     klass = "home";
   }
+
+  const links = AUTHOR_PROFILES.links;
+  const linkList = [];
+  for( const [key, value] of Object.entries(links) ){
+    const klass = `bi bi-${key}`;
+    linkList.push(<Link href={value} className="flex-1 text-center"><i className={klass}></i></Link>)
+  }
+
   return (
     <div className={`${klass} global-nav fixed top-0 left-0 right-0 z-50`}>
       <nav className="container max-w-screen-lg flex items-center justify-between mx-auto flex-nowrap p-3 h-12">
@@ -44,17 +52,7 @@ const Header = () => {
           <span className="text-sm tracking-tight">まなぶ・つくる・あそぶ</span>
         </Link>
         <div className="block">
-          {Object.keys(AUTHOR_PROFILES.links).map((key) => {
-            const klass = `bi bi-${key}`;
-            return (
-              <Link
-                href={AUTHOR_PROFILES.links[key]}
-                className="mx-1 text-lg lg:text-xl lg:mx-2 text-center"
-              >
-                <i className={klass}></i>
-              </Link>
-            );
-          })}
+          {linkList}
         </div>
       </nav>
     </div>
