@@ -1,16 +1,16 @@
 ---
-title: 'asdf で Node.js をインストールする'
-excerpt: ''
-coverImage: '/assets/blog/dynamic-routing/cover.jpg'
-date: '2023-01-02'
+title: "asdf で Node.js をインストールする"
+excerpt: ""
+coverImage: "/assets/blog/dynamic-routing/cover.jpg"
+date: "2023-01-02"
 author:
   name: Takenori Oshima
-  picture: '/assets/blog/authors/takenori.jpg'
+  picture: "/assets/blog/authors/takenori.jpg"
 ogImage:
-  url: '/assets/blog/dynamic-routing/cover.jpg'
+  url: "/assets/blog/dynamic-routing/cover.jpg"
 ---
 
-Node.js・Ruby・PHP...いろいろな開発言語のバージョン切り替えを一括管理できる大変便利なenv系ツール、[asdf](https://asdf-vm.com/)。理解を深めるため、asdf で Node.js インストールする作業をまとめました。
+Node.js・Ruby・PHP...いろいろな開発言語のバージョン切り替えを一括管理できる大変便利な env 系ツール、[asdf](https://asdf-vm.com/)。理解を深めるため、asdf で Node.js インストールする作業をまとめました。
 
 ## GitHub から asdf を Clone
 
@@ -21,6 +21,7 @@ Homebrew 経由でも導入できますが、公式のおすすめに従って g
 ```
 
 ## asdf の読み込み
+
 `~/.zshrc` に以下コマンドを追加します。fig を使っている場合は Dotfiles > Scripts に追加すると、一元管理できて良い感じがします。
 
 ```
@@ -113,4 +114,3 @@ Node.js のバージョンが >= 16.10 の場合はシンプルに `yarn` を有
 % yarn -v
 1.22.19
 ```
-

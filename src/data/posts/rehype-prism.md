@@ -36,15 +36,17 @@ import "../styles/prism.css";
 いろいろな言語やオプションを使って、表示確認を行っていきましょう。
 
 **css**
+
 ```css
-.example{
+.example {
   display: flex;
   align-items: center;
-  height: calc( 100vh - 2rem );
+  height: calc(100vh - 2rem);
 }
 ```
 
 **tsx で 行番号表示 + 行のハイライト**
+
 ```tsx {1,4-6} showLineNumbers
 import Item from "../../compoments/item";
 import React, { useEffect } from "react";
@@ -53,9 +55,9 @@ type Props = {
   item: Item;
 };
 
-export default function Example({item}: Props) {
+export default function Example({ item }: Props) {
   useEffect(() => {
-    console.log('This is Example');
+    console.log("This is Example");
   }, []);
 
   return (
@@ -69,6 +71,7 @@ export default function Example({item}: Props) {
 ```
 
 **json で diff**
+
 ```diff-json
  {
    "private": true,
@@ -101,7 +104,7 @@ export default function Example({item}: Props) {
 <?php
 /**
  * Example function.
- * 
+ *
  * @param $name string
  * @return void
  */
