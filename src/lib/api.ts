@@ -46,7 +46,7 @@ export function getAllPosts(fields: string[] = []) {
   return posts;
 }
 
-const worksDirectory = join(process.cwd(), "_works");
+const worksDirectory = join(process.cwd(), "src/data/works");
 
 export function getWorkSlugs() {
   return fs.readdirSync(worksDirectory);
