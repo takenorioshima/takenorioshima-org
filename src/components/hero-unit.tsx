@@ -59,7 +59,7 @@ export default function HeroUnit() {
             <ambientLight intensity={0.1} />
             <directionalLight color="white" position={[0, 0, 5]} />
             <Suspense fallback={null}>
-              <Model scale={10} />
+              <Model scale={13} />
             </Suspense>
           </Canvas>
         </div>

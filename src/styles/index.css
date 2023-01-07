@@ -2,6 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  height: -webkit-fill-available;
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+}
+
 .global-nav {
   color: white;
 }
@@ -169,18 +178,18 @@ iframe[src*="youtube.com/embed"] {
 }
 
 .flip-titles-container {
-  font-size: 2.25rem;
+  font-size: clamp(2rem, 2vw + 1.5rem, 3rem);
   writing-mode: vertical-lr;
   display: flex;
   flex-direction: column-reverse;
   position: relative;
-  top: -3rem;
+  top: -4rem;
 }
 
 .flip-titles {
   position: relative;
   perspective: 300px;
-  width: 100px;
+  width: 3em;
 }
 
 .flip-title {
@@ -188,7 +197,6 @@ iframe[src*="youtube.com/embed"] {
   top: 0%;
   left: 50%;
   padding: 1rem;
-  font-size: 2.25rem;
   line-height: 1;
   color: white;
   white-space: nowrap;
@@ -280,4 +288,9 @@ iframe[src*="youtube.com/embed"] {
   to {
     top: 0;
   }
+}
+
+.font-palt {
+  font-feature-settings: "palt";
+  letter-spacing: 0.04em;
 }
