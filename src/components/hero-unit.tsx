@@ -2,7 +2,7 @@ import React, { Suspense, useEffect, useRef } from "react";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import { Canvas, useThree, useFrame } from "@react-three/fiber";
 import { OrbitControls, OrthographicCamera } from "@react-three/drei";
-import Model from "./model";
+import Model from "./hero-model";
 
 export default function HeroUnit() {
   useEffect(() => {
