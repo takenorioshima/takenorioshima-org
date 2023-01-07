@@ -11,9 +11,17 @@ const Header = () => {
 
   const links = AUTHOR_PROFILES.links;
   const linkList = [];
-  for( const [key, value] of Object.entries(links) ){
+  for (const [key, value] of Object.entries(links)) {
     const klass = `bi bi-${key}`;
-    linkList.push(<Link href={value} className="mx-1 text-lg lg:text-xl lg:mx-2 text-center" key={key}><i className={klass}></i></Link>)
+    linkList.push(
+      <Link
+        href={value}
+        className="mx-[0.5em] text-lg lg:text-xl lg:mx-2 text-center"
+        key={key}
+      >
+        <i className={klass}></i>
+      </Link>
+    );
   }
 
   return (
@@ -49,11 +57,11 @@ const Header = () => {
               />
             </g>
           </svg>
-          <span className="text-sm tracking-tight">まなぶ・つくる・あそぶ</span>
+          <span className="font-palt text-sm tracking-tight">
+            まなぶ・つくる・あそぶ
+          </span>
         </Link>
-        <div className="block">
-          {linkList}
-        </div>
+        <div className="block">{linkList}</div>
       </nav>
     </div>
   );
