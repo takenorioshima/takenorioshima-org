@@ -21,8 +21,8 @@ type Props = {
 
 declare global {
   interface Window {
-    twttr: { widgets: { load: () => void } },
-    instgrm: { Embeds: { process: () => void } }
+    twttr: { widgets: { load: () => void } };
+    instgrm: { Embeds: { process: () => void } };
   }
 }
 
@@ -39,7 +39,7 @@ export default function Post({ post, morePosts, preview }: Props) {
     if (window.twttr) {
       window.twttr.widgets.load();
     }
-  }, [post])
+  }, [post]);
 
   const title = `${post.title} - ${SITE_NAME}`;
 
