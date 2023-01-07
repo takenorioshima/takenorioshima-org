@@ -5,7 +5,12 @@ type Props = {
 const PostBody = ({ content }: Props) => {
   return (
     <article
-      className="prose prose-sm md:prose-base max-w-full js-toc-content"
+      className="
+        max-w-full prose
+        prose-h2:font-semibold prose-h2:text-lg
+        prose-p:leading-7
+        before:prose-code:hidden after:prose-code:hidden
+        js-toc-content"
       dangerouslySetInnerHTML={{ __html: content }}
     />
   );

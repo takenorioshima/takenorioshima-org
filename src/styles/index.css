@@ -93,6 +93,14 @@
   @apply opacity-100;
 }
 
+.prose p > code {
+  @apply inline-block bg-slate-200 px-1 leading-normal rounded-sm;
+}
+
+.prose p > code::before,
+.prose p > code::after {
+}
+
 iframe[src*="embed.music.apple.com"] {
   max-width: 100% !important;
 }

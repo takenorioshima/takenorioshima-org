@@ -300,7 +300,6 @@ pre.language-json::before {
   content: "JSON";
 }
 
-
 /*********************************************************
 * Line highlighting
 */
@@ -355,7 +354,7 @@ pre[class*="language-"] > code[class*="language-"] {
     "Courier New", monospace;
   font-size: 0.8rem;
   border-left: 1px solid #ccc;
-  margin: 1.25rem 0 -0.5em 1em;
+  margin: 1.25rem 0 -7px 1em;
   padding-left: 1em;
   padding-bottom: 0.25rem;
 }

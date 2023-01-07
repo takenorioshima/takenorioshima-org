@@ -1,4 +1,5 @@
 /** @type {import('tailwindcss').Config} */
+const preBorderRadius = "0.75rem";
 module.exports = {
   content: ["./src/components/**/*.tsx", "./src/pages/**/*.tsx"],
   theme: {
@@ -51,6 +52,9 @@ module.exports = {
                 paddingLeft: "0.25rem",
                 borderLeft: "4px solid #ddd",
               },
+              pre: {
+                borderRadius: preBorderRadius,
+              },
             },
           ],
         },
@@ -75,6 +79,9 @@ module.exports = {
               "li > ul": {
                 paddingLeft: "0.25rem",
               },
+              pre: {
+                borderRadius: preBorderRadius,
+              },
             },
           ],
         },
@@ -87,29 +94,8 @@ module.exports = {
               "li > ul": {
                 paddingLeft: "0.25rem",
               },
-            },
-          ],
-        },
-        xl: {
-          css: [
-            {
-              li: {
-                margin: 0,
-              },
-              "li > ul": {
-                paddingLeft: "0.25rem",
-              },
-            },
-          ],
-        },
-        "2xl": {
-          css: [
-            {
-              li: {
-                margin: "0 0 0.25rem 0",
-              },
-              "li > ul": {
-                paddingLeft: "0.25rem",
+              pre: {
+                borderRadius: preBorderRadius,
               },
             },
           ],
