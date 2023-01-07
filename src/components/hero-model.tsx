@@ -47,8 +47,8 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
   const lipTopRef = useRef(null);
   const lipBottomRef = useRef(null);
 
-  const durationBase = 500;
-  const easing = TWEEN.Easing.Quintic.Out;
+  const durationBase = 2000;
+  const easing = TWEEN.Easing.Exponential.Out;
   const vectorZero = new THREE.Vector3();
 
   let takenori: THREE.Group;
@@ -82,8 +82,10 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
       }
     });
 
+    takenori.userData.initialScale = takenori.scale.clone();
+
     setInterval(animateRandomly, 2000);
-  }, []);
+  }, [props]);
 
   useFrame(() => {
     TWEEN.update();
@@ -257,10 +259,17 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
         } else {
           positionTo = vectorZero;
         }
-        new TWEEN.Tween(target.position).to(positionTo, durationBase).start();
-        new TWEEN.Tween(target.rotation).to(vectorZero, durationBase).start();
+        new TWEEN.Tween(target.position)
+          .to(positionTo, durationBase)
+          .easing(easing)
+          .start();
+        new TWEEN.Tween(target.rotation)
+          .to(vectorZero, durationBase)
+          .easing(easing)
+          .start();
         new TWEEN.Tween(target.scale)
           .to({ x: 1, y: 1, z: 1 }, durationBase)
+          .easing(easing)
           .start();
       });
 
@@ -269,8 +278,8 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
   }
 
   function randomScale() {
-    const minScale = 4;
-    const maxScale = 13;
+    const minScale = takenori.userData.initialScale.x - 3;
+    const maxScale = takenori.userData.initialScale.x + 3;
     const scale = Math.random() * (maxScale - minScale) + minScale;
     new TWEEN.Tween(takenori.scale)
       .to({ x: scale, y: scale, z: scale })
@@ -308,6 +317,7 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
       case 0:
         changeMaterial();
         flipLips();
+        randomScale();
       case 1:
         rotate();
         extendGlasses();
