@@ -92,32 +92,17 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
   });
 
   function rotate() {
-    new TWEEN.Tween(takenori.rotation)
-      .to(randomVector3(3, 6), durationBase)
-      .easing(easing)
-      .start();
+    tween(takenori.rotation, randomVector3(3, 6));
   }
 
   function extendGlasses() {
     if (!glassL.userData.extended) {
-      new TWEEN.Tween(glassL.scale)
-        .to({ z: 8 }, durationBase)
-        .easing(easing)
-        .start();
-      new TWEEN.Tween(glassR.scale)
-        .to({ z: 10 }, durationBase)
-        .easing(easing)
-        .start();
+      tween(glassL.scale, { z: 8 });
+      tween(glassR.scale, { z: 10 });
       glassL.userData.extended = true;
     } else {
-      new TWEEN.Tween(glassL.scale)
-        .to({ z: 1 }, durationBase)
-        .easing(easing)
-        .start();
-      new TWEEN.Tween(glassR.scale)
-        .to({ z: 1 }, durationBase)
-        .easing(easing)
-        .start();
+      tween(glassL.scale, { z: 1 });
+      tween(glassR.scale, { z: 1 });
       glassL.userData.extended = false;
     }
   }
@@ -150,94 +135,37 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
     if (!takenori.userData.dissolved) {
       let target;
       target = glassL;
-      new TWEEN.Tween(target.position)
-        .to({ x: 0.5, y: 0.2, z: -0.5 }, durationBase)
-        .easing(easing)
-        .start();
-      new TWEEN.Tween(target.rotation)
-        .to({ x: 1 }, durationBase)
-        .easing(easing)
-        .start();
-      new TWEEN.Tween(target.scale)
-        .to({ x: 3, y: 3, z: 0.3 }, durationBase)
-        .easing(easing)
-        .start();
+      tween(target.position, { x: 0.5, y: 0.2, z: -0.5 });
+      tween(target.rotation, { x: 1 });
+      tween(target.scale, { x: 3, y: 3, z: 0.3 });
 
       target = glassR;
-      new TWEEN.Tween(target.position)
-        .to({ x: -0.2, z: 0.3 }, durationBase)
-        .easing(easing)
-        .start();
-      new TWEEN.Tween(target.rotation)
-        .to({ y: -1, z: -0.5 }, durationBase)
-        .easing(easing)
-        .start();
-      new TWEEN.Tween(target.scale)
-        .to({ x: 4, y: 4, z: 0.3 }, durationBase)
-        .easing(easing)
-        .start();
+      tween(target.position, { x: -0.2, z: 0.3 });
+      tween(target.rotation, { y: -1, z: -0.5 });
+      tween(target.scale, { x: 4, y: 4, z: 0.3 });
 
       target = cap;
-      new TWEEN.Tween(target.position)
-        .to({ x: 1, y: 0.3 }, durationBase)
-        .easing(easing)
-        .start();
-      new TWEEN.Tween(target.rotation)
-        .to({ y: 0.5, z: 0.5 }, durationBase)
-        .easing(easing)
-        .start();
-      new TWEEN.Tween(target.scale)
-        .to({ x: 1.5, y: 1.5, z: 1.5 }, durationBase)
-        .easing(easing)
-        .start();
+      tween(target.position, { x: 1, y: 0.3 });
+      tween(target.rotation, { y: 0.5, z: 0.5 });
+      tween(target.scale, { x: 1.5, y: 1.5, z: 1.5 });
 
       target = head;
-      new TWEEN.Tween(target.rotation)
-        .to({ x: 0.5, z: 2 }, durationBase)
-        .easing(easing)
-        .start();
-      new TWEEN.Tween(target.scale)
-        .to({ x: 1, y: 1, z: 0.03 }, durationBase)
-        .easing(easing)
-        .start();
+      tween(target.rotation, { x: 0.5, z: 2 });
+      tween(target.scale, { x: 1, y: 1, z: 0.03 });
 
       target = nose;
-      new TWEEN.Tween(target.position)
-        .to({ z: -1 }, durationBase)
-        .easing(easing)
-        .start();
-      new TWEEN.Tween(target.rotation)
-        .to({ z: 5 }, durationBase)
-        .easing(easing)
-        .start();
-      new TWEEN.Tween(target.scale)
-        .to({ x: 2, y: 2, z: 2 }, durationBase)
-        .easing(easing)
-        .start();
+      tween(target.position, { z: -1 });
+      tween(target.rotation, { z: 5 });
+      tween(target.scale, { x: 2, y: 2, z: 2 });
 
       target = lipTop;
-      new TWEEN.Tween(target.position)
-        .to({ y: -0.5 }, durationBase)
-        .easing(easing)
-        .start();
-      new TWEEN.Tween(target.scale)
-        .to({ x: 3, y: 3, z: 3 }, durationBase)
-        .easing(easing)
-        .start();
+      tween(target.position, { y: -0.5 });
+      tween(target.scale, { x: 3, y: 3, z: 3 });
 
       target = lipBottom;
-      new TWEEN.Tween(target.position)
-        .to({ x: 1, y: 0.25 }, durationBase)
-        .easing(easing)
-        .start();
-      new TWEEN.Tween(target.rotation)
-        .to({ z: 1 }, durationBase)
-        .easing(easing)
-        .start();
-      new TWEEN.Tween(target.scale)
-        .to({ x: 2, y: 2, z: 2 }, durationBase)
-        .easing(easing)
-        .start();
+      tween(target.position, { x: 1, y: 0.25 });
+      tween(target.rotation, { z: 1 });
+      tween(target.scale, { x: 2, y: 2, z: 2 });
 
       takenori.userData.dissolved = true;
     } else {
@@ -259,18 +187,9 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
         } else {
           positionTo = vectorZero;
         }
-        new TWEEN.Tween(target.position)
-          .to(positionTo, durationBase)
-          .easing(easing)
-          .start();
-        new TWEEN.Tween(target.rotation)
-          .to(vectorZero, durationBase)
-          .easing(easing)
-          .start();
-        new TWEEN.Tween(target.scale)
-          .to({ x: 1, y: 1, z: 1 }, durationBase)
-          .easing(easing)
-          .start();
+        tween(target.position, positionTo);
+        tween(target.rotation, vectorZero);
+        tween(target.scale, { x: 1, y: 1, z: 1 });
       });
 
       takenori.userData.dissolved = false;
@@ -281,34 +200,23 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
     const minScale = takenori.userData.initialScale.x - 3;
     const maxScale = takenori.userData.initialScale.x + 3;
     const scale = Math.random() * (maxScale - minScale) + minScale;
-    new TWEEN.Tween(takenori.scale)
-      .to({ x: scale, y: scale, z: scale })
-      .easing(easing)
-      .start();
+    tween(takenori.scale, { x: scale, y: scale, z: scale });
   }
 
   function flipLips() {
     if (!lipTop.userData.rotated) {
-      new TWEEN.Tween(lipTop.rotation)
-        .to({ y: Math.PI * 2 }, durationBase)
-        .easing(easing)
-        .start();
-      new TWEEN.Tween(lipBottom.rotation)
-        .to({ y: -Math.PI * 2 }, durationBase)
-        .easing(easing)
-        .start();
+      tween(lipTop.rotation, { y: Math.PI * 2 });
+      tween(lipBottom.rotation, { y: -Math.PI * 2 });
       lipTop.userData.rotated = true;
     } else {
-      new TWEEN.Tween(lipTop.rotation)
-        .to({ y: 0 }, durationBase)
-        .easing(easing)
-        .start();
-      new TWEEN.Tween(lipBottom.rotation)
-        .to({ y: 0 }, durationBase)
-        .easing(easing)
-        .start();
+      tween(lipTop.rotation, { y: 0 });
+      tween(lipBottom.rotation, { y: 0 });
       lipTop.userData.rotated = false;
     }
+  }
+
+  function tween(target: THREE.Vector3 | THREE.Euler, to: object) {
+    new TWEEN.Tween(target).to(to, durationBase).easing(easing).start();
   }
 
   function animateRandomly() {
