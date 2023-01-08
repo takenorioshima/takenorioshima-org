@@ -55,7 +55,7 @@ Homebrew 経由でも導入できますが、公式のおすすめに従って g
 Node.js のプラグインを asdf 追加して Shims を更新します。
 
 ```
-% asdf install nodejs
+% asdf plugin add nodejs
 % asdf reshim
 ```
 
