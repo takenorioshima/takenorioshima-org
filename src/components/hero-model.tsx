@@ -220,12 +220,35 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
     }
   }
 
-  function tween(target: THREE.Vector3 | THREE.Euler, to: object) {
-    new TWEEN.Tween(target).to(to, durationBase).easing(easing).start();
+  function swapCap() {
+    const duration = 500;
+    if (!yellowCap.visible) {
+      yellowCap.visible = yellowCapT.visible = true;
+      cap.visible = brim.visible = false;
+      tween(yellowCap.scale, { x: 1, y: 1, z: 1 }, duration);
+      tween(yellowCapT.scale, { x: 1, y: 1, z: 1 }, duration);
+      tween(cap.scale, { x: 0, y: 0, z: 0 }, duration);
+      tween(brim.scale, { x: 0, y: 0, z: 0 }, duration);
+    } else {
+      yellowCap.visible = yellowCapT.visible = false;
+      cap.visible = brim.visible = true;
+      tween(cap.scale, { x: 1, y: 1, z: 1 }, duration);
+      tween(brim.scale, { x: 1, y: 1, z: 1 }, duration);
+      tween(yellowCap.scale, { x: 0, y: 0, z: 0 }, duration);
+      tween(yellowCapT.scale, { x: 0, y: 0, z: 0 }, duration);
+    }
+  }
+
+  function tween(
+    target: THREE.Vector3 | THREE.Euler,
+    to: object,
+    duration: number = durationBase
+  ) {
+    new TWEEN.Tween(target).to(to, duration).easing(easing).start();
   }
 
   function animateRandomly() {
-    const random = Math.floor(Math.random() * 5);
+    const random = Math.floor(Math.random() * 6);
     switch (random) {
       case 0:
         changeMaterial();
@@ -241,6 +264,9 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
       case 4:
         rotate();
         extendGlasses();
+      case 5:
+        swapCap();
+        rotate();
     }
   }
 
