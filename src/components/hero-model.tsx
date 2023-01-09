@@ -8,27 +8,26 @@ import * as TWEEN from "@tweenjs/tween.js";
 type GLTFResult = GLTF & {
   nodes: {
     head: THREE.Mesh;
-    glassR: THREE.Mesh;
     nose: THREE.Mesh;
+    glassL: THREE.Mesh;
+    glassR: THREE.Mesh;
     glassFrame: THREE.Mesh;
-    Cube279: THREE.Mesh;
-    Cube279_1: THREE.Mesh;
     lipTop: THREE.Mesh;
     lipBottom: THREE.Mesh;
-    glassL: THREE.Mesh;
-    Cube003: THREE.Mesh;
-    Cube003_1: THREE.Mesh;
+    cap: THREE.Mesh;
+    brim: THREE.Mesh;
+    yellowCap: THREE.Mesh;
+    yellowCapT: THREE.Mesh;
   };
   materials: {
-    ["Take Skin.001"]: THREE.MeshStandardMaterial;
-    ["Take Glass Frame"]: THREE.MeshStandardMaterial;
-    ["Glass Bridge.001"]: THREE.MeshStandardMaterial;
-    ["Take Brim"]: THREE.MeshStandardMaterial;
-    ["Take Cap"]: THREE.MeshStandardMaterial;
-    ["Take Lips.001"]: THREE.MeshStandardMaterial;
-    ["Take Lips.002"]: THREE.MeshStandardMaterial;
-    YellowCap: THREE.MeshStandardMaterial;
-    Material: THREE.MeshStandardMaterial;
+    skin: THREE.MeshStandardMaterial;
+    glass: THREE.MeshStandardMaterial;
+    glassFrame: THREE.MeshStandardMaterial;
+    cap: THREE.MeshStandardMaterial;
+    lip: THREE.MeshStandardMaterial;
+    yellowCap: THREE.MeshStandardMaterial;
+    white: THREE.MeshStandardMaterial;
+    brim: THREE.MeshStandardMaterial;
   };
 };
 
@@ -41,6 +40,8 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
   const headRef = useRef(null);
   const capRef = useRef(null);
   const brimRef = useRef(null);
+  const yellowCapRef = useRef(null);
+  const yellowCapTRef = useRef(null);
   const glassLRef = useRef(null);
   const glassRRef = useRef(null);
   const noseRef = useRef(null);
@@ -55,6 +56,8 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
   let head: THREE.Mesh;
   let cap: THREE.Mesh;
   let brim: THREE.Mesh;
+  let yellowCap: THREE.Mesh;
+  let yellowCapT: THREE.Mesh;
   let glassL: THREE.Mesh;
   let glassR: THREE.Mesh;
   let nose: THREE.Mesh;
@@ -62,15 +65,17 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
   let lipBottom: THREE.Mesh;
 
   useEffect(() => {
-    takenori = takenoriRef.current;
-    head = headRef.current;
-    cap = capRef.current;
-    glassL = glassLRef.current;
-    glassR = glassRRef.current;
-    nose = noseRef.current;
-    lipTop = lipTopRef.current;
-    lipBottom = lipBottomRef.current;
-    brim = brimRef.current;
+    takenori = takenoriRef.current!;
+    head = headRef.current!;
+    cap = capRef.current!;
+    glassL = glassLRef.current!;
+    glassR = glassRRef.current!;
+    nose = noseRef.current!;
+    lipTop = lipTopRef.current!;
+    lipBottom = lipBottomRef.current!;
+    brim = brimRef.current!;
+    yellowCap = yellowCapRef.current!;
+    yellowCapT = yellowCapTRef.current!;
 
     takenori.traverse((child: any) => {
       const offsetMeshes = ["glassL", "glassR", "lipTop", "lipBottom"];
@@ -253,7 +258,7 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
         castShadow
         receiveShadow
         geometry={nodes.head.geometry}
-        material={materials["Take Skin.001"]}
+        material={materials.skin}
         ref={headRef}
       />
       <mesh
@@ -261,8 +266,8 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
         castShadow
         receiveShadow
         geometry={nodes.glassR.geometry}
-        material={materials["Take Glass Frame"]}
-        position={[-0.07, 0.05, 0.19]}
+        material={materials.glass}
+        position={[-0.07, 0.05, -0.2]}
         ref={glassRRef}
       />
       <mesh
@@ -270,7 +275,7 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
         castShadow
         receiveShadow
         geometry={nodes.nose.geometry}
-        material={materials["Take Skin.001"]}
+        material={materials.skin}
         ref={noseRef}
       />
       <mesh
@@ -278,22 +283,22 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
         castShadow
         receiveShadow
         geometry={nodes.glassFrame.geometry}
-        material={materials["Glass Bridge.001"]}
+        material={materials.glass}
       />
       <mesh
-        name="Cube279"
+        name="brim"
         castShadow
         receiveShadow
-        geometry={nodes.Cube279.geometry}
-        material={materials["Take Brim"]}
+        geometry={nodes.brim.geometry}
+        material={materials.brim}
         ref={brimRef}
       />
       <mesh
         name="cap"
         castShadow
         receiveShadow
-        geometry={nodes.Cube279_1.geometry}
-        material={materials["Take Cap"]}
+        geometry={nodes.cap.geometry}
+        material={materials.cap}
         ref={capRef}
       />
       <mesh
@@ -301,8 +306,8 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
         castShadow
         receiveShadow
         geometry={nodes.lipTop.geometry}
-        material={materials["Take Lips.001"]}
-        position={[0, -0.08, 0.18]}
+        material={materials.lip}
+        position={[0, -0.08, -0.19]}
         ref={lipTopRef}
       />
       <mesh
@@ -310,8 +315,8 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
         castShadow
         receiveShadow
         geometry={nodes.lipBottom.geometry}
-        material={materials["Take Lips.002"]}
-        position={[0, -0.12, 0.18]}
+        material={materials.lip}
+        position={[0, -0.12, -0.19]}
         ref={lipBottomRef}
       />
       <mesh
@@ -319,16 +324,26 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
         castShadow
         receiveShadow
         geometry={nodes.glassL.geometry}
-        material={materials["Take Glass Frame"]}
-        position={[0.07, 0.05, 0.19]}
+        material={materials.glass}
+        position={[0.07, 0.05, -0.2]}
         ref={glassLRef}
       />
       <mesh
         name="yellowCap"
         castShadow
         receiveShadow
-        geometry={nodes.Cube003.geometry}
-        material={materials.YellowCap}
+        geometry={nodes.yellowCap.geometry}
+        material={materials.yellowCap}
+        ref={yellowCapRef}
+        visible={false}
+      />
+      <mesh
+        name="yellowCapT"
+        castShadow
+        receiveShadow
+        geometry={nodes.yellowCapT.geometry}
+        material={materials.white}
+        ref={yellowCapTRef}
         visible={false}
       />
     </group>
