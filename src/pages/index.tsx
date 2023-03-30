@@ -22,7 +22,7 @@ export default function Index({ recentPosts }: Props) {
           <title>{SITE_NAME}</title>
         </Head>
         <HeroUnit />
-        <Container>
+        {/* <Container>
           <h2 className="text-2xl font-bold tracking-tighter md:pr-8">
             <i className="bi-journals"></i> 最近の投稿
           </h2>
@@ -36,21 +36,14 @@ export default function Index({ recentPosts }: Props) {
             />
           )}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-        </Container>
+        </Container> */}
       </Layout>
     </>
   );
 }
 
 export const getStaticProps = async () => {
-  const recentPosts = getRecentPosts([
-    "title",
-    "date",
-    "slug",
-    "author",
-    "coverImage",
-    "excerpt",
-  ]);
+  const recentPosts = getRecentPosts(["title", "date", "slug", "author", "coverImage", "excerpt"]);
 
   return {
     props: { recentPosts },

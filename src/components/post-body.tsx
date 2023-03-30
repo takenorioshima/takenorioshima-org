@@ -7,7 +7,7 @@ const PostBody = ({ content }: Props) => {
     <article
       className="
         max-w-full prose
-        prose-h2:font-semibold prose-h2:text-lg
+        prose-h2:font-semibold
         prose-p:leading-7
         before:prose-code:hidden after:prose-code:hidden
         js-toc-content"

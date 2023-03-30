@@ -51,10 +51,7 @@ export default function HeroUnit() {
         </div>
 
         <div className="absolute top-0 left-0 w-full h-full">
-          <Canvas
-            orthographic={true}
-            camera={{ zoom: 100, position: [10, 5, 0] }}
-          >
+          <Canvas orthographic={true} camera={{ zoom: 100, position: [10, 5, 0] }}>
             <OrbitControls autoRotate={true} enableZoom={false} />
             <ambientLight intensity={0.1} />
             <directionalLight color="white" position={[0, 0, 5]} />
@@ -64,10 +61,10 @@ export default function HeroUnit() {
           </Canvas>
         </div>
 
-        <div className="hero-unit-scroll">
+        {/* <div className="hero-unit-scroll">
           <small>Scroll</small>
           <i className="bi-chevron-down"></i>
-        </div>
+        </div> */}
       </div>
     </>
   );

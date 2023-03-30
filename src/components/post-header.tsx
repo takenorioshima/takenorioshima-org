@@ -11,18 +11,18 @@ type Props = {
 const PostHeader = ({ title, coverImage, date }: Props) => {
   return (
     <>
-      <div className="post-header relative h-[500px] pt-12">
-        <div className="absolute top-0 left-0 w-full -z-10">
+      <div className="post-header relative flex items-center md:min-h-[500px] pt-12">
+        <div className="absolute top-0 left-0 w-full h-full -z-10">
           <Image
             src={coverImage}
             alt={`Cover Image for ${title}`}
-            className="block w-full h-[500px] object-cover object-center"
+            className="block w-full h-full object-cover object-center"
             title={title}
             width={1200}
             height={630}
           />
         </div>
-        <div className="container max-w-screen-lg mx-auto flex flex-col h-full justify-center px-4">
+        <div className="container max-w-screen-lg mx-auto flex flex-col h-full justify-center px-4 py-12">
           <PostTitle>{title}</PostTitle>
           <div className="">
             <DateFormatter dateString={date} className="text-white" />

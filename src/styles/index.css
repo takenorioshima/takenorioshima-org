@@ -59,6 +59,7 @@ body {
   left: 0;
   background: #ff5a6a;
   mix-blend-mode: multiply;
+  backdrop-filter: blur(20px);
 }
 
 .toc-list {
