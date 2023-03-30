@@ -1,5 +1,5 @@
 import { getAllWorks } from "../lib/api";
-import Layout from "../components/layout";
+import Layout from "../components/layouts/default";
 import Work from "../interfaces/work";
 import Head from "next/head";
 import WorksList from "../components/works-list";
@@ -22,15 +22,7 @@ function Works({ works }: Props) {
 export default Works;
 
 export const getStaticProps = async () => {
-  const works = getAllWorks([
-    "title",
-    "date",
-    "slug",
-    "content",
-    "tags",
-    "ogImage",
-    "coverImage",
-  ]);
+  const works = getAllWorks(["title", "date", "slug", "content", "tags", "ogImage", "coverImage"]);
   return {
     props: { works },
   };

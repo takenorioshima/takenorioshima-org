@@ -4,7 +4,7 @@ import ErrorPage from "next/error";
 import Container from "../../components/container";
 import PostBody from "../../components/post-body";
 import PostHeader from "../../components/post-header";
-import Layout from "../../components/layout";
+import Layout from "../../components/layouts/posts";
 import Sidebar from "../../components/sidebar";
 import { getPostBySlug, getAllPosts } from "../../lib/api";
 import PostTitle from "../../components/post-title";
@@ -49,16 +49,12 @@ export default function Post({ post, morePosts, preview }: Props) {
         <PostTitle>Loading…</PostTitle>
       ) : (
         <>
-          <article className="mb-32">
+          <article className="mb-20">
             <Head>
               <title>{title}</title>
               <meta property="og:image" content={post.ogImage.url} />
             </Head>
-            <PostHeader
-              title={post.title}
-              coverImage={post.coverImage}
-              date={post.date}
-            />
+            <PostHeader title={post.title} coverImage={post.coverImage} date={post.date} />
             <Container>
               <div className="lg:grid grid-cols-7 gap-4">
                 <div className="lg:col-span-5 mb-20 lg:mb-0">
@@ -83,15 +79,7 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  const post = getPostBySlug(params.slug, [
-    "title",
-    "date",
-    "slug",
-    "author",
-    "content",
-    "ogImage",
-    "coverImage",
-  ]);
+  const post = getPostBySlug(params.slug, ["title", "date", "slug", "author", "content", "ogImage", "coverImage"]);
   const content = await markdownToHtml(post.content || "");
 
   return {
