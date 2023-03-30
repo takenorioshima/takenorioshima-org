@@ -295,3 +295,7 @@ iframe[src*="youtube.com/embed"] {
   font-feature-settings: "palt";
   letter-spacing: 0.04em;
 }
+
+.parsed-content {
+  transform: perspective(100px) rotateY(-2deg) rotateZ(-5deg);
+}
