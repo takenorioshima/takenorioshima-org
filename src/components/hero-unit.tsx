@@ -32,7 +32,7 @@ export default function HeroUnit() {
   return (
     <>
       <div id="hero-unit" className="hero-unit">
-        <div className="relative flex items-center justify-center w-full h-full">
+        <div className="relative flex items-center justify-center w-full h-full parsed-content">
           <div className="flip-titles-container">
             <p>大島武宜は</p>
             <div className="flip-titles">
