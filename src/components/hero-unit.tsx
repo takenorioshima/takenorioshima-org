@@ -32,8 +32,8 @@ export default function HeroUnit() {
   return (
     <>
       <div id="hero-unit" className="hero-unit overflow-hidden">
-        <div className="relative flex items-center justify-center w-full h-full parsed-content z-50">
-          <div className="flip-titles-container">
+        <div className="relative flex items-center justify-center w-full h-full">
+          <div className="flip-titles-container parsed-content z-50">
             <p>大島武宜は</p>
             <div className="flip-titles">
               <div className="flip-title">コンポーザー</div>
