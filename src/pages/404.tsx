@@ -1,7 +1,6 @@
 import Layout from "../components/layouts/default";
 import Head from "next/head";
 import { SITE_NAME } from "../lib/constants";
-import "bootstrap-icons/font/bootstrap-icons.css";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Model from "../components/hero-model";

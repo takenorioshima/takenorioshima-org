@@ -1,5 +1,4 @@
 import React, { Suspense, useEffect } from "react";
-import "bootstrap-icons/font/bootstrap-icons.css";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Model from "./hero-model";

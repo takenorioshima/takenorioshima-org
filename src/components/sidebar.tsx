@@ -1,19 +1,21 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import "bootstrap-icons/font/bootstrap-icons.css";
 import SidebarToc from "./sidebar-toc";
 import { AUTHOR_PROFILES } from "../lib/constants";
 
 const Sidebar = () => {
-
   const links = AUTHOR_PROFILES.links;
   const linkList = [];
   for (const [key, value] of Object.entries(links)) {
     const klass = `bi bi-${key}`;
-    linkList.push(<Link href={value.toString()} className="flex-1 text-center" key={key}><i className={klass}></i></Link>)
+    linkList.push(
+      <Link href={value.toString()} className="flex-1 text-center" key={key}>
+        <i className={klass}></i>
+      </Link>
+    );
   }
-  
+
   return (
     <>
       <div className="sidebar-profile relative mb-4">
@@ -27,19 +29,13 @@ const Sidebar = () => {
               height="96"
             />
             <div>
-              <div className="font-semibold text-lg">
-                {AUTHOR_PROFILES.name.ja}
-              </div>
-              <div className="text-xs text-slate-500">
-                {AUTHOR_PROFILES.name.en}
-              </div>
+              <div className="font-semibold text-lg">{AUTHOR_PROFILES.name.ja}</div>
+              <div className="text-xs text-slate-500">{AUTHOR_PROFILES.name.en}</div>
             </div>
           </div>
 
           <div className="text-sm my-2">{AUTHOR_PROFILES.description}</div>
-          <div className="flex align-center w-full">
-            {linkList}
-          </div>
+          <div className="flex align-center w-full">{linkList}</div>
         </div>
       </div>
       <SidebarToc />
