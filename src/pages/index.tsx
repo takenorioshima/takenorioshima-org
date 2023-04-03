@@ -20,6 +20,7 @@ export default function Index({ recentPosts }: Props) {
       <Layout>
         <Head>
           <title>{SITE_NAME}</title>
+          <meta name="google-site-verification" content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VARIFICATION} />
         </Head>
         <HeroUnit />
         {/* <Container>
