@@ -1,17 +1,14 @@
 import { generateSitemapXml } from "../lib/api";
-import Head from "next/head";
-import { NextPage } from "next";
+import { useRouter } from "next/router";
+import { useEffect } from "react";
 
-const Sitemap: NextPage = () => {
-  return (
-    <>
-      <Head>
-        <meta name="robots" content="noindex" />
-      </Head>
-    </>
-  );
-};
-export default Sitemap;
+export default function Sitemap() {
+  const router = useRouter();
+  useEffect(() => {
+    router.replace("/404");
+  }, []);
+  return null;
+}
 
 export const getStaticProps = async () => {
   await generateSitemapXml();
