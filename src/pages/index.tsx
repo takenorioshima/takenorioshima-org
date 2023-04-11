@@ -2,11 +2,10 @@ import Container from "../components/container";
 import MoreStories from "../components/more-stories";
 import HeroUnit from "../components/hero-unit";
 import HeroPost from "../components/hero-post";
+import { NextSeo } from "next-seo";
 import Layout from "../components/layouts/default";
 import { getRecentPosts } from "../lib/api";
-import Head from "next/head";
 import Post from "../interfaces/post";
-import { SITE_NAME } from "../lib/constants";
 
 type Props = {
   recentPosts: Post[];
@@ -18,10 +17,7 @@ export default function Index({ recentPosts }: Props) {
   return (
     <>
       <Layout>
-        <Head>
-          <title>{SITE_NAME}</title>
-          <meta name="google-site-verification" content={process.env.NEXT_PUBLIC_GOOGLE_SITE_VARIFICATION} />
-        </Head>
+        <NextSeo />
         <HeroUnit />
         {/* <Container>
           <h2 className="text-2xl font-bold tracking-tighter md:pr-8">

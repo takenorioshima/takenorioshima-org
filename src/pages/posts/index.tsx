@@ -2,9 +2,8 @@ import Container from "../../components/container";
 import MoreStories from "../../components/more-stories";
 import Layout from "../../components/layouts/posts";
 import { getAllPosts } from "../../lib/api";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 import Post from "../../interfaces/post";
-import { SITE_NAME } from "../../lib/constants";
 import Footer from "../../components/footer";
 
 type Props = {
@@ -15,9 +14,7 @@ export default function Posts({ posts }: Props) {
   return (
     <>
       <Layout>
-        <Head>
-          <title>{SITE_NAME}</title>
-        </Head>
+        <NextSeo />
         <Container>
           <h2 className="text-2xl font-bold tracking-tighter md:pr-8">
             <i className="bi bi-journals"></i> 最近の投稿

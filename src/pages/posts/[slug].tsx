@@ -8,10 +8,10 @@ import Layout from "../../components/layouts/posts";
 import Sidebar from "../../components/sidebar";
 import { getPostBySlug, getAllPosts } from "../../lib/api";
 import PostTitle from "../../components/post-title";
-import Head from "next/head";
 import markdownToHtml from "../../lib/markdownToHtml";
 import type PostType from "../../interfaces/post";
 import { SITE_NAME } from "../../lib/constants";
+import { NextSeo } from "next-seo";
 
 type Props = {
   post: PostType;
@@ -50,10 +50,17 @@ export default function Post({ post, morePosts, preview }: Props) {
       ) : (
         <>
           <article className="mb-20">
-            <Head>
-              <title>{title}</title>
-              <meta property="og:image" content={post.ogImage.url} />
-            </Head>
+            <NextSeo
+              title={title}
+              description={post.excerpt}
+              openGraph={{
+                images: [
+                  {
+                    url: post.ogImage.url,
+                  },
+                ],
+              }}
+            />
             <PostHeader title={post.title} coverImage={post.coverImage} date={post.date} />
             <Container>
               <div className="lg:grid grid-cols-7 gap-4">
@@ -79,7 +86,16 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  const post = getPostBySlug(params.slug, ["title", "date", "slug", "author", "content", "ogImage", "coverImage"]);
+  const post = getPostBySlug(params.slug, [
+    "title",
+    "date",
+    "excerpt",
+    "slug",
+    "author",
+    "content",
+    "ogImage",
+    "coverImage",
+  ]);
   const content = await markdownToHtml(post.content || "");
 
   return {
