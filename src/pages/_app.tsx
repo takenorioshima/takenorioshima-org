@@ -12,19 +12,6 @@ import { SITE_NAME, AUTHOR_PROFILES, HOME_OG_IMAGE_URL } from "../lib/constants"
 export default function MyApp({ Component, pageProps }: AppProps) {
   const description = AUTHOR_PROFILES.description;
 
-  const handleScroll = () => {
-    const globalNav = document.querySelector(".global-nav");
-    if (window.pageYOffset > 500) {
-      globalNav?.classList.add("is-scrolled", "bg-white");
-    } else {
-      globalNav?.classList.remove("is-scrolled", "bg-white");
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-  }, []);
-
   return (
     <>
       <DefaultSeo

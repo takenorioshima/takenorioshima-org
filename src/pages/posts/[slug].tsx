@@ -39,6 +39,28 @@ export default function Post({ post, morePosts, preview }: Props) {
     if (window.twttr) {
       window.twttr.widgets.load();
     }
+
+    // Observe page-header visibility, change background color of global header.
+    const globalNav = document.querySelector(".global-nav");
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: [0, 1.0],
+    };
+    const observer = new IntersectionObserver(callback, options);
+    const target = document.querySelector(".post-header");
+    if (target) {
+      observer.observe(target);
+    }
+    function callback(entries: Array<IntersectionObserverEntry>) {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio === 0) {
+          globalNav?.classList.add("is-scrolled", "bg-white");
+        } else {
+          globalNav?.classList.remove("is-scrolled", "bg-white");
+        }
+      });
+    }
   }, [post]);
 
   const title = `${post.title} - ${SITE_NAME}`;
