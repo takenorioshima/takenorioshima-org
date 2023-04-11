@@ -14,11 +14,7 @@ const Header = () => {
   for (const [key, value] of Object.entries(links)) {
     const klass = `bi bi-${key}`;
     linkList.push(
-      <Link
-        href={value}
-        className="mx-[0.5em] text-lg lg:text-xl lg:mx-2 text-center"
-        key={key}
-      >
+      <Link href={value} className="mx-[0.5em] text-lg lg:text-xl lg:mx-2 text-center" key={key}>
         <i className={klass}></i>
       </Link>
     );
@@ -45,10 +41,7 @@ const Header = () => {
                 width="262.77"
                 height="55"
               />
-              <polygon
-                className="st1"
-                points="180.34,36.24 138.23,302.81 82.26,305.75 124.37,39.18"
-              />
+              <polygon className="st1" points="180.34,36.24 138.23,302.81 82.26,305.75 124.37,39.18" />
             </g>
             <g>
               <path
@@ -57,9 +50,7 @@ const Header = () => {
               />
             </g>
           </svg>
-          <span className="font-palt text-sm tracking-tight">
-            まなぶ・つくる・あそぶ
-          </span>
+          <span className="font-palt text-sm tracking-tight">まなぶ・つくる・あそぶ</span>
         </Link>
         <div className="block">{linkList}</div>
       </nav>
