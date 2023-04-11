@@ -1,6 +1,6 @@
 ---
 title: "asdf で Node.js をインストールする"
-excerpt: ""
+excerpt: "Node.js・Ruby・PHP...いろいろな開発言語のバージョン切り替えを一括管理できる大変便利な asdf 。理解を深めるため、asdf で Node.js をインストールする手順をまとめました。"
 coverImage: "/assets/blog/asdf-node-js/cover.jpg"
 date: "2023-01-02"
 author:
@@ -14,10 +14,10 @@ Node.js・Ruby・PHP...いろいろな開発言語のバージョン切り替え
 
 ## GitHub から asdf を Clone
 
-Homebrew 経由でも導入できますが、公式のおすすめに従って`git clone`で導入します。現時点での最新リリースのタグ v0.11.0 を指定しています。
+Homebrew 経由でも導入できますが、公式のおすすめに従って`git clone`で導入します。現時点での最新リリースのタグ v0.11.3 を指定しています。
 
 ```sh
-% git clone https://github.com/asdf-vm/asdf.git ~/.asdf -b v0.11.0
+% git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3
 ```
 
 ## asdf の読み込み
@@ -34,14 +34,14 @@ Homebrew 経由でも導入できますが、公式のおすすめに従って`g
 # .zshrc に追加した場合
 % source .zshrc
 % asdf version
-  v0.11.0-6a4f51a
+  v0.11.3-0adc6c1
 ```
 
 ```sh
 # fig の Scripts に追加した場合
 % fig source
 % asdf version
-  v0.11.0-6a4f51a
+  v0.11.3-0adc6c1
 ```
 
 ## asdf で Node.js を管理できるようにプラグインを追加
@@ -61,12 +61,12 @@ Node.js のプラグインを asdf 追加して Shims を更新します。
 
 ## Node.js のインストール
 
-latest オプションをつけて、最新版をインストールしてみます。 19.3.0 がインストールされました。
+latest オプションをつけて、最新版をインストールしてみます。 19.8.1 がインストールされました。
 
 ```sh
 % asdf install nodejs latest
 % asdf list nodejs
-  19.3.0
+  19.8.1
 ```
 
 インストール可能なバージョンは `asdf list all nodejs` で確認でき、バージョンを指定してインストールすることもできます。バージョン 18.15.0 を追加してみます。
@@ -74,7 +74,7 @@ latest オプションをつけて、最新版をインストールしてみま�
 ```sh
 % asdf install nodejs 18.15.0
 % asdf list nodejs
-  19.3.0
+  19.8.1
   18.15.0
 ```
 
@@ -99,7 +99,7 @@ latest オプションをつけて、最新版をインストールしてみま�
 % asdf global nodejs 18.15.0
 % asdf list nodejs
  *18.15.0
-  19.3.0
+  19.8.1
 % node -v
 v18.15.0
 ```
