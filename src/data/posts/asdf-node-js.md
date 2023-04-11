@@ -69,21 +69,21 @@ latest オプションをつけて、最新版をインストールしてみま�
   19.3.0
 ```
 
-インストール可能なバージョンは`asdf list all nodejs`で確認でき、バージョンを指定してインストールすることもできます。バージョン 16.19.0 を追加してみます。
+インストール可能なバージョンは `asdf list all nodejs` で確認でき、バージョンを指定してインストールすることもできます。バージョン 18.15.0 を追加してみます。
 
 ```sh
-% asdf install nodejs 16.19.0
+% asdf install nodejs 18.15.0
 % asdf list nodejs
-  16.19.0
   19.3.0
+  18.15.0
 ```
 
 ## Node.js のバージョンを指定
 
-使用するバージョンを指定してみたら、エラーが出てしまいました。
+使用するバージョンをグローバルで指定してみたら、エラーが出てしまいました。
 
 ```sh
-% asdf global nodejs 16.19.0
+% asdf global nodejs 18.15.0
 % tail: /Users/takenorioshima/.tool-versions: No such file or directory
 ```
 
@@ -96,17 +96,17 @@ latest オプションをつけて、最新版をインストールしてみま�
 再度指定すると設定ができました。現在グローバルで指定されているバージョンは`asdf list nodejs`の一覧に`*`が付いていることで確認できます。
 
 ```sh
-% asdf global nodejs 16.19.0
+% asdf global nodejs 18.15.0
 % asdf list nodejs
- *16.19.0
+ *18.15.0
   19.3.0
 % node -v
-v16.19.0
+v18.15.0
 ```
 
 ## Yarn を有効化する
 
-Node.js のバージョンが >= 16.10 の場合は、以下コマンドで `yarn` を有効化できました。
+Node.js のバージョンが >= 16.10 の場合は、以下コマンドで `yarn` を有効化できました。簡単！
 
 ```
 % corepack enable yarn
