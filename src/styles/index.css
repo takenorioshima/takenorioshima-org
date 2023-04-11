@@ -26,11 +26,17 @@ body {
 }
 
 .global-nav.home,
+.global-nav.posts,
 .global-nav.is-scrolled {
   color: black;
 }
 
+.global-nav.posts {
+  background: white;
+}
+
 .global-nav.home .logo-o,
+.global-nav.posts .logo-o,
 .global-nav.is-scrolled .logo-o {
   fill: black;
 }

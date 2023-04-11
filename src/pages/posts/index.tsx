@@ -16,12 +16,11 @@ export default function Posts({ posts }: Props) {
       <Layout>
         <NextSeo />
         <Container>
-          <h2 className="text-2xl font-bold tracking-tighter md:pr-8">
+          <h2 className="text-2xl font-bold tracking-tighter md:pr-8 py-5">
             <i className="bi bi-journals"></i> 最近の投稿
           </h2>
           <MoreStories posts={posts} />
         </Container>
-        <Footer />
       </Layout>
     </>
   );
