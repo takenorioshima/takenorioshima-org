@@ -9,7 +9,7 @@ const MoreStories = ({ posts }: Props) => {
   const publishedPosts = posts.filter((post) => !post.slug.match(/^\+/));
   return (
     <section>
-      <div className="grid grid-cols-1 lg:grid-cols-6 gap-5 lg:gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-6 gap-y-5 lg:gap-10">
         {publishedPosts.map((post, index) => (
           <PostPreview
             key={post.slug}
