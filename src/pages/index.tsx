@@ -6,6 +6,7 @@ import { NextSeo } from "next-seo";
 import Layout from "../components/layouts/default";
 import { getRecentPosts } from "../lib/api";
 import Post from "../interfaces/post";
+import { useEffect } from "react";
 
 type Props = {
   recentPosts: Post[];
@@ -14,6 +15,11 @@ type Props = {
 export default function Index({ recentPosts }: Props) {
   const heroPost = recentPosts[0];
   const morePosts = recentPosts.slice(1);
+
+  useEffect(() => {
+    document.querySelector("body")?.classList.add("home");
+  }, []);
+
   return (
     <>
       <Layout>

@@ -6,7 +6,7 @@ html {
   height: -webkit-fill-available;
 }
 
-body {
+body.home {
   min-height: 100vh;
   min-height: -webkit-fill-available;
 }
