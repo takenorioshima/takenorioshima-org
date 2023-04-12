@@ -1,13 +1,13 @@
 ---
 title: "Teenage Engineering OP-1 の Album に PC から mp3 / m4a / aif を流し込みたい"
 excerpt: "もう実時間またない。OP-1 の Album に PC から mp3 / m4a / aif を読み込ませる方法"
-coverImage: "/assets/blog/hello-world/cover.jpg"
+coverImage: "/assets/blog/op1-album-import/cover.jpg"
 date: "2022-12-27"
 author:
   name: Takenori Oshima
   picture: "/assets/blog/authors/takenori.jpg"
 ogImage:
-  url: "/assets/blog/hello-world/cover.jpg"
+  url: "/assets/blog/op1-album-import/cover.jpg"
 ---
 
 Teenage Engineering OP-1 には「Album」という機能があります。
@@ -29,6 +29,8 @@ Teenage Engineering OP-1 には「Album」という機能があります。
 ## 本当は怖い OP-1 Album の UI
 
 この Album 機能の PLAY 操作はいつだってドキドキです。PLAY ボタンと REC ボタンが隣り合わせになっており、REC ボタンを押した瞬間に **Album の内容が削除され新規録音が始まる**ためです。鬼の UI ッ...！
+
+![Album UI](/assets/blog/op1-album-import/ui.jpg)
 
 誤って REC ボタンを押して録音内容が削除された結果、「ラインインを繋いでオケを録音し直す(実時間待つ 😇)」な経験が複数回ある私。REC 操作は Shift + REC など冗長なキーアクションとして欲しいものです。
 
