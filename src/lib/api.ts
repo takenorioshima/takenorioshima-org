@@ -98,14 +98,14 @@ export function getAllWorks(fields: string[] = []) {
 
 export function generateSitemapXml() {
   const posts = getAllPosts(["slug", "title", "date"]);
-  const url = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000/";
+  const url = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
   let xml = '<?xml version="1.0" encoding="UTF-8"?>';
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
   posts.forEach((post) => {
     if (post.slug.slice(0, 1) !== "+") {
       xml += `
           <url>
-            <loc>${url}posts/${post.slug}</loc>
+            <loc>${url}/posts/${post.slug}/</loc>
             <lastmod>${post.date}</lastmod>
             <changefreq>weekly</changefreq>
           </url>
