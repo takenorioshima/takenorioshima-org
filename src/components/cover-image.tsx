@@ -1,5 +1,4 @@
 import cn from "classnames";
-import Link from "next/link";
 import Image from "next/image";
 
 type Props = {
@@ -13,24 +12,12 @@ const CoverImage = ({ title, src, slug }: Props) => {
     <Image
       src={src}
       alt={`Cover Image for ${title}`}
-      className={cn("w-full aspect-[2/1] object-cover object-center", {
-        "hover:shadow-lg transition-shadow duration-200": slug,
-      })}
+      className={cn("w-full aspect-[2/1] object-cover object-center")}
       width={1280}
       height={640}
     />
   );
-  return (
-    <div className="sm:mx-0">
-      {slug ? (
-        <Link as={`/posts/${slug}`} href="/posts/[slug]" aria-label={title}>
-          {image}
-        </Link>
-      ) : (
-        image
-      )}
-    </div>
-  );
+  return <div className="sm:mx-0">{image}</div>;
 };
 
 export default CoverImage;

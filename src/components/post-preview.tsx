@@ -11,38 +11,25 @@ type Props = {
   index: number;
 };
 
-const PostPreview = ({
-  title,
-  coverImage,
-  date,
-  excerpt,
-  slug,
-  index,
-}: Props) => {
+const PostPreview = ({ title, coverImage, date, excerpt, slug, index }: Props) => {
   const colClass = index < 2 ? "col-span-3" : "col-span-2";
   return (
-    <div
-      className={`${colClass} rounded-lg overflow-hidden bg-white drop-shadow`}
+    <Link
+      as={`/posts/${slug}`}
+      href="/posts/[slug]"
+      className={`${colClass} rounded-lg overflow-hidden bg-white drop-shadow hover:shadow-xl transition-shadow duration-200`}
     >
       <div className="">
         <CoverImage slug={slug} title={title} src={coverImage} />
       </div>
       <div className="p-5">
-        <h3 className="mb-2 text-xl lg:text-2xl font-semibold leading-tight">
-          <Link
-            as={`/posts/${slug}`}
-            href="/posts/[slug]"
-            className="hover:underline"
-          >
-            {title}
-          </Link>
-        </h3>
+        <h3 className="mb-2 text-xl lg:text-2xl font-semibold leading-tight">{title}</h3>
         <div className="text-xs text-gray-500 mb-4">
           <DateFormatter dateString={date} />
         </div>
         <p className="text-sm">{excerpt}</p>
       </div>
-    </div>
+    </Link>
   );
 };
 
