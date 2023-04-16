@@ -6,14 +6,15 @@ import { OrbitControls } from "@react-three/drei";
 import Model from "../components/hero-model";
 import React, { Suspense } from "react";
 import Link from "next/link";
+import { NextSeo } from "next-seo";
 
 export default function PageNotFound() {
+  const title = `404 - ${SITE_NAME}`;
+
   return (
     <>
       <Layout>
-        <Head>
-          <title>{SITE_NAME}</title>
-        </Head>
+        <NextSeo title={title} />
         <div id="hero-unit" className="hero-unit">
           <div className="relative flex items-center justify-center w-full h-full z-10">
             <div className="text-center parsed-content">
