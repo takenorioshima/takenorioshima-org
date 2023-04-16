@@ -10,7 +10,7 @@ export default function Policies() {
   return (
     <>
       <Layout>
-        <NextSeo title="プライバシーポリシー {SITE_NAME}" />
+        <NextSeo title={`プライバシーポリシ - ${SITE_NAME}`} />
         <Container>
           <h2 className="text-2xl font-bold text-center tracking-tighter md:pr-8 py-10 mt-20">
             <i className="bi bi-shield-lock-fill"></i> プライバシーポリシー
