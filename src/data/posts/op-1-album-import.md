@@ -3,7 +3,7 @@ title: "Teenage Engineering OP-1 の Album に PC から mp3 / m4a / aif を流�
 excerpt: "もう実時間またない。OP-1 の Album に PC から mp3 / m4a / aif を読み込ませる方法"
 coverImage: "/assets/blog/op1-album-import/cover.jpg"
 date: "2022-12-27"
-tags: ["Music"]
+tags: ["music"]
 author:
   name: Takenori Oshima
   picture: "/assets/blog/authors/takenori.jpg"

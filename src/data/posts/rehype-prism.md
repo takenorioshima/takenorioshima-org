@@ -3,7 +3,7 @@ title: "Next.js + Markdown なブログで Prism.js を使ってコードハイ�
 excerpt: "Next.js + Markdown なブログで Prism.js を使ってコードハイライティングしたい"
 coverImage: "/assets/blog/rehype-prism/cover.jpg"
 date: "2023-01-04"
-tags: ["Programming"]
+tags: ["programming"]
 author:
   name: Takenori Oshima
   picture: ""

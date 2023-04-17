@@ -51,7 +51,7 @@ export const getStaticPaths = () => {
   let allTags = new Array();
   posts.forEach((post) => {
     post.tags.forEach((tag: string) => {
-      allTags.push(tag);
+      allTags.push(tag.toLowerCase());
     });
   });
   const tags = Array.from(new Set(allTags));
