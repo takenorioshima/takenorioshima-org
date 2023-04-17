@@ -52,7 +52,7 @@ export default function Post({ post, morePosts, preview }: Props) {
     if (target) {
       observer.observe(target);
     }
-    function callback(entries: Array<IntersectionObserverEntry>) {
+    function callback(entries: IntersectionObserverEntry[]) {
       entries.forEach((entry) => {
         if (entry.intersectionRatio === 0) {
           globalNav?.classList.add("is-scrolled", "bg-white");
