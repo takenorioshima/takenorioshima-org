@@ -3,6 +3,7 @@ title: "Next.js + Markdown なブログ記事中に Twitter や YouTube を埋�
 excerpt: "Next.js + Markdown なブログの記事中に Twitter や YouTube などを埋め込むために行った作業メモ。"
 coverImage: "/assets/blog/markdown-embed/cover.jpg"
 date: "2022-12-28"
+tags: ["Programming"]
 author:
   name: Takenori Oshima
   picture: ""

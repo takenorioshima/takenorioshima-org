@@ -3,6 +3,7 @@ title: "Fender Mustang の Dynamic Vibrate を固めたい"
 excerpt: "使わぬなら・固めてしまおう・ダイナミックビブラート"
 coverImage: "/assets/blog/fender-mustang-fixed-bridge/cover.jpg"
 date: "2022-12-28"
+tags: ["Music"]
 author:
   name: Takenori Oshima
   picture: ""

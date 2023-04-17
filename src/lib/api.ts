@@ -15,10 +15,11 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   const { data, content } = matter(fileContents);
 
   type Items = {
-    [key: string]: string;
+    [key: string]: string | string[];
+    tags: string[];
   };
 
-  const items: Items = {};
+  const items: Items = { tags: [] };
 
   // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
@@ -54,6 +55,19 @@ export function getRecentPosts(fields: string[] = []) {
   const posts = publishedSlugs
     .map((slug) => getPostBySlug(slug, fields))
     // sort posts by date in descending order
+    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+  return posts;
+}
+
+export function getTaggedPosts(tag: string) {
+  console.log(`tag: ${tag}`);
+  const slugs = getPostSlugs();
+  const fields = ["title", "date", "slug", "author", "coverImage", "excerpt", "tags"];
+  const posts = slugs
+    .map((slug) => getPostBySlug(slug, fields))
+    .filter((post) => {
+      return post.tags.includes(tag);
+    })
     .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
   return posts;
 }
