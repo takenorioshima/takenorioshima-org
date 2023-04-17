@@ -15,11 +15,10 @@ export function getPostBySlug(slug: string, fields: string[] = []) {
   const { data, content } = matter(fileContents);
 
   type Items = {
-    [key: string]: string | string[];
-    tags: string[];
+    [key: string]: any;
   };
 
-  const items: Items = { tags: [] };
+  const items: Items = {};
 
   // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
