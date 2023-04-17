@@ -1,6 +1,4 @@
-import fs from "fs";
 import { join } from "path";
-import matter from "gray-matter";
 import Layout from "../../components/layouts/posts";
 import { NextSeo } from "next-seo";
 import MoreStories from "../../components/more-stories";
