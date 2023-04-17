@@ -14,13 +14,15 @@ type Props = {
 };
 
 export default function Tags({ posts, tag }: Props) {
+  const tagName = tag.charAt(0).toUpperCase() + tag.substring(1).toLowerCase();
+
   return (
     <>
       <Layout>
         <NextSeo />
         <Container>
           <h2 className="text-2xl font-bold tracking-tighter md:pr-8 py-5">
-            <i className="bi bi-journals"></i> タグ: {tag}
+            <i className="bi bi-journals"></i> タグ: {tagName}
           </h2>
           <MoreStories posts={posts} />
         </Container>
