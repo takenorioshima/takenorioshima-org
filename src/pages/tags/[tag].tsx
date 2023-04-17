@@ -1,6 +1,7 @@
 import { join } from "path";
 import Layout from "../../components/layouts/posts";
 import { NextSeo } from "next-seo";
+import { SITE_NAME } from "../../lib/constants";
 import MoreStories from "../../components/more-stories";
 import Container from "../../components/container";
 import Post from "../../interfaces/post";
@@ -13,11 +14,12 @@ type Props = {
 
 export default function Tags({ posts, tag }: Props) {
   const tagName = tag.charAt(0).toUpperCase() + tag.substring(1).toLowerCase();
+  const title = `${tagName} - ${SITE_NAME}`;
 
   return (
     <>
       <Layout>
-        <NextSeo />
+        <NextSeo title={title} />
         <Container>
           <h2 className="text-2xl font-bold tracking-tighter md:pr-8 py-5">
             <i className="bi bi-journals"></i> タグ: {tagName}
