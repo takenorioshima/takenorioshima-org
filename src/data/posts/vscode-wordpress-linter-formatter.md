@@ -4,11 +4,6 @@ excerpt: "VS Code で WordPress のテーマを快適に開発するために、
 coverImage: "/assets/blog/vscode-wordpress-linter-formatter/cover.jpg"
 date: "2022-12-21"
 tags: ["programming"]
-author:
-  name: Takenori Oshima
-  picture: ""
-ogImage:
-  url: "/assets/blog/vscode-wordpress-linter-formatter/cover.jpg"
 ---
 
 VS Code で WordPress のテーマを快適に開発するために、リンター / フォーマッター / コーディング規約を導入する手順をまとめました。同様の記事はネット上に多くありますが、

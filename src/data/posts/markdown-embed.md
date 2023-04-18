@@ -4,11 +4,6 @@ excerpt: "Next.js + Markdown なブログの記事中に Twitter や YouTube な
 coverImage: "/assets/blog/markdown-embed/cover.jpg"
 date: "2022-12-28"
 tags: ["programming"]
-author:
-  name: Takenori Oshima
-  picture: ""
-ogImage:
-  url: "/assets/blog/markdown-embed/cover.jpg"
 ---
 
 この記事は Markdown で書かれ remark-rehype で html に変換されています( [GitHub](#) )。Markdown 中に記述した「生の html」は変換時に削除されてしまうため、「Twitter での呟きや YouTube 動画などを埋め込みたい」、というときに困ってしまいました。「Markdown 中に記述した html も出力されるようにする」ように調整した、作業メモです。

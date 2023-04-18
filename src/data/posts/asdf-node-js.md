@@ -4,11 +4,6 @@ excerpt: "Node.js・Ruby・PHP...いろいろな開発言語のバージョン�
 coverImage: "/assets/blog/asdf-node-js/cover.jpg"
 date: "2023-01-02"
 tags: ["Programming"]
-author:
-  name: Takenori Oshima
-  picture: "/assets/blog/authors/takenori.jpg"
-ogImage:
-  url: "/assets/blog/asdf-node-js/cover.jpg"
 ---
 
 Node.js・Ruby・PHP...いろいろな開発言語のバージョン切り替えを一括管理できる大変便利な env 系ツール、[asdf](https://asdf-vm.com/)。理解を深めるため、asdf で Node.js をインストールする手順をまとめました。

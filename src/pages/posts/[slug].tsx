@@ -78,7 +78,7 @@ export default function Post({ post, morePosts, preview }: Props) {
               openGraph={{
                 images: [
                   {
-                    url: post.ogImage.url,
+                    url: post.coverImage,
                   },
                 ],
               }}
@@ -108,16 +108,7 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  const post = getPostBySlug(params.slug, [
-    "title",
-    "date",
-    "excerpt",
-    "slug",
-    "author",
-    "content",
-    "ogImage",
-    "coverImage",
-  ]);
+  const post = getPostBySlug(params.slug, ["title", "date", "excerpt", "slug", "content", "coverImage"]);
   const content = await markdownToHtml(post.content || "");
 
   return {

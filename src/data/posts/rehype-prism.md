@@ -4,11 +4,6 @@ excerpt: "Next.js + Markdown なブログで Prism.js を使ってコードハ�
 coverImage: "/assets/blog/rehype-prism/cover.jpg"
 date: "2023-01-04"
 tags: ["programming"]
-author:
-  name: Takenori Oshima
-  picture: ""
-ogImage:
-  url: "/assets/blog/rehype-prism/cover.jpg"
 ---
 
 Tailwind の prose だけだと、`pre` 内のコードがハイライト表示されずちょっとさみしい。読みやすくハイライト表示されるよう、Prism.js を導入してみた作業メモです。

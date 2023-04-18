@@ -4,11 +4,6 @@ excerpt: "きれいな Sass を書くために、Stylelint + Prettier の組み�
 coverImage: "/assets/blog/stylelint/cover.jpg"
 date: "2022-12-24"
 tags: ["programming"]
-author:
-  name: Takenori Oshima
-  picture: ""
-ogImage:
-  url: "/assets/blog/stylelint/cover.jpg"
 ---
 
 きれいな Sass を書くために、Stylelint + Prettier の組み合わせがよく紹介されていますが、改めて設定してみると「Sass は Stylelint にお任せで十分かも」と思ったので、導入・設定メモを残しておきます。
