@@ -5,9 +5,6 @@ type WorkType = {
   coverImage: string;
   excerpt: string;
   tags: string;
-  ogImage: {
-    url: string;
-  };
   content: string;
 };
 

@@ -4,11 +4,6 @@ excerpt: "もう実時間またない。OP-1 の Album に PC から mp3 / m4a /
 coverImage: "/assets/blog/op1-album-import/cover.jpg"
 date: "2022-12-27"
 tags: ["music"]
-author:
-  name: Takenori Oshima
-  picture: "/assets/blog/authors/takenori.jpg"
-ogImage:
-  url: "/assets/blog/op1-album-import/cover.jpg"
 ---
 
 Teenage Engineering OP-1 には「Album」という機能があります。

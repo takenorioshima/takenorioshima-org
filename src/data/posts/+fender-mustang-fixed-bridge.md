@@ -4,11 +4,6 @@ excerpt: "使わぬなら・固めてしまおう・ダイナミックビブラ�
 coverImage: "/assets/blog/fender-mustang-fixed-bridge/cover.jpg"
 date: "2022-12-28"
 tags: ["music"]
-author:
-  name: Takenori Oshima
-  picture: ""
-ogImage:
-  url: "/assets/blog/fender-mustang-fixed-bridge/cover.jpg"
 ---
 
 私がまだ 10 代のころ、池袋のイケベ楽器店で購入した Fedner Mustang USA (1977)。
