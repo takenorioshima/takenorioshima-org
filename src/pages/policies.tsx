@@ -1,5 +1,4 @@
 import Layout from "../components/layouts/posts";
-import Head from "next/head";
 import { SITE_NAME, AUTHOR_PROFILES } from "../lib/constants";
 import React, { Suspense } from "react";
 import Link from "next/link";
