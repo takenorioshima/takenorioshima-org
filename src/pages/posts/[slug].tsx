@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import { useEffect } from "react";
+import Script from "next/script";
 import ErrorPage from "next/error";
 import Container from "../../components/container";
 import PostBody from "../../components/post-body";
@@ -67,6 +68,8 @@ export default function Post({ post, morePosts, preview }: Props) {
 
   return (
     <Layout preview={preview}>
+      <Script src="https://platform.twitter.com/widgets.js" />
+      <Script src="https://www.instagram.com/embed.js" />
       {router.isFallback ? (
         <PostTitle>Loading…</PostTitle>
       ) : (
