@@ -10,11 +10,12 @@ tags: ["programming"]
 
 ## Markdown 変換系で入れている package
 
-- remark-rehype 10.1.0
-- remark-parse 10.0.1
-- rehype-autolink-headings 6.1.1
-- rehype-slug 5.1.0
-- rehype-stringify 9.0.3
+- remark-parse
+- remark-rehype
+- rehype-code-titles
+- rehype-prism
+- rehype-slug
+- rehype-stringify
 
 Next.js のバージョンは v13.1.0 です。
 
@@ -37,7 +38,8 @@ Markdown から html への変換処理に rehypeRaw を追加し、remarkRehype
  import rehypeStringify from "rehype-stringify";
  import rehypeSlug from "rehype-slug";
 +import rehypeRaw from "rehype-raw";
- import rehypeAutolinkHeadings from "rehype-autolink-headings";
+ import rehypePrism from "rehype-prism-plus";
+ import rehypeCodeTitles from "rehype-code-titles";
 
  export default async function markdownToHtml(markdown: string) {
    const result = await unified()
@@ -45,9 +47,10 @@ Markdown から html への変換処理に rehypeRaw を追加し、remarkRehype
 -    .use(remarkRehype)
 +    .use(remarkRehype, { allowDangerousHtml: true })
 +    .use(rehypeRaw)
+     .use(rehypeCodeTitles)
+     .use(rehypePrism)
      .use(rehypeStringify)
      .use(rehypeSlug)
-     .use(rehypeAutolinkHeadings)
      .process(markdown);
    return result.toString();
  }
@@ -105,28 +108,17 @@ iframe[src*="youtube.com/embed"] {
 
 ## Twitter / Instagram の JavaScript が発火しない問題
 
-埋め込みがあるページを初回に読み込む場合は問題ないですが、SPA で「トップページ → Twitter 埋め込みがあるページ」のような画面遷移を行った場合に JavaScript による初期化が行われません。
+埋め込みがあるページを初回に読み込む場合は問題ないですが、SPA で「記事ページ → Twitter 埋め込みがあるページ」のような画面遷移を行った場合に JavaScript による初期化が行われません。
 
-- \_app.js で Twitter / Instagram の JavaScript を読み込んでおく
+- [slug].tsx で Twitter / Instagram の JavaScript を読み込んでおく
 - 記事ページの useEffect フックでそれぞれの初期化関数を呼び出す
 
 ことで対応しました。
 
-```tsx:pages/_app.js
+```tsx:pages/posts/[slug].tsx
 import Script from "next/script";
 
-export default function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <>
-      <Script src="https://platform.twitter.com/widgets.js" />
-      <Script src="https://www.instagram.com/embed.js" />
-      <Component {...pageProps} />
-    </>
-  );
-}
-```
-
-```tsx:posts/[slug].tsx
+// Compornent 読み込み完了時に初期化する
 useEffect(() => {
   if (window.instgrm) {
     window.instgrm.Embeds.process();
@@ -135,6 +127,17 @@ useEffect(() => {
     window.twttr.widgets.load();
   }
 }, [post]);
+
+export default function Post({ post, morePosts, preview }: Props) {
+  return (
+    <Layout preview={preview}>
+      {/* Twitter / Instagram の JavaScript を読み込み */}
+      <Script src="https://platform.twitter.com/widgets.js" />
+      <Script src="https://www.instagram.com/embed.js" />
+      ...略
+    </Layout>
+  );
+}
 ```
 
 型もこんな感じで追加しておきます。
