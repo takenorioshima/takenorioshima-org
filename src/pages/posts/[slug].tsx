@@ -1,9 +1,8 @@
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { FC, ImgHTMLAttributes, Fragment, createElement, useEffect, AnchorHTMLAttributes } from "react";
 import Script from "next/script";
 import ErrorPage from "next/error";
 import Container from "../../components/container";
-import PostBody from "../../components/post-body";
 import PostHeader from "../../components/post-header";
 import Layout from "../../components/layouts/posts";
 import Sidebar from "../../components/sidebar";
@@ -13,6 +12,11 @@ import markdownToHtml from "../../lib/markdownToHtml";
 import type PostType from "../../interfaces/post";
 import { SITE_NAME } from "../../lib/constants";
 import { NextSeo } from "next-seo";
+import rehypeParse from "rehype-parse";
+import rehypeReact from "rehype-react";
+import { unified } from "unified";
+import Image from "next/image";
+import Link from "next/link";
 
 type Props = {
   post: PostType;
@@ -26,6 +30,36 @@ declare global {
     instgrm: { Embeds: { process: () => void } };
   }
 }
+
+const toReactNode = (content: string) => {
+  return unified()
+    .use(rehypeParse, {
+      fragment: true,
+    })
+    .use(rehypeReact, {
+      createElement,
+      Fragment,
+      components: {
+        a: CustomLink,
+        img: CustomImage,
+      },
+    })
+    .processSync(content).result;
+};
+
+const CustomLink: FC<AnchorHTMLAttributes<HTMLAnchorElement>> = ({ href, children }) => {
+  return href?.startsWith("/") ? (
+    <Link href={href}>{children}</Link>
+  ) : (
+    <a href={href} rel="noreferrer" target="_blank">
+      {children}
+    </a>
+  );
+};
+
+const CustomImage: FC<ImgHTMLAttributes<HTMLImageElement>> = ({ src = "", alt = "" }) => {
+  return <Image className="rounded shadow" src={src} alt={alt} width="704" height="470" />;
+};
 
 export default function Post({ post, morePosts, preview }: Props) {
   const router = useRouter();
@@ -90,7 +124,16 @@ export default function Post({ post, morePosts, preview }: Props) {
             <Container>
               <div className="lg:grid grid-cols-7 gap-4">
                 <div className="lg:col-span-5 mb-20 lg:mb-0">
-                  <PostBody content={post.content} />
+                  <div
+                    className="
+                      max-w-full prose
+                      prose-h2:font-semibold
+                      prose-p:leading-7
+                      before:prose-code:hidden after:prose-code:hidden
+                      js-toc-content"
+                  >
+                    {toReactNode(post.content)}
+                  </div>
                 </div>
                 <div className="lg:col-span-2 px-4">
                   <Sidebar />
