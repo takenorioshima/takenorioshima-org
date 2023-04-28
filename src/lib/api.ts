@@ -125,6 +125,12 @@ export function generateSitemapXml() {
         `;
     }
   });
+  xml += `
+    <url>
+      <loc>${url}/lowpoly/</loc>
+      <lastmod>2023-04-01</lastmod>
+      <changefreq>weekly</changefreq>
+    </url>`;
   xml += "</urlset>";
   fs.writeFileSync("public/sitemap.xml", xml);
   return null;
