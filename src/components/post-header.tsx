@@ -18,8 +18,7 @@ const PostHeader = ({ title, coverImage, date }: Props) => {
             alt={`Cover Image for ${title}`}
             className="block w-full h-full object-cover object-center"
             title={title}
-            width={1200}
-            height={630}
+            fill
           />
         </div>
         <div className="container max-w-screen-lg mx-auto flex flex-col h-full justify-center px-4 py-12">
