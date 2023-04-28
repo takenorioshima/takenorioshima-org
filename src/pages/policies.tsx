@@ -66,7 +66,7 @@ export default function Policies() {
               </Link>
               や
               <Link href={AUTHOR_PROFILES.links.github + "/takenorioshima-org/issues"} className="mx-1" target="_blank">
-                GitHub Issue
+                GitHub Issues
               </Link>
               でご報告ください。
             </p>
