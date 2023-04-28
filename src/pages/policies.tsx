@@ -6,10 +6,12 @@ import Container from "../components/container";
 import { NextSeo } from "next-seo";
 
 export default function Policies() {
+  const title = `プライバシーポリシー - ${SITE_NAME}`;
+
   return (
     <>
       <Layout>
-        <NextSeo title={`プライバシーポリシ - ${SITE_NAME}`} />
+        <NextSeo title={title} />
         <Container>
           <h2 className="text-2xl font-bold text-center tracking-tighter md:pr-8 py-10 mt-20">
             <i className="bi bi-shield-lock-fill"></i> プライバシーポリシー
