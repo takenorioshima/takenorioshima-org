@@ -28,6 +28,12 @@ export default function MyApp({ Component, pageProps }: AppProps) {
             },
           ],
         }}
+        additionalMetaTags={[
+          {
+            property: "google-site-verification",
+            content: process.env.NEXT_PUBLIC_GOOGLE_SITE_VARIFICATION as string,
+          },
+        ]}
       />
       <GoogleAnalytics trackPageViews />
       <Component {...pageProps} />
