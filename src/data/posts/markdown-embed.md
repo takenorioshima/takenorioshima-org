@@ -24,7 +24,7 @@ Next.js のバージョンは v13.1.0 です。
 remark-rehype 公式のリポジトリで紹介されていた rehype-raw をインストール。バージョン `6.1.1` がインストールされました。
 
 ```bash
-% yarn add rehype-raw
+❯ yarn add rehype-raw
 ```
 
 ## 変換処理の設定

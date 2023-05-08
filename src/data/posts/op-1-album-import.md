@@ -46,7 +46,7 @@ OP-1 は USB Mass Storage として振る舞えるので、「PC から音源フ
 [ffmpeg](https://ffmpeg.org/) でいい感じに生成できました。2 行目の入力ファイルのパス・4 行目の出力ファイル名は適宜調整してください。
 
 ```sh {2,4} showLineNumbers
-ffmpeg \
+❯ ffmpeg \
   -i path-to-your-source.mp3 \
   -af "apad=whole_dur=00:\06:\00" -acodec pcm_s16le \
   side_a.aif

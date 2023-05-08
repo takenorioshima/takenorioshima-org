@@ -10,8 +10,8 @@ tags: ["programming"]
 
 ## 環境
 
-- macOS 12.6
-- VS Code 1.73.1
+- macOS 13.3.1
+- VS Code 1.78.0
 - yarn 1.22.19
 
 ## yarn でのインストール
@@ -23,29 +23,29 @@ Stylelint とルールセットを yarn でプロジェクトディレクトリ�
   - stylelint-config-standard-scss
   - stylelint-config-twbs-bootstrap
 
-```
+```sh
 ❯ yarn add -D stylelint stylelint-config-standard-scss stylelint-config-twbs-bootstrap
 ```
 
 Stylelint は 14.14.1 がインストールされました。
 
-```
+```sh
 ❯ yarn stylelint -v
 14.14.1
 ```
 
 ## VS Code の拡張機能をインストール
 
-Stylelint 公式の拡張機能 をインストールします。タキシードが・とても・すてきだ。
+Stylelint 公式の拡張機能をインストールします。タキシードが・とても・すてきだ。
 
-```
+```sh
 ❯ code --install-extension stylelint.vscode-stylelint
 ```
 
-Stylelint の設定ファイルを追加
-プロジェクトディレクトリ( = package.json と同じ階層) に .stylelintrc を作成し、json で利用するルールセットを指定します。
+## Stylelint の設定ファイルを追加
+プロジェクトディレクトリ直下( = package.json と同じ階層) に .stylelintrc を作成し、json で利用するルールセットを指定します。
 
-```
+```json:.stylelintrc
 {
   "extends": [
     "stylelint-config-twbs-bootstrap",
@@ -60,11 +60,11 @@ Stylelint の設定ファイルを追加
 - VS Code の CSS のリンターを無効にする
 - 拡張子 .scss が Stylelint の対象になるように追加
 - ファイル保存時に自動整形する
-- .scss のフォマッターを Stylelint にする ( Prettier との競合を回避 )
+- .scss のフォーマッターを Stylelint にする ( Prettier との競合を回避 )
 
 ※ Stylelint に関係する項目のみ抽出しています。
 
-```
+```json:.vscode/settings.json
 {
   "scss.validate": false,
   "css.validate": false,
@@ -83,7 +83,7 @@ Stylelint の設定ファイルを追加
 
 めためたなインデント・プロパティ名の typo・不正な単位・大文字の混入を含めて、リンターが指摘してくれるか検証します。
 
-```
+```css
 .sample {
 pading: 0pxl 0.25rem 0 0;
   line-height: 1;font-size: 10px;
@@ -97,7 +97,7 @@ i  {
 
 ↓ エラーを修正し、保存。プロパティの並び替え・小文字への置換・インデントの調整などが自動的に行われることを確認します。
 
-```
+```css
 .sample {
   display: block;
   padding: 0 0.25rem 0 0;
