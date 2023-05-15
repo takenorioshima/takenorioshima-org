@@ -25,7 +25,7 @@ const socialButtons = (props: Props) => {
           </Link>
         </div>
         <Link
-          className="py-3 text-slate-500 transition hover:opacity-70"
+          className="py-3 text-slate-700 transition hover:opacity-70"
           href="https://github.com/takenorioshima/takenorioshima-org/issues"
           target="_blank"
         >
