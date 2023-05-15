@@ -17,6 +17,7 @@ import rehypeReact from "rehype-react";
 import { unified } from "unified";
 import Image from "next/image";
 import Link from "next/link";
+import ShareButtons from "../../components/share-butttons";
 
 type Props = {
   post: PostType;
@@ -134,6 +135,7 @@ export default function Post({ post, morePosts, preview }: Props) {
                   >
                     {toReactNode(post.content)}
                   </div>
+                  <ShareButtons title={post.title} slug={post.slug} />
                 </div>
                 <div className="lg:col-span-2 px-4">
                   <Sidebar />
