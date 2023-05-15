@@ -10,7 +10,7 @@ const Sidebar = () => {
   for (const [key, value] of Object.entries(links)) {
     const klass = `bi bi-${key}`;
     linkList.push(
-      <Link href={value.toString()} className="flex-1 text-center" key={key}>
+      <Link href={value.toString()} className="flex-1 text-center" key={key} aria-label={key}>
         <i className={klass}></i>
       </Link>
     );
