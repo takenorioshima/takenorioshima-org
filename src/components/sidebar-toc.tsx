@@ -21,11 +21,11 @@ const SidebarToc = () => {
   return (
     <>
       <div className="sticky top-[80px]">
-        <h4 className="text-gray-700 font-semibold text-sm">目次</h4>
+        <div className="text-gray-700 font-semibold text-sm">目次</div>
         <div className="js-toc"></div>
       </div>
     </>
   );
-}
+};
 
 export default SidebarToc;
