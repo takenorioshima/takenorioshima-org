@@ -42,7 +42,7 @@ const toReactNode = (content: string) => {
       Fragment,
       components: {
         a: CustomLink,
-        // img: CustomImage,
+        img: CustomImage,
       },
     })
     .processSync(content).result;
