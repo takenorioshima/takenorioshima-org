@@ -52,6 +52,9 @@ module.exports = {
                 paddingLeft: "0.25rem",
                 borderLeft: "4px solid #ddd",
               },
+              code: {
+                wordBreak: "break-all",
+              },
               pre: {
                 borderRadius: preBorderRadius,
               },
