@@ -1,5 +1,6 @@
 import DateFormatter from "./date-formatter";
 import PostTitle from "./post-title";
+import PostHeaderToc from "./post-header-toc";
 import Image from "next/image";
 
 type Props = {
@@ -23,8 +24,9 @@ const PostHeader = ({ title, coverImage, date }: Props) => {
         </div>
         <div className="container max-w-screen-lg mx-auto flex flex-col h-full justify-center px-4 py-12">
           <PostTitle>{title}</PostTitle>
-          <div className="">
+          <div className="flex justify-between relative">
             <DateFormatter dateString={date} className="text-white" />
+            <PostHeaderToc />
           </div>
         </div>
       </div>

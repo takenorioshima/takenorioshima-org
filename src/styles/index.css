@@ -79,6 +79,13 @@ body.home {
   mix-blend-mode: multiply;
 }
 
+.header-toc-chevron::before {
+  transition: 0.2s;
+}
+.header-toc-chevron.flip::before {
+  transform: rotate(-180deg);
+}
+
 .toc-list {
   @apply relative p-0 text-sm font-semibold list-none;
 }
