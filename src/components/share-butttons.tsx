@@ -12,20 +12,23 @@ const socialButtons = (props: Props) => {
 
   return (
     <div className="mt-10 border-t-2 pt-10">
-      <div className="flex justify-between w-100 text-sm">
-        <div className="flex">
+      <div className="flex flex-wrap justify-center sm:justify-between w-100 text-sm">
+        <div className="flex items-center">
           <Link
-            className="rounded-full bg-white p-3 mr-2 px-5 shadow transition hover:opacity-70"
+            className="rounded-full w-full whitespace-nowrap bg-white p-3 mr-2 px-5 shadow transition hover:opacity-70"
             href={twitterSharerUrl}
           >
             <i className="bi bi-twitter"></i> ツイートする
           </Link>
-          <Link className="rounded-full bg-white p-3 px-5 shadow transition hover:opacity-70" href={facebookSharerUrl}>
+          <Link
+            className="rounded-full w-full whitespace-nowrap bg-white p-3 px-5 shadow transition hover:opacity-70"
+            href={facebookSharerUrl}
+          >
             <i className="bi bi-facebook"></i> シェアする
           </Link>
         </div>
         <Link
-          className="py-3 text-slate-700 transition hover:opacity-70"
+          className="p-4 sm:p-3 text-slate-700 transition hover:opacity-70"
           href="https://github.com/takenorioshima/takenorioshima-org/issues"
           target="_blank"
         >

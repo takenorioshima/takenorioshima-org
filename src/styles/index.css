@@ -57,7 +57,8 @@ body.home {
   transform: translate(-50%, -50%) rotate(5deg);
 }
 
-.post-header::before {
+.post-header::before,
+.post-header::after {
   content: "";
   display: block;
   width: 100%;
@@ -66,9 +67,23 @@ body.home {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.post-header::before {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+.post-header::after {
+  z-index: -2;
   background: #ff5a6a;
   mix-blend-mode: multiply;
-  backdrop-filter: blur(20px);
+}
+
+.header-toc-chevron::before {
+  transition: 0.2s;
+}
+.header-toc-chevron.flip::before {
+  transform: rotate(-180deg);
 }
 
 .toc-list {

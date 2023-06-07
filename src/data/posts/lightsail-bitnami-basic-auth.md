@@ -109,4 +109,5 @@ Bitnami の htaccess 設定ファイルを編集し、Basic 認証を追加し�
 
 ## 参照したサイト
 
+- [Bitnami - Understand The Default Apache Configuration](https://docs.bitnami.com/aws/apps/wordpress/get-started/understand-config/)
 - [Bitnami - Password-Protect Access To An Application With Apache](https://docs.bitnami.com/aws/infrastructure/lamp/administration/use-htpasswd/)
