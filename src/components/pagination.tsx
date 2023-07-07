@@ -15,8 +15,6 @@ function klassName(page: number, currentPage: number) {
 }
 
 export default function Pagination({ pages, currentPage }: Props) {
-  console.log(pages);
-  console.log(currentPage);
   return (
     <>
       <ul className="flex items-center justify-center my-10">

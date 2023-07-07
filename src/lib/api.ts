@@ -59,7 +59,6 @@ export function getRecentPosts(fields: string[] = []) {
 }
 
 export function getTaggedPosts(tag: string) {
-  console.log(`tag: ${tag}`);
   const slugs = getPostSlugs();
   const fields = ["title", "date", "slug", "coverImage", "excerpt", "tags"];
   const posts = slugs
