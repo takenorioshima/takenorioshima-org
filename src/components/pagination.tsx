@@ -12,7 +12,7 @@ function activePage(page: number, currentPage: number) {
   return true;
 }
 
-function klassName(page, currentPage) {
+function klassName(page: number, currentPage: number) {
   const classes = "p-3";
   if (page !== currentPage) {
     return classes;

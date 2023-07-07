@@ -51,7 +51,7 @@ export async function getStaticProps({ params }: Params) {
 
 type Props = {
   posts: Post[];
-  pages: number;
+  pages: number[];
   currentPage: number;
 };
 
