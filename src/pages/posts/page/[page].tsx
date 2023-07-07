@@ -5,6 +5,7 @@ import { NextSeo } from "next-seo";
 import Container from "../../../components/container";
 import MoreStories from "../../../components/more-stories";
 import { SITE_NAME } from "../../../lib/constants";
+import Pagination from "../../../components/pagination";
 
 const pageSize: number = 8;
 
@@ -64,6 +65,7 @@ export default function Page({ posts, pages, currentPage }: Props) {
           <i className="bi bi-journals"></i> 投稿の一覧
         </h2>
         <MoreStories posts={posts} />
+        <Pagination pages={pages} currentPage={currentPage} />
       </Container>
     </Layout>
   );
