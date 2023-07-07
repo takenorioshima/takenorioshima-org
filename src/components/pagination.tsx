@@ -5,13 +5,6 @@ type Props = {
   currentPage: number;
 };
 
-function activePage(page: number, currentPage: number) {
-  if (page !== currentPage) {
-    return false;
-  }
-  return true;
-}
-
 function klassName(page: number, currentPage: number) {
   const classes = "p-3";
   if (page !== currentPage) {
