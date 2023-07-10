@@ -1,5 +1,80 @@
 export const projectData = [
   {
+    slug: "book-crowd",
+    title: 'クラウド 増殖する悪意',
+    year: 2013,
+    description: "森 達也・著／ISBN 978-4-907623-02-9／四六判・並製・288ページ",
+    imageWidth: 500,
+    imageHeight: 7301,
+    tags: ["Book Design", "Graphic Design"],
+    links: [
+      {
+        name: "Amazon",
+        url: "https://www.amazon.co.jp/dp/4844376012",
+      }
+    ]
+  },
+  {
+    slug: "book-sakutto",
+    title: 'サクッと！ 化学実験',
+    year: 2014,
+    description: "山田 暢司・著／ISBN  978-4-907623-06-7／四六判・並製・224ページ",
+    imageWidth: 500,
+    imageHeight: 7301,
+    tags: ["Book Design", "Graphic Design"],
+    links: [
+      {
+        name: "Amazon",
+        url: "https://www.amazon.co.jp/dp/4907623062/",
+      }
+    ]
+  },
+  {
+    slug: "nakamuranazuki-web",
+    title: 'Nakamura Nazuki Accessory',
+    year: 2016,
+    description: "アクセサリー作家「中村なづき」の WEB サイト。",
+    imageWidth: 1200,
+    imageHeight: 1730,
+    tags: ["Web Design", "Programming", "WordPress", "Photography"],
+    links: [
+      {
+        name: "www.nakamuranazuki.com",
+        url: "https://www.nakamuranazuki.com",
+      }
+    ]
+  },
+  {
+    slug: "sonicgarden-camp-web",
+    title: 'ソニックガーデンキャンプ',
+    year: 2020,
+    description: "株式会社ソニックガーデンが学生や第二新卒者を対象に提供している無料オンラインプログラミング合宿「ソニックガーデンキャンプ」の WEB サイト",
+    imageWidth: 1200,
+    imageHeight: 1730,
+    tags: ["Web Design", "Graphic Design", "Programming", "WordPress"],
+    links: [
+      {
+        name: "camp.sonicgarden.jp",
+        url: "https://camp.sonicgarden.jp",
+      }
+    ]
+  },
+  {
+    slug: "dzero-web",
+    title: 'dZERO',
+    year: 2020,
+    description: "書籍・デジタルコンテンツの制作・出版・販売を行う株式会社dZERO の WEB サイト。",
+    imageWidth: 1200,
+    imageHeight: 1740,
+    tags: ["Web Design", "Graphic Design", "Programming", "WordPress"],
+    links: [
+      {
+        name: "dze.ro",
+        url: "https://dze.ro",
+      }
+    ]
+  },
+  {
     slug: "indus-and-rocks-kakono",
     title: 'Indus&Rocks + きじは = 亀 - 過去の余韻と未来の予感 2017',
     year: 2017,
@@ -31,8 +106,8 @@ export const projectData = [
   },
   {
     slug: "takenori-10nen-fukuten",
-    title: '十年服展のためのインプロヴィゼーション',
-    year: 2021,
+    title: '十年服展のためのインプロヴィゼーション[MV]',
+    year: 2016,
     description: "[コンセプト]出展作家が実際に作品に用いた素材(「洋服の生地」と「写真フィルム」)を用いた演奏を行うこと。／[洋服の生地での演奏方法]アナログレコードと同じ12インチ径の紙の台紙に生地をミシンで縫い付け、ターンテーブルで再生。オーディオ信号やモジュレーション信号として使用。生地の縫い付けは展示時間中にも行われた。／[写真フィルムでの演奏方法]写真フィルムを貼付けた12インチ径のアクリルディスクを、白熱球とフォトレジスタの間で回転させることで、光量によって異なる発振ピッチやCV/GATE信号を出力する「フィルムトロン」を製作、再生。来場者が回転している写真フィルムを閲覧しやすいように、垂直(観覧車と同軸)方向に回転する機構を用意。オーディオ信号やモジュレーション信号、CV/GATE信号として使用。／[使用した楽器]ポジフィルム(135・6x7)とフィルムトロン／アナログレコード(マハヴィシュヌ・オーケストラ - 火の鳥)の上に重ねられた生地の端切れとターンテーブル／Teenage Engineering OP-1／Doepfer A-100 Basic System／KORG mini kaoss pad 2",
     imageWidth: 1600,
     imageHeight: 900,
@@ -46,7 +121,7 @@ export const projectData = [
   },
   {
     slug: "tatoe-teion",
-    title: 'タとエ - おはよう、あなた',
+    title: 'タとエ - おはよう、あなた[MV]',
     year: 2021,
     description: "",
     imageWidth: 1600,
@@ -61,7 +136,7 @@ export const projectData = [
   },
   {
     slug: "tatoe-ohayo",
-    title: 'タとエ - おはよう、あなた',
+    title: 'タとエ - おはよう、あなた[MV]',
     year: 2021,
     description: "テテテテ 低音をきかせて",
     imageWidth: 1600,
@@ -75,8 +150,8 @@ export const projectData = [
     ]
   },
   {
-    slug: "tatoe-yoiko",
-    title: 'タとエ - ぱ',
+    slug: "tatoe-pa",
+    title: 'タとエ - ぱ[MV]',
     year: 2020,
     description: "アルバム「よいこ」より「ぱ」のミュージックビデオ。すべての 3D アニメーションは Blender で制作されました。",
     imageWidth: 1600,
@@ -101,6 +176,10 @@ export const projectData = [
       {
         name: "Apple Music",
         url: "https://music.apple.com/jp/album/%E3%82%88%E3%81%84%E3%81%93/1510680453",
+      },
+      {
+        name: "Spotify",
+        url: "https://open.spotify.com/album/6J83LSVm15DEel6M4tfHxc?si=N_RupETcS9in6S4DByjr8A",
       }
     ]
   },
@@ -116,14 +195,18 @@ export const projectData = [
       {
         name: "Apple Music",
         url: "https://music.apple.com/jp/album/%E3%82%BF%E3%81%A8%E3%82%A8/1446892175",
+      },
+      {
+        name: "Spotify",
+        url: "https://open.spotify.com/album/3m06ShYH3kGIfRWFANQpyC?si=AoCYT7n3Ro-djsME95GZeA",
       }
     ]
   },
   {
     slug: "senkawos-nejireru-shisen",
-    title: 'Senkawos - 捻れる視線、交えるふたり',
+    title: 'Senkawos - 捻れる視線、交えるふたり[MV]',
     year: 2011,
-    description: "",
+    description: "映像と音を「いっせいのせ」で一発[録り||撮り]したライヴレコーディングミュージックビデオ。",
     imageWidth: 1600,
     imageHeight: 900,
     tags: ["Music", "Guitar", "Composition", "Direction", "Edit", "Sound Engineer"],
@@ -136,9 +219,9 @@ export const projectData = [
   },
   {
     slug: "senkawos-songbird",
-    title: 'Senkawos - Songbird',
+    title: 'Senkawos - Songbird[MV]',
     year: 2012,
-    description: "",
+    description: "映像と音を「いっせいのせ」で一発[録り||撮り]したライヴレコーディングミュージックビデオ。",
     imageWidth: 1600,
     imageHeight: 900,
     tags: ["Music", "Guitar", "Composition", "Direction", "Edit", "Sound Engineer"],
@@ -151,9 +234,9 @@ export const projectData = [
   },
   {
     slug: "senkawos-the-torus",
-    title: 'Senkawos - The Torus',
-    year: 2023,
-    description: "",
+    title: 'Senkawos - The Torus[MV]',
+    year: 2012,
+    description: "映像と音を「いっせいのせ」で一発[録り||撮り]したライヴレコーディングミュージックビデオ。",
     imageWidth: 1600,
     imageHeight: 900,
     tags: ["Music", "Guitar", "Composition", "Direction", "Edit", "Sound Engineer"],
@@ -181,7 +264,7 @@ export const projectData = [
   },
   {
     slug: "looppool-surf",
-    title: 'LOOP POOL - Surf',
+    title: 'LOOP POOL - Surf[MV]',
     year: 2018,
     description: "",
     imageWidth: 1920,
@@ -239,7 +322,7 @@ export const projectData = [
       },
       {
         name: "Spotify",
-        url: "https://example.com",
+        url: "https://open.spotify.com/album/72uXYduugMWTPJstxbwy88?si=s88fosZCTjyyx72n4sTqhg",
       }
     ]
   },
@@ -258,7 +341,7 @@ export const projectData = [
       },
       {
         name: "Spotify",
-        url: "https://example.com",
+        url: "https://open.spotify.com/album/3SVta4ZE5HNzoExsdP5yuO?si=4D6EwWWDQEqoYica0-u5qA",
       }
     ]
   },
@@ -277,7 +360,7 @@ export const projectData = [
       },
       {
         name: "Spotify",
-        url: "https://example.com",
+        url: "https://open.spotify.com/album/4o3jz4Kf1cPd5RRxwOlqF7?si=itWsbv0CR12s2kuycn80Eg",
       }
     ]
   },
@@ -296,7 +379,7 @@ export const projectData = [
       },
       {
         name: "Spotify",
-        url: "https://example.com",
+        url: "https://open.spotify.com/album/1piCr2TiXcXL27KUrOrIWC?si=JhJNtsIrQliqRyZidju1Jg",
       }
     ]
   },
@@ -315,7 +398,7 @@ export const projectData = [
       },
       {
         name: "Spotify",
-        url: "https://example.com",
+        url: "https://open.spotify.com/album/6hUghx4PlLstZogd01BgAr?si=keW5sIn2Q8uwnMV_t5qw5w",
       }
     ]
   },
