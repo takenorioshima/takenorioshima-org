@@ -35,6 +35,7 @@
     "next-export-optimize-images": "^2.1.0",
     "next-transpile-modules": "^10.0.0",
     "postcss": "^8.4.23",
+    "react-masonry-css": "^1.0.16",
     "rehype-code-titles": "^1.2.0",
     "rehype-parse": "^8.0.4",
     "rehype-prism-plus": "^1.5.1",
