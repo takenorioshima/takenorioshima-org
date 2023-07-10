@@ -8,6 +8,11 @@ import Modal from "../components/modal";
 
 const Projects = () => {
   const title = `Projects - ${SITE_NAME}`;
+
+  projectData.sort((a, b) => {
+    return a.year > b.year ? -1 : 1;
+  });
+
   return (
     <Layout>
       <NextSeo title={title} />
