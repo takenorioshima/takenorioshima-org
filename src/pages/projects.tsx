@@ -1,6 +1,6 @@
 import { projectData } from "../data/projects";
 import Masonry from "react-masonry-css";
-import Layout from "../components/layouts/default";
+import Layout from "../components/layouts/posts";
 import { SITE_NAME } from "../lib/constants";
 import { NextSeo } from "next-seo";
 import PageHeader from "../components/page-header";
