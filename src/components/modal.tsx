@@ -4,10 +4,10 @@ import { useState } from "react";
 
 type Project = {
   project: {
-    id: number;
+    slug: string;
     title: string;
     description: string;
-    image: string;
+    year: number;
     imageWidth: number;
     imageHeight: number;
     tags: string[];
@@ -23,19 +23,20 @@ export default function Modal({ project }: Project) {
     setIsOpen(!isOpen);
   };
 
-  const imagePath = (filename: string) => {
-    return "/assets/projects/" + filename;
+  const imagePath = (slug: string) => {
+    return "/assets/projects/" + slug + ".jpg";
   };
 
   return (
     <div className="rounded-lg shadow-md overflow-hidden transition-all	duration-200">
-      <Link href="#" onClick={toggleModal} key={project.id}>
-        {project.image && (
+      <Link href="#" onClick={toggleModal} key={project.slug}>
+        {project.slug && (
           <Image
-            src={imagePath(project.image as string)}
+            src={imagePath(project.slug as string)}
             alt={project.title}
             width={project.imageWidth}
             height={project.imageHeight}
+            className="block w-100"
           />
         )}
       </Link>

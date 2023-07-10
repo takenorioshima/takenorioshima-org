@@ -12,9 +12,9 @@ const Projects = () => {
     <Layout>
       <NextSeo title={title} />
       <PageHeader title="Projects" className="bg-gray-600" />
-      <div className="m-[1rem]">
+      <div className="m-[1rem] container max-w-screen-xxl mx-auto">
         <Masonry breakpointCols={3} className="masonry-grid" columnClassName="masonry-grid-column">
-          {projectData && projectData.map((project) => <Modal key={project.id} project={project} />)}
+          {projectData && projectData.map((project) => <Modal key={project.slug} project={project} />)}
         </Masonry>
       </div>
     </Layout>

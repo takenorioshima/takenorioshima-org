@@ -1,10 +1,99 @@
 export const projectData = [
   {
+    slug: "indus-and-rocks-kakono",
+    title: 'Indus&Rocks + きじは = 亀 - 過去の余韻と未来の予感 2017',
+    year: 2017,
+    description: "",
+    imageWidth: 1000,
+    imageHeight: 1000,
+    tags: ["Music", "Sound Engineer"],
+    links: [
+      {
+        name: "BASE",
+        url: "https://indusandrock.official.ec/items/38945765",
+      }
+    ]
+  },
+  {
+    slug: "indus-and-rocks-souseiji",
+    title: 'Indus&Rocks - 創世時',
+    year: 2017,
+    description: "",
+    imageWidth: 1000,
+    imageHeight: 1000,
+    tags: ["Music", "Sound Engineer"],
+    links: [
+      {
+        name: "BASE",
+        url: "https://indusandrock.official.ec/items/43303713",
+      }
+    ]
+  },
+  {
+    slug: "takenori-10nen-fukuten",
+    title: '十年服展のためのインプロヴィゼーション',
+    year: 2021,
+    description: "[コンセプト]出展作家が実際に作品に用いた素材(「洋服の生地」と「写真フィルム」)を用いた演奏を行うこと。／[洋服の生地での演奏方法]アナログレコードと同じ12インチ径の紙の台紙に生地をミシンで縫い付け、ターンテーブルで再生。オーディオ信号やモジュレーション信号として使用。生地の縫い付けは展示時間中にも行われた。／[写真フィルムでの演奏方法]写真フィルムを貼付けた12インチ径のアクリルディスクを、白熱球とフォトレジスタの間で回転させることで、光量によって異なる発振ピッチやCV/GATE信号を出力する「フィルムトロン」を製作、再生。来場者が回転している写真フィルムを閲覧しやすいように、垂直(観覧車と同軸)方向に回転する機構を用意。オーディオ信号やモジュレーション信号、CV/GATE信号として使用。／[使用した楽器]ポジフィルム(135・6x7)とフィルムトロン／アナログレコード(マハヴィシュヌ・オーケストラ - 火の鳥)の上に重ねられた生地の端切れとターンテーブル／Teenage Engineering OP-1／Doepfer A-100 Basic System／KORG mini kaoss pad 2",
+    imageWidth: 1600,
+    imageHeight: 900,
+    tags: ["Music", "Synthsizer", "Experimental", "Improvisation", "Composition", "Direction", "Sound Engineer"],
+    links: [
+      {
+        name: "YouTube",
+        url: "https://youtu.be/6uUILdHWGHw",
+      }
+    ]
+  },
+  {
+    slug: "tatoe-teion",
+    title: 'タとエ - おはよう、あなた',
+    year: 2021,
+    description: "",
+    imageWidth: 1600,
+    imageHeight: 900,
+    tags: ["Music", "Guitar", "Vocal", "Composition", "Direction", "Sound Engineer"],
+    links: [
+      {
+        name: "YouTube",
+        url: "https://youtu.be/PiEJltsuU8U",
+      }
+    ]
+  },
+  {
+    slug: "tatoe-ohayo",
+    title: 'タとエ - おはよう、あなた',
+    year: 2021,
+    description: "テテテテ 低音をきかせて",
+    imageWidth: 1600,
+    imageHeight: 900,
+    tags: ["Music", "Guitar", "Vocal", "Composition", "Direction", "Sound Engineer"],
+    links: [
+      {
+        name: "YouTube",
+        url: "https://youtu.be/M3TXpHFSVCw",
+      }
+    ]
+  },
+  {
+    slug: "tatoe-yoiko",
+    title: 'タとエ - ぱ',
+    year: 2020,
+    description: "アルバム「よいこ」より「ぱ」のミュージックビデオ。すべての 3D アニメーションは Blender で制作されました。",
+    imageWidth: 1600,
+    imageHeight: 900,
+    tags: ["Music", "Guitar", "Vocal", "Composition", "Graphic Design", "Sound Engineer", "3D Modeling"],
+    links: [
+      {
+        name: "YouTube",
+        url: "https://youtu.be/ORDIApI_eM8",
+      }
+    ]
+  },
+  {
     slug: "tatoe-yoiko",
     title: 'タとエ - よいこ',
     year: 2020,
     description: "",
-    image: 'tatoe-yoiko.jpg',
     imageWidth: 1000,
     imageHeight: 1000,
     tags: ["Music", "Guitar", "Vocal", "Composition", "Graphic Design", "Sound Engineer"],
@@ -20,7 +109,6 @@ export const projectData = [
     title: 'タとエ - タとエ',
     year: 2017,
     description: "",
-    image: 'tatoe-tatoe.jpg',
     imageWidth: 1000,
     imageHeight: 1000,
     tags: ["Music", "Guitar", "Vocal", "Composition", "Graphic Design", "Sound Engineer"],
@@ -36,7 +124,6 @@ export const projectData = [
     title: 'Senkawos - 捻れる視線、交えるふたり',
     year: 2011,
     description: "",
-    image: 'senkawos-nejireru-shisen.jpg',
     imageWidth: 1600,
     imageHeight: 900,
     tags: ["Music", "Guitar", "Composition", "Direction", "Edit", "Sound Engineer"],
@@ -52,7 +139,6 @@ export const projectData = [
     title: 'Senkawos - Songbird',
     year: 2012,
     description: "",
-    image: 'senkawos-songbird.jpg',
     imageWidth: 1600,
     imageHeight: 900,
     tags: ["Music", "Guitar", "Composition", "Direction", "Edit", "Sound Engineer"],
@@ -68,7 +154,6 @@ export const projectData = [
     title: 'Senkawos - The Torus',
     year: 2023,
     description: "",
-    image: 'senkawos-the-torus.jpg',
     imageWidth: 1600,
     imageHeight: 900,
     tags: ["Music", "Guitar", "Composition", "Direction", "Edit", "Sound Engineer"],
@@ -80,11 +165,10 @@ export const projectData = [
     ]
   },
   {
-    slug: "petal-paper-cuts",
-    title: 'petal - Paper Cuts',
+    slug: "petale-paper-cuts",
+    title: 'petale - Paper Cuts',
     year: 2023,
     description: "",
-    image: 'petale-paper-cuts.jpg',
     imageWidth: 1000,
     imageHeight: 1000,
     tags: ["Music", "Sound Engineer"],
@@ -100,7 +184,6 @@ export const projectData = [
     title: 'LOOP POOL - Surf',
     year: 2018,
     description: "",
-    image: 'looppool-surf.jpg',
     imageWidth: 1920,
     imageHeight: 816,
     tags: ["Music", "Guitar"],
@@ -116,7 +199,6 @@ export const projectData = [
     title: 'THE 天国畑 JAPON - TokYOネイティヴ',
     year: 2013,
     description: "",
-    image: 'tengokubatake-tokyo-native.jpg',
     imageWidth: 500,
     imageHeight: 500,
     tags: ["Music", "Sound Engineer"],
@@ -132,7 +214,6 @@ export const projectData = [
     title: 'THE 天国畑 JAPON - かろみのすてっぷ',
     year: 2013,
     description: "",
-    image: 'tengokubatake-karomi-no-step.jpg',
     imageWidth: 500,
     imageHeight: 500,
     tags: ["Music", "Sound Engineer"],
@@ -148,7 +229,6 @@ export const projectData = [
     title: 'Senkawos - In the Air',
     year: 2009,
     description: "",
-    image: 'senkawos-in-the-air.jpg',
     imageWidth: 500,
     imageHeight: 500,
     tags: ["Music", "Guitar", "Composition", "Graphic Design", "Sound Engineer"],
@@ -168,7 +248,6 @@ export const projectData = [
     title: 'Senkawos - On the Ground',
     year: 2011,
     description: "",
-    image: 'senkawos-on-the-ground.jpg',
     imageWidth: 500,
     imageHeight: 500,
     tags: ["Music", "Guitar", "Composition", "Graphic Design", "Sound Engineer"],
@@ -188,7 +267,6 @@ export const projectData = [
     title: 'Senkawos - Across the Universe',
     year: 2012,
     description: "",
-    image: 'senkawos-across-the-universe.jpg',
     imageWidth: 500,
     imageHeight: 500,
     tags: ["Music", "Guitar", "Composition", "Graphic Design", "Sound Engineer"],
@@ -208,7 +286,6 @@ export const projectData = [
     title: 'Senkawos - 5',
     year: 2019,
     description: "",
-    image: 'senkawos-five.jpg',
     imageWidth: 500,
     imageHeight: 500,
     tags: ["Music", "Guitar", "Composition", "Graphic Design", "Sound Engineer"],
@@ -228,7 +305,6 @@ export const projectData = [
     title: 'Senkawos - Fork',
     year: 2016,
     description: "",
-    image: 'senkawos-fork.jpg',
     imageWidth: 500,
     imageHeight: 500,
     tags: ["Music", "Guitar", "Composition", "Sound Engineer"],
@@ -248,11 +324,9 @@ export const projectData = [
     title: '大島武宜と働く機械',
     year: 2017,
     description: '2台のカメラ・3台の縫製用ミシン・フィジカルドラムロボット・シンセサイザ・WEBカメラを用いた演奏。Arduino や Processing で MIDI コントロールしています。',
-    image: 'to-and-wm.jpg',
     imageWidth: 1600,
     imageHeight: 800,
     tags: ["Musician", "Programmer", "Electronics", "Composer"],
-    class: "col-span-2",
     links: [
       {
         name: "YouTube",
@@ -264,11 +338,9 @@ export const projectData = [
     slug: "senkawos-seed",
     title: 'Senkawos - Seed',
     year: 2013,
-    image: 'senkawos-seed.jpg',
     imageWidth: 800,
     imageHeight: 800,
     tags: ["Music", "Guitar", "Composition", "Graphic Design"],
-    class: "col-span-2",
     links: [
       {
         name: "Amazon",
