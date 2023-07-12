@@ -28,7 +28,7 @@ export default function Modal({ project }: Project) {
   };
 
   return (
-    <div className="rounded-lg shadow-md overflow-hidden transition-all	duration-200">
+    <div className="rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-200">
       <Link href="#" onClick={toggleModal} key={project.slug}>
         {project.slug && (
           <Image
@@ -40,8 +40,8 @@ export default function Modal({ project }: Project) {
           />
         )}
       </Link>
-      <div className={!isOpen ? "hidden" : "p-4 block"}>
-        <div className="text-xl font-semibold mb-3">{project.title}</div>
+      <div className={!isOpen ? "hidden" : "p-4 block bg-white"}>
+        <div className="text-xl font-bold mb-3">{project.title}</div>
         <div className="">
           {project.description && <p className="text-sm mb-3">{project.description}</p>}
           {project.links && (

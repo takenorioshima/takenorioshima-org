@@ -1,16 +1,16 @@
 export const projectData = [
   {
-    slug: "book-crowd",
-    title: 'クラウド 増殖する悪意',
-    year: 2013,
-    description: "森 達也・著／ISBN 978-4-907623-02-9／四六判・並製・288ページ",
-    imageWidth: 500,
-    imageHeight: 7301,
-    tags: ["Book Design", "Graphic Design"],
+    slug: "senkawos-tune-in-time",
+    title: 'Senkawos - チューン・イン・タイム[MV]',
+    year: 2016,
+    description: "ROCOH Theta で撮影した全天球映像をぐりぐりするミュージックビデオ。",
+    imageWidth: 1600,
+    imageHeight: 900,
+    tags: ["Music", "Guitar", "Vocal", "Direction", "Video Edit", "Composition"],
     links: [
       {
-        name: "Amazon",
-        url: "https://www.amazon.co.jp/dp/4844376012",
+        name: "YouTube",
+        url: "https://youtu.be/bHaY30Vtvgw",
       }
     ]
   },
@@ -267,8 +267,8 @@ export const projectData = [
     title: 'LOOP POOL - Surf[MV]',
     year: 2018,
     description: "",
-    imageWidth: 1920,
-    imageHeight: 816,
+    imageWidth: 1500,
+    imageHeight: 636,
     tags: ["Music", "Guitar"],
     links: [
       {
