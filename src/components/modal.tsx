@@ -41,6 +41,15 @@ export default function Modal({ project }: Project) {
       </Link>
       <div className={!isOpen ? "hidden" : "p-4 block bg-white"}>
         <div className="text-xl font-bold mb-3">{project.title}</div>
+        {project.tags && (
+          <div className="text-slate-800 mb-3">
+            {project.tags.map((tag) => (
+              <span key={tag} className="inline-block bg-slate-200 border rounded py-[0.1rem] px-1 mr-2 mb-2 text-xs">
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
         <div className="">
           {project.description && <p className="text-sm mb-3">{project.description}</p>}
           {project.links && (
@@ -52,15 +61,6 @@ export default function Modal({ project }: Project) {
                     <span className="font-semibold">{link.name}</span>
                   </Link>
                 ))}
-            </div>
-          )}
-          {project.tags && (
-            <div className="text-slate-500">
-              {project.tags.map((tag) => (
-                <span key={tag} className="inline-block mr-2 text-xs">
-                  {tag}
-                </span>
-              ))}
             </div>
           )}
         </div>
