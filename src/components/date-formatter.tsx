@@ -20,12 +20,12 @@ const DateFormatter = ({ dateString, modifiedDateString, className }: Props) => 
       <div className={className}>
         <i className="bi bi-clock"></i>
         &nbsp;
-        <time dateTime={dateString}>{format(date, "LLLL d, yyyy")}</time>
+        <time dateTime={dateString}>{format(date, "MMM d, yyyy")}</time>
         {modifiedDate && (
           <>
             <i className="bi bi-arrow-clockwise ml-4"></i>
             &nbsp;
-            <time dateTime={modifiedDateString}>{format(modifiedDate, "LLLL d, yyyy")}</time>
+            <time dateTime={modifiedDateString}>{format(modifiedDate, "MMM d, yyyy")}</time>
           </>
         )}
       </div>
