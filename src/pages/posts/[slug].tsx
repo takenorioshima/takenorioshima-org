@@ -121,7 +121,12 @@ export default function Post({ post, morePosts, preview }: Props) {
                 ],
               }}
             />
-            <PostHeader title={post.title} coverImage={post.coverImage} date={post.date} />
+            <PostHeader
+              title={post.title}
+              coverImage={post.coverImage}
+              date={post.date}
+              modifiedDate={post.modifiedDate}
+            />
             <Container>
               <div className="lg:grid grid-cols-7 gap-4">
                 <div className="lg:col-span-5 mb-20 lg:mb-0">
@@ -156,7 +161,15 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  const post = getPostBySlug(params.slug, ["title", "date", "excerpt", "slug", "content", "coverImage"]);
+  const post = getPostBySlug(params.slug, [
+    "title",
+    "date",
+    "modifiedDate",
+    "excerpt",
+    "slug",
+    "content",
+    "coverImage",
+  ]);
   const content = await markdownToHtml(post.content || "");
 
   return {

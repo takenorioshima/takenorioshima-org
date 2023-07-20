@@ -7,8 +7,10 @@ const Header = () => {
   let klass = "";
   if (router.pathname === "/") {
     klass = "home";
-  } else {
-    klass = router.pathname.replace("/", "");
+  } else if (router.pathname.includes("/posts/page/")) {
+    klass = "page";
+  } else if (router.pathname.includes("/posts/[slug]")) {
+    klass = "post";
   }
 
   const links = AUTHOR_PROFILES.links;

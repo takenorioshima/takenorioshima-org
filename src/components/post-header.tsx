@@ -7,9 +7,11 @@ type Props = {
   title: string;
   coverImage: string;
   date: string;
+  modifiedDate?: string;
 };
 
-const PostHeader = ({ title, coverImage, date }: Props) => {
+const PostHeader = ({ title, coverImage, date, modifiedDate }: Props) => {
+  console.log(modifiedDate);
   return (
     <>
       <div className="post-header relative flex items-center md:min-h-[500px] pt-12">
@@ -25,7 +27,7 @@ const PostHeader = ({ title, coverImage, date }: Props) => {
         <div className="container max-w-screen-lg mx-auto flex flex-col h-full justify-center px-4 py-12">
           <PostTitle>{title}</PostTitle>
           <div className="flex justify-between relative">
-            <DateFormatter dateString={date} className="text-white" />
+            <DateFormatter dateString={date} modifiedDateString={modifiedDate} className="text-white" />
             <PostHeaderToc />
           </div>
         </div>
