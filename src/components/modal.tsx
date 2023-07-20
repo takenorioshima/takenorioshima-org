@@ -17,9 +17,8 @@ type Project = {
 
 export default function Modal({ project }: Project) {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleModal = (e) => {
+  const toggleModal = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    console.log(e.target.parent);
     setIsOpen(!isOpen);
   };
 
