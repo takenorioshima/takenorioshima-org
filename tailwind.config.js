@@ -3,6 +3,10 @@ const preBorderRadius = "0.75rem";
 module.exports = {
   content: ["./src/components/**/*.tsx", "./src/pages/**/*.tsx"],
   theme: {
+    fontFamily: {
+      'sans': 'HelveticaNeue, "Helvetica Neue", Helvetica, Arial, 游ゴシック体, YuGothic, "游ゴシック Medium", "Yu Gothic Medium", 游ゴシック, "Yu Gothic", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "MS ゴシック", "MS Gothic", sans-serif',
+      'fontFeatureSettings': 'palt'
+    },
     extend: {
       colors: {
         "accent-1": "#FF5A6A",
