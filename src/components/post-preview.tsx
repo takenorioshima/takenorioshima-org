@@ -24,7 +24,7 @@ const PostPreview = ({ title, coverImage, date, excerpt, slug, index }: Props) =
       </div>
       <div className="p-5">
         <h3 className="mb-2 text-xl lg:text-2xl font-semibold leading-tight">{title}</h3>
-        <div className="text-xs text-gray-500 mb-4">
+        <div className="text-xs text-gray-500 mb-3">
           <DateFormatter dateString={date} />
         </div>
         <p className="text-sm">{excerpt}</p>
