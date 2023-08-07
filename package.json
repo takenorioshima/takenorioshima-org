@@ -2,7 +2,7 @@
   "private": true,
   "scripts": {
     "dev": "next",
-    "build": "next build && next export && next-export-optimize-images",
+    "build": "next build && next-export-optimize-images",
     "start": "next start",
     "typecheck": "tsc"
   },
