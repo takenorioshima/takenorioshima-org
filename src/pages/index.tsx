@@ -6,6 +6,7 @@ import { NextSeo } from "next-seo";
 import Layout from "../components/layouts/default";
 import { getRecentPosts } from "../lib/api";
 import Post from "../interfaces/post";
+import Footer from "../components/footer";
 import { useEffect } from "react";
 
 type Props = {
@@ -25,7 +26,7 @@ export default function Index({ recentPosts }: Props) {
       <Layout>
         <NextSeo />
         <HeroUnit />
-        {/* <Container>
+        <Container>
           <h2 className="text-2xl font-bold tracking-tighter md:pr-8">
             <i className="bi-journals"></i> 最近の投稿
           </h2>
@@ -39,7 +40,8 @@ export default function Index({ recentPosts }: Props) {
             />
           )}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-        </Container> */}
+        </Container>
+        <Footer />
       </Layout>
     </>
   );

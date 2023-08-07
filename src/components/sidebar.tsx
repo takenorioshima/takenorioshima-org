@@ -34,7 +34,7 @@ const Sidebar = () => {
             </div>
           </div>
 
-          <div className="text-sm my-2">{AUTHOR_PROFILES.description}</div>
+          <div className="text-sm leading-relaxed my-2">{AUTHOR_PROFILES.description}</div>
           <div className="flex align-center w-full">{linkList}</div>
         </div>
       </div>

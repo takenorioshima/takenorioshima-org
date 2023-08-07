@@ -34,7 +34,7 @@ export default function HeroUnit() {
         <div className="relative flex items-center justify-center w-full h-full z-10">
           <div className="flip-titles-container parsed-content">
             <p>大島武宜は</p>
-            <div className="flip-titles">
+            <div className="flip-titles font-semibold">
               <div className="flip-title">コンポーザー</div>
               <div className="flip-title">ギタリスト</div>
               <div className="flip-title">ＷＥＢデザイナー</div>

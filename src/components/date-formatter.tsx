@@ -14,7 +14,6 @@ const DateFormatter = ({ dateString, modifiedDateString, className }: Props) => 
     }
     return parseISO(modifiedDateString);
   })();
-  console.log(modifiedDateString);
   return (
     <>
       <div className={className}>
