@@ -11,7 +11,6 @@ type Props = {
 };
 
 const PostHeader = ({ title, coverImage, date, modifiedDate }: Props) => {
-  console.log(modifiedDate);
   return (
     <>
       <div className="post-header relative flex items-center md:min-h-[500px] pt-12">
