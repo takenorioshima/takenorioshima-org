@@ -3,17 +3,55 @@ title: "Next.js + Markdown なブログで Prism.js を使ってコードハイ�
 excerpt: "Next.js + Markdown なブログで Prism.js を使ってコードハイライティングしたい"
 coverImage: "/assets/blog/rehype-prism/cover.jpg"
 date: "2023-01-04"
+modifiedDate: "2023-08-14"
 tags: ["programming"]
 ---
 
-Tailwind の prose だけだと、`pre` 内のコードがハイライト表示されずちょっとさみしい。読みやすくハイライト表示されるよう、Prism.js を導入してみた作業メモです。
+Next.js + Markdown なブログで、Tailwind の prose だけだと、`pre` 内のコードがハイライト表示されずちょっとさみしい。読みやすくハイライト表示されるよう、Prism.js を導入してみた作業メモです。
 
-## rehype-prism-plus を追加
+## やりたいこと
 
-rehype-prism もありますが、 diff 表示などもできる rehype-prism-plus を導入してみます。
+![Before / After](/assets/blog/rehype-prism/before-after.png)
 
+## rehype-prism-plus・rehype-code-titles の追加
+
+rehype-prism もありますが、
+
+- diff や 行番号も表示するために rehype-prism-plus
+- ファイル名を表示するために rehype-code-titles
+
+を導入してみます。
+
+```sh
+yarn add -D rehype-prism-plus rehype-code-titles
 ```
-yarn add -D rehype-prism-plus
+
+## Markdown から html への変換処理に上記プラグインを追加
+
+このサイトの場合は [src/lib/markdownToHtml.ts](https://github.com/takenorioshima/takenorioshima-org/blob/main/src/lib/markdownToHtml.ts) で Markdown から html への変換処理をしているので、ここに処理を追加します。
+
+```diff-ts:src/lib/markdownToHtml.ts
+  import { unified } from "unified";
+  import remarkParse from "remark-parse";
+  import remarkRehype from "remark-rehype";
+  import rehypeStringify from "rehype-stringify";
+  import rehypeSlug from "rehype-slug";
+  import rehypeRaw from "rehype-raw";
++ import rehypePrism from "rehype-prism-plus";
++ import rehypeCodeTitles from "rehype-code-titles";
+
+  export default async function markdownToHtml(markdown: string) {
+    const result = await unified()
+      .use(remarkParse)
+      .use(remarkRehype, { allowDangerousHtml: true })
++     .use(rehypeCodeTitles)
++     .use(rehypePrism)
+      .use(rehypeRaw)
+      .use(rehypeStringify)
+      .use(rehypeSlug)
+      .process(markdown);
+    return result.toString();
+  }
 ```
 
 ## ハイライト表示用のスタイルを追加
@@ -21,11 +59,13 @@ yarn add -D rehype-prism-plus
 - [Prism themes](https://github.com/PrismJS/prism-themes)からお好みのテーマの css
 - rehype-prism-plus が生成する Line Number や diff の css
 
-を組み合わせて・微調整を行って `prism.css` としてプロジェクト側から読み込みます。今回はこんな内容の css となりました。
+を組み合わせて・微調整を行って \_app.tsx から `prism.css` としてプロジェクト側から読み込みます。
 
-```
+```tsx:src/pages/_app.tsx
 import "../styles/prism.css";
 ```
+
+このサイトでは最終的にこんな内容の [css](https://github.com/takenorioshima/takenorioshima-org/blob/main/src/styles/prism.css) になりました。
 
 ## 表示確認
 
@@ -109,11 +149,4 @@ function the_example_function ($name = '' ){
 }
 ```
 
-良い感じ！ですが、
-
-- ファイル名・言語名の表示
-- コピーボタン
-
-も欲しくなりますね。
-
-## ファイル名の表示
+とても・良い感じに・なりました。
