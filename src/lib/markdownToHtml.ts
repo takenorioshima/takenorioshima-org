@@ -11,9 +11,9 @@ export default async function markdownToHtml(markdown: string) {
   const result = await unified()
     .use(remarkParse)
     .use(remarkRehype, { allowDangerousHtml: true })
-    .use(rehypeRaw)
     .use(rehypeCodeTitles)
     .use(rehypePrism)
+    .use(rehypeRaw)
     .use(rehypeStringify)
     .use(rehypeSlug)
     .process(markdown);
