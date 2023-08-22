@@ -60,10 +60,10 @@ export default function HeroUnit() {
           </Canvas>
         </div>
 
-        {/* <div className="hero-unit-scroll">
+        <div className="hero-unit-scroll">
           <small>Scroll</small>
           <i className="bi-chevron-down"></i>
-        </div> */}
+        </div>
       </div>
     </>
   );
