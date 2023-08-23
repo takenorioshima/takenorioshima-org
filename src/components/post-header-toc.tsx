@@ -25,14 +25,12 @@ const PostHeaderToc = () => {
     chevron?.classList.toggle("flip");
   }
   return (
-    <>
-      <div className="lg:hidden">
-        <button className="font-semibold text-white" onClick={toggleToc}>
-          目次 <i className="bi bi-chevron-down js-header-toc-chevron header-toc-chevron"></i>
-        </button>
-        <div className="js-header-toc hidden absolute bg-white top-[3rem] left-0 w-full drop-shadow-md rounded-md p-4"></div>
-      </div>
-    </>
+    <div className="lg:hidden">
+      <button className="font-semibold text-white" onClick={toggleToc}>
+        目次 <i className="bi bi-chevron-down js-header-toc-chevron header-toc-chevron"></i>
+      </button>
+      <div className="js-header-toc hidden absolute bg-white top-[3rem] left-0 w-full drop-shadow-md rounded-md p-4"></div>
+    </div>
   );
 };
 
