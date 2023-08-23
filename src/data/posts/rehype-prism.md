@@ -84,6 +84,8 @@ import "../styles/prism.css";
 **tsx で 行番号表示 + 行のハイライト**
 
 ```tsx {1,4-6} showLineNumbers
+import Header from "../header";
+import Footer from "../footer";
 import Item from "../../compoments/item";
 import React, { useEffect } from "react";
 
@@ -98,9 +100,11 @@ export default function Example({ item }: Props) {
 
   return (
     <>
+      <Header />
       <div className="example-class">
         <Item content={item.content} />
       </div>
+      <Footer />
     </>
   );
 }
@@ -136,7 +140,7 @@ export default function Example({ item }: Props) {
 
 **php**
 
-```php:test.php
+```php:functions.php
 <?php
 /**
  * Example function.
@@ -144,8 +148,8 @@ export default function Example({ item }: Props) {
  * @param $name string
  * @return void
  */
-function the_example_function ($name = '' ){
-  echo 'My name is' + $name + '';
+function the_example_function( $name = '' ){
+  echo 'My name is' + $name + '!';
 }
 ```
 
