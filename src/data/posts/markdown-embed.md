@@ -111,14 +111,14 @@ iframe[src*="youtube.com/embed"] {
 埋め込みがあるページを初回に読み込む場合は問題ないですが、SPA で「記事ページ → Twitter 埋め込みがあるページ」のような画面遷移を行った場合に JavaScript による初期化が行われません。
 
 - [slug].tsx で Twitter / Instagram の JavaScript を読み込んでおく
-- 記事ページの useEffect フックでそれぞれの初期化関数を呼び出す
+- useEffect フックでそれぞれの初期化関数を呼び出す
 
 ことで対応しました。
 
 ```tsx:pages/posts/[slug].tsx
 import Script from "next/script";
 
-// Compornent 読み込み完了時に初期化する
+// 読み込み完了時に初期化する
 useEffect(() => {
   if (window.instgrm) {
     window.instgrm.Embeds.process();
