@@ -5,7 +5,7 @@ import { useRouter } from "next/router";
 const Header = () => {
   const router = useRouter();
   let klass = "";
-  if (router.pathname === "/") {
+  if (router.pathname === "/" || router.pathname === "/policies") {
     klass = "home";
   } else if (router.pathname.includes("/posts/page/")) {
     klass = "page";
