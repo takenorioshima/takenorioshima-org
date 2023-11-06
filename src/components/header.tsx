@@ -16,9 +16,9 @@ const Header = () => {
   const links = AUTHOR_PROFILES.links;
   const linkList = [];
   for (const [key, value] of Object.entries(links)) {
-    const klass = `bi bi-${key}`;
+    const klass = `bi bi-${value.iconClass}`;
     linkList.push(
-      <Link href={value} className="mx-[0.5em] text-lg lg:text-xl lg:mx-2 text-center" key={key} aria-label={key}>
+      <Link href={value.url} className="mx-[0.5em] text-lg lg:text-xl lg:mx-2 text-center" key={key} aria-label={key}>
         <i className={klass}></i>
       </Link>
     );
