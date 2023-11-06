@@ -61,11 +61,15 @@ export default function Policies() {
             </p>
             <p>
               当Webサイトは著作権や肖像権の侵害を目的としたものではありません。著作権や肖像権に関して問題がございましたら、
-              <Link href={AUTHOR_PROFILES.links.twitter} className="mx-1" target="_blank">
-                Twitter
+              <Link href={AUTHOR_PROFILES.links.twitter.url} className="mx-1" target="_blank">
+                X
               </Link>
               や
-              <Link href={AUTHOR_PROFILES.links.github + "/takenorioshima-org/issues"} className="mx-1" target="_blank">
+              <Link
+                href={AUTHOR_PROFILES.links.github.url + "/takenorioshima-org/issues"}
+                className="mx-1"
+                target="_blank"
+              >
                 GitHub Issues
               </Link>
               でご報告ください。

@@ -8,9 +8,9 @@ const Sidebar = () => {
   const links = AUTHOR_PROFILES.links;
   const linkList = [];
   for (const [key, value] of Object.entries(links)) {
-    const klass = `bi bi-${key}`;
+    const klass = `bi bi-${value.iconClass}`;
     linkList.push(
-      <Link href={value.toString()} className="flex-1 text-center" key={key} aria-label={key}>
+      <Link href={value.url.toString()} className="flex-1 text-center" key={key} aria-label={key}>
         <i className={klass}></i>
       </Link>
     );
