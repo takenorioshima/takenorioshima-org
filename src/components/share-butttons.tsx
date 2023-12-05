@@ -18,7 +18,7 @@ const socialButtons = (props: Props) => {
             className="rounded-full w-full whitespace-nowrap bg-white p-3 mr-2 px-5 shadow transition hover:opacity-70"
             href={twitterSharerUrl}
           >
-            <i className="bi bi-twitter"></i> ツイートする
+            <i className="bi bi-twitter-x"></i> ポストする
           </Link>
           <Link
             className="rounded-full w-full whitespace-nowrap bg-white p-3 px-5 shadow transition hover:opacity-70"
