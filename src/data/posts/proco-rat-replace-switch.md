@@ -12,7 +12,7 @@ tags: ["music"]
 
 スイッチを押してもカチッとならず、エフェクトの ON / OFF が切り替わらない。
 
-<video controls autoplay loop muted src="/assets/blog/proco-rat-replace-switch/problem.mov" type="video/mp4">
+<video controls autoplay loop muted src="/assets/blog/proco-rat-replace-switch/problem_hd.mov" type="video/mp4">
 Sorry, your browser doesn't support embedded videos.
 </video>
 
