@@ -10,7 +10,7 @@ type Props = {
   slug: string;
 };
 
-const HeroPost = ({ title, coverImage, date, excerpt, slug }: Props) => {
+const HeroPost = ({ title, date, excerpt, slug }: Props) => {
   return (
     <Link
       as={`/posts/${slug}`}
@@ -18,7 +18,7 @@ const HeroPost = ({ title, coverImage, date, excerpt, slug }: Props) => {
       className={`grid lg:grid-cols-5 items-center rounded-lg overflow-hidden bg-white drop-shadow hover:shadow-xl transition-shadow duration-200 my-5 lg:my-10`}
     >
       <div className="lg:col-span-3">
-        <CoverImage slug={slug} title={title} src={coverImage} />
+        <CoverImage slug={slug} title={title} />
       </div>
       <div className="p-5 lg:col-span-2">
         <h3 className="mb-2 text-xl lg:text-3xl font-semibold leading-tight">{title}</h3>

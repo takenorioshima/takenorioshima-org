@@ -4,14 +4,13 @@ import Link from "next/link";
 
 type Props = {
   title: string;
-  coverImage: string;
   date: string;
   excerpt: string;
   slug: string;
   index: number;
 };
 
-const PostPreview = ({ title, coverImage, date, excerpt, slug, index }: Props) => {
+const PostPreview = ({ title, date, excerpt, slug, index }: Props) => {
   const colClass = index < 2 ? "col-span-3" : "col-span-2";
   return (
     <Link
@@ -20,7 +19,7 @@ const PostPreview = ({ title, coverImage, date, excerpt, slug, index }: Props) =
       className={`${colClass} rounded-lg overflow-hidden bg-white drop-shadow hover:shadow-xl transition-shadow duration-200`}
     >
       <div className="">
-        <CoverImage slug={slug} title={title} src={coverImage} />
+        <CoverImage slug={slug} title={title} />
       </div>
       <div className="p-5">
         <h3 className="mb-2 text-xl lg:text-2xl font-semibold leading-tight">{title}</h3>
