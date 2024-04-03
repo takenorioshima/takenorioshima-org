@@ -1,7 +1,6 @@
 ---
 title: "VS Code で WordPress のテーマを快適に開発したい – リンター・フォーマッター・コーディング規約の導入"
 excerpt: "VS Code で WordPress のテーマを快適に開発するために、リンター・フォーマッター・コーディング規約を導入する手順をまとめました。"
-coverImage: "/assets/blog/vscode-wordpress-linter-formatter/cover.jpg"
 date: "2022-12-21"
 tags: ["programming"]
 ---

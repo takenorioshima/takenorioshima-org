@@ -1,7 +1,6 @@
 ---
 title: "Arduino でユーロラックモジュールから GATE を受け取りたい"
 excerpt: "ユーロラックモジュールからの GATE を安全に受け取る"
-coverImage: "/assets/blog/arduino-clock-from-eurorack-modules/cover.jpg"
 date: "2023-11-01"
 tags: ["music"]
 ---

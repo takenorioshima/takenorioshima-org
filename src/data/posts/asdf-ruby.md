@@ -1,7 +1,6 @@
 ---
 title: "asdf で Ruby をインストールする"
 excerpt: "Node.js・Ruby・PHP...いろいろな開発言語のバージョン切り替えを一括管理できる大変便利な asdf 。理解を深めるため、asdf で Ruby をインストールする手順をまとめました。"
-coverImage: "/assets/blog/asdf-ruby/cover.jpg"
 date: "2023-01-14"
 modifiedDate: "2023-07-20"
 tags: ["programming"]

@@ -1,7 +1,6 @@
 ---
 title: "Next.js + Markdown なブログ記事中の画像に next/image コンポーネントを使いたい"
 excerpt: "Next.js + Markdown なブログ記事中の画像に next/image コンポーネントを使いたい"
-coverImage: "/assets/blog/markdown-embed/cover.jpg"
 date: "2023-04-27"
 tags: ["programming"]
 ---

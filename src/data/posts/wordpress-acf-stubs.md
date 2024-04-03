@@ -1,7 +1,6 @@
 ---
 title: "WordPress コーディング規約 で Advanced Custom Fields の関数未定義エラーを解消したい"
 excerpt: "プラグインで定義された関数を stubs で読み込んで、快適にコーディングしよう。"
-coverImage: "/assets/blog/wordpress-acf-stubs/cover.jpg"
 date: "2023-08-22"
 tags: ["Programming"]
 ---
