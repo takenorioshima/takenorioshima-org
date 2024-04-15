@@ -101,6 +101,8 @@ export default function Post({ post, morePosts, preview }: Props) {
 
   const title = `${post.title} - ${SITE_NAME}`;
 
+  const coverImageSrc = `/assets/blog/${router.query.slug}/cover.jpg`;
+
   return (
     <Layout preview={preview}>
       <Script src="https://platform.twitter.com/widgets.js" />
@@ -116,14 +118,14 @@ export default function Post({ post, morePosts, preview }: Props) {
               openGraph={{
                 images: [
                   {
-                    url: post.coverImage,
+                    url: coverImageSrc,
                   },
                 ],
               }}
             />
             <PostHeader
               title={post.title}
-              coverImage={post.coverImage}
+              coverImage={coverImageSrc}
               date={post.date}
               modifiedDate={post.modifiedDate}
             />

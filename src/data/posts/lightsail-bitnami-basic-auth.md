@@ -1,7 +1,6 @@
 ---
 title: "Amazon Lightsail の WordPress インスタンスで Basic 認証を使いたい"
 excerpt: "Amazon Lightsail の WordPress インスタンスで Basic 認証を使いたい"
-coverImage: "/assets/blog/lightsail-bitnami-basic-auth/cover.jpg"
 date: "2023-06-01"
 tags: ["programming"]
 ---

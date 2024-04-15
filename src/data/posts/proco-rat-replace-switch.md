@@ -1,7 +1,6 @@
 ---
 title: "不良になった ProCo Rat2 のスイッチを交換したい"
 excerpt: "踏んでもカチッとならず不良となったスイッチを交換しよう。"
-coverImage: "/assets/blog/proco-rat-replace-switch/cover.jpg"
 date: "2023-08-24"
 tags: ["music"]
 ---

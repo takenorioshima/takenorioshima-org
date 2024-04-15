@@ -34,7 +34,7 @@ type Params = {
 
 export async function getStaticProps({ params }: Params) {
   const currentPage = Number(params.page);
-  const posts = getAllPosts(["title", "date", "slug", "coverImage", "excerpt", "content"]);
+  const posts = getAllPosts(["title", "date", "slug", "excerpt", "content"]);
   const publishedPosts = posts.filter((post) => !post.slug.match(/^\+/));
 
   const pages = range(1, Math.ceil(publishedPosts.length / pageSize));

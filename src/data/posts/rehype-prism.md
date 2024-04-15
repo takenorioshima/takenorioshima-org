@@ -1,7 +1,6 @@
 ---
 title: "Next.js + Markdown なブログで Prism.js を使ってコードハイライティングしたい"
 excerpt: "Next.js + Markdown なブログで Prism.js を使ってコードハイライティングしたい"
-coverImage: "/assets/blog/rehype-prism/cover.jpg"
 date: "2023-01-04"
 modifiedDate: "2023-08-14"
 tags: ["programming"]

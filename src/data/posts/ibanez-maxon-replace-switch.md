@@ -1,7 +1,6 @@
 ---
 title: "不良になった Ibanez | Maxon のキャラメルスイッチを交換したい"
 excerpt: "不良になりがちな Ibanez | Maxon のキャラメルスイッチを交換する"
-coverImage: "/assets/blog/ibanez-maxon-replace-switch/cover.jpg"
 date: "2023-04-27"
 tags: ["music"]
 ---

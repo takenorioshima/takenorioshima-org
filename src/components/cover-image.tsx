@@ -3,14 +3,13 @@ import Image from "next/image";
 
 type Props = {
   title: string;
-  src: string;
   slug?: string;
 };
 
-const CoverImage = ({ title, src, slug }: Props) => {
+const CoverImage = ({ title, slug }: Props) => {
   const image = (
     <Image
-      src={src}
+      src={"assets/blog/" + slug + "/cover.jpg"}
       alt={`Cover Image for ${title}`}
       className={cn("w-full aspect-[2/1] object-cover object-center")}
       width={1280}

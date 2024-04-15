@@ -1,7 +1,6 @@
 ---
 title: "Sass のリンター/フォーマッターは Stylelint だけで良いのかもしれない"
 excerpt: "きれいな Sass を書くために、Stylelint + Prettier の組み合わせがよく紹介されていますが、改めて設定してみると「Sass は Stylelint にお任せで十分かも」と思ったので、導入・設定メモを残しておきます。"
-coverImage: "/assets/blog/stylelint/cover.jpg"
 date: "2022-12-24"
 tags: ["programming"]
 ---
@@ -43,6 +42,7 @@ Stylelint 公式の拡張機能をインストールします。タキシード�
 ```
 
 ## Stylelint の設定ファイルを追加
+
 プロジェクトディレクトリ直下( = package.json と同じ階層) に .stylelintrc を作成し、json で利用するルールセットを指定します。
 
 ```json:.stylelintrc
@@ -85,13 +85,14 @@ Stylelint 公式の拡張機能をインストールします。タキシード�
 
 ```css
 .sample {
-pading: 0pxl 0.25rem 0 0;
-  line-height: 1;font-size: 10px;
-    display: block;
-margin: 0 1rem 0 0;
-i  {
-    font-SIZE: 2rem;
-   }
+  pading: 0pxl 0.25rem 0 0;
+  line-height: 1;
+  font-size: 10px;
+  display: block;
+  margin: 0 1rem 0 0;
+  i {
+    font-size: 2rem;
+  }
 }
 ```
 

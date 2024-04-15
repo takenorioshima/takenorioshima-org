@@ -1,7 +1,6 @@
 ---
 title: "GitHub Actions を使って main ブランチの内容を ftp で自動デプロイしたい"
 excerpt: "手作業による ftp をやめて、便利に自動化しよう。"
-coverImage: "/assets/blog/github-actions-ftp-workflow/cover.jpg"
 date: "2023-12-06"
 tags: ["programming"]
 ---
