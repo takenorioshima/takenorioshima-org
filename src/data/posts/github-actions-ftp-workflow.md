@@ -101,8 +101,7 @@ jobs:
           yarn.lock
           composer.lock
           composer.json
-          vendor/**
-          src/**
+          vendor/** 
           .vscode/**
 ```
 
@@ -110,7 +109,7 @@ jobs:
 
 GitHub の該当リポジトリの Settings > Secrets and Variables > Actions から New repository secrets と進み、secrets を作成します。
 
-今回は `FTP_SERVER`・`FTP_USERNAME`・`FTP_PASSWORD`・`FTP_SERVER＿DIR` の 4 つを作成しました。`FTP_SERVER＿DIR` は末尾に / が必要なので注意。
+今回は `FTP_SERVER`・`FTP_USERNAME`・`FTP_PASSWORD`・`FTP_SERVER_DIR` の 4 つを作成しました。`FTP_SERVER_DIR` は末尾に / が必要なので注意。
 
 ![GitHub Settings](/assets/blog/github-actions-ftp-workflow/github-secrets.png)
 
