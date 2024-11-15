@@ -2,6 +2,7 @@
 title: "GitHub Actions を使って main ブランチの内容を ftp で自動デプロイしたい"
 excerpt: "手作業による ftp をやめて、便利に自動化しよう。"
 date: "2023-12-06"
+modifiedDate: "2024-11-15"
 tags: ["programming"]
 ---
 
@@ -57,7 +58,7 @@ ftp 接続情報のサーバ名・ユーザ名・リモートディレクトリ�
 +        server-dir: ${{ secrets.FTP_SERVER_DIR }}
 ```
 
-`package.json`や`node_modules`ディレクトリなど、本番リリース時に不要なファイル・ディレクトリがあれば除外しておきます。今回のプロジェクトの場合は以下のようになりました。
+`package.json`や`node_modules`ディレクトリなど、本番リリース時に不要なファイル・ディレクトリがあれば除外しておきます。今回のプロジェクトの場合は最終的に以下のようになりました。
 
 ```diff-yml:main.yml
  on: push
@@ -77,25 +78,24 @@ ftp 接続情報のサーバ名・ユーザ名・リモートディレクトリ�
          username: ${{ secrets.FTP_USERNAME }}
          password: ${{ secrets.FTP_PASSWORD }}
          server-dir: ${{ secrets.FTP_SERVER_DIR }}
-+        exclude: |
-+          **/.git*
-+          **/.git*/**
-+          .gitignore
-+          package.json
-+          yarn.lock
-+          **/node_modules/**
-+          .composer.lock
-+          .composer.json
-+          **/vendor/**
-+          **/src/**
-+          .vscode/**
+         exclude: |
+           .git*
+           .git*/**
+           node_modules/**
+           package.json
+           yarn.lock
+           composer.lock
+           composer.json
+           vendor/**
+           src/**
+           .vscode/**
 ```
 
 ## GitHub で Secrets の追加
 
 GitHub の該当リポジトリの Settings > Secrets and Variables > Actions から New repository secrets と進み、secrets を作成します。
 
-今回は `FTP_SERVER`・`FTP_USERNAME`・`FTP_PASSWORD`・`FTP_SERVER＿DIR` の 4 つを作成しました。
+今回は `FTP_SERVER`・`FTP_USERNAME`・`FTP_PASSWORD`・`FTP_SERVER＿DIR` の 4 つを作成しました。`FTP_SERVER＿DIR` は末尾に / が必要なので注意。
 
 ![GitHub Settings](/assets/blog/github-actions-ftp-workflow/github-secrets.png)
 
