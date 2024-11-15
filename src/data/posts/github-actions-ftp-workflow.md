@@ -15,9 +15,10 @@ GitHub Actions を使って GitHub の main ブランチに merge されたタ�
 [SamKirkland/FTP-Deploy-Action](https://github.com/SamKirkland/FTP-Deploy-Action) を参考に進めます。プロジェクトディレクトリ配下に `/.github/workflows/main.yml` を作成し、以下を追加します。
 
 ```yml:main.yml
-on: push
-  branches:
-    - main
+on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 name: 🚀 Deploy website on push
@@ -40,9 +41,10 @@ jobs:
 ftp 接続情報のサーバ名・ユーザ名・リモートディレクトリも GitHub の Secrets で管理したいので + 定数はアッパースネーク表記にしたいので、以下を変更します。
 
 ```diff-yml:main.yml
- on: push
-   branches:
-     - main
+ on:
+   push:
+     branches:
+       - main
    workflow_dispatch:
 
  name: 🚀 Deploy website on push
@@ -69,9 +71,10 @@ ftp 接続情報のサーバ名・ユーザ名・リモートディレクトリ�
 `package.json`や`node_modules`ディレクトリなど、本番リリース時に不要なファイル・ディレクトリがあれば除外しておきます。今回のプロジェクトの場合は最終的に以下のようになりました。
 
 ```yml:main.yml
-on: push
-  branches:
-    - main
+on:
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 name: 🚀 Deploy website on push
