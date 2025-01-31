@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
           <url>
+            <loc>https://www.takenorioshima.org/posts/wordpress-avoid-css-cache/</loc>
+            <lastmod>2025-01-30</lastmod>
+            <changefreq>weekly</changefreq>
+          </url>
+        
+          <url>
             <loc>https://www.takenorioshima.org/posts/github-actions-ftp-workflow/</loc>
             <lastmod>2023-12-06</lastmod>
             <changefreq>weekly</changefreq>
