@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 
 @config '../../tailwind.config.js';
 
@@ -74,7 +74,6 @@ body.home {
 
 .post-header::before {
   backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
 }
 .post-header::after {
   z-index: -2;
