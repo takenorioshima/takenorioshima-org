@@ -19,7 +19,7 @@ const Sidebar = () => {
   return (
     <>
       <div className="sidebar-profile relative mb-4">
-        <div className="bg-white p-5 drop-shadow rounded-lg relative z-10">
+        <div className="bg-white p-5 drop-shadow-sm rounded-lg relative z-10">
           <div className="flex items-center">
             <Image
               alt="Icon: Takenori Oshima"

@@ -22,7 +22,7 @@ const PostHeader = ({ title, coverImage, date, modifiedDate }: Props) => {
           fill
         />
       </div>
-      <div className="container max-w-screen-lg mx-auto flex flex-col h-full justify-center px-4 py-12">
+      <div className="container max-w-(--breakpoint-lg) mx-auto flex flex-col h-full justify-center px-4 py-12">
         <PostTitle>{title}</PostTitle>
         <div className="flex justify-between relative">
           <DateFormatter dateString={date} modifiedDateString={modifiedDate} className="text-white" />

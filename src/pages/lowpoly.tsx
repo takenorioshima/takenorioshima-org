@@ -39,7 +39,7 @@ export default function LowPoly() {
   ];
 
   const listItems = items.map((item) => (
-    <div className="col-span-3 rounded-lg overflow-hidden bg-white drop-shadow hover:shadow-xl transition-shadow duration-200 aspect-square">
+    <div className="col-span-3 rounded-lg overflow-hidden bg-white drop-shadow-sm hover:shadow-xl transition-shadow duration-200 aspect-square">
       <div className="text-sm p-2 absolute top-0 left-0 bg-slate-300 rounded-br">{item.filename}</div>
       <Suspense fallback={null}>
         <Canvas orthographic={true} shadows>

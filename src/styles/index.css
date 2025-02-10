@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@config '../../tailwind.config.js';
 
 html {
   height: -webkit-fill-available;
@@ -131,7 +131,7 @@ body.home {
 }
 
 .prose p > code {
-  @apply inline-block bg-slate-200 px-1 leading-normal rounded-sm;
+  @apply inline-block bg-slate-200 px-1 leading-normal rounded-xs;
 }
 
 .prose p > code::before,
