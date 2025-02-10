@@ -23,7 +23,7 @@ const PageHeader = ({ title, description, coverImage, icon, className }: Props) 
           />
         ) : null}
       </div>
-      <div className="container max-w-screen-lg mx-auto flex flex-col h-full justify-center px-4 py-12">
+      <div className="container max-w-(--breakpoint-lg) mx-auto flex flex-col h-full justify-center px-4 py-12">
         <h1 className="text-white text-4xl md:text-6xl font-semibold tracking-tighter leading-tight mb-5 text-center">
           {icon ? <i className={`bi ${icon} mr-3`}></i> : null}
           {title}

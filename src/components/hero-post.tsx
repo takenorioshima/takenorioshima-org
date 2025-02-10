@@ -15,7 +15,7 @@ const HeroPost = ({ title, date, excerpt, slug }: Props) => {
     <Link
       as={`/posts/${slug}`}
       href="/posts/[slug]"
-      className={`grid lg:grid-cols-5 items-center rounded-lg overflow-hidden bg-white drop-shadow hover:shadow-xl transition-shadow duration-200 my-5 lg:my-10`}
+      className={`grid lg:grid-cols-5 items-center rounded-lg overflow-hidden bg-white drop-shadow-sm hover:shadow-xl transition-shadow duration-200 my-5 lg:my-10`}
     >
       <div className="lg:col-span-3">
         <CoverImage slug={slug} title={title} />

@@ -10,7 +10,7 @@ function klassName(page: number, currentPage: number) {
   if (page !== currentPage) {
     return classes;
   } else {
-    return classes + " bg-black text-white font-semibold rounded";
+    return classes + " bg-black text-white font-semibold rounded-sm";
   }
 }
 

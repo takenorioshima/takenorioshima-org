@@ -3,7 +3,7 @@ import Container from "./container";
 
 const Footer = () => {
   return (
-    <footer className="pb-1 px-5 border-t bg-gray-50">
+    <footer className="pb-1 px-5 border-t border-slate-300 shadow-lg bg-gray-50">
       <Container>
         <div className="flex justify-between">
           <Link href="/policies/" className="text-sm text-gray-500">

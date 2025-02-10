@@ -9,9 +9,9 @@ type Props = {
 const CoverImage = ({ title, slug }: Props) => {
   const image = (
     <Image
-      src={"assets/blog/" + slug + "/cover.jpg"}
+      src={"assets/posts/" + slug + "/cover.jpg"}
       alt={`Cover Image for ${title}`}
-      className={cn("w-full aspect-[2/1] object-cover object-center")}
+      className={cn("w-full aspect-2/1 object-cover object-center")}
       width={1280}
       height={640}
     />

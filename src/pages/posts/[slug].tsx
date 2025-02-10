@@ -59,7 +59,7 @@ const CustomLink: FC<AnchorHTMLAttributes<HTMLAnchorElement>> = ({ href, childre
 };
 
 const CustomImage: FC<ImgHTMLAttributes<HTMLImageElement>> = ({ src = "", alt = "" }) => {
-  return <Image className="rounded shadow" src={src} alt={alt} width="704" height="470" />;
+  return <Image className="rounded-sm shadow-sm" src={src} alt={alt} width="704" height="470" />;
 };
 
 export default function Post({ post, morePosts, preview }: Props) {
@@ -101,7 +101,7 @@ export default function Post({ post, morePosts, preview }: Props) {
 
   const title = `${post.title} - ${SITE_NAME}`;
 
-  const coverImageSrc = `/assets/blog/${router.query.slug}/cover.jpg`;
+  const coverImageSrc = `/assets/posts/${router.query.slug}/cover.jpg`;
 
   return (
     <Layout preview={preview}>
@@ -137,7 +137,7 @@ export default function Post({ post, morePosts, preview }: Props) {
                       max-w-full prose
                       prose-h2:font-semibold
                       prose-p:leading-7
-                      before:prose-code:hidden after:prose-code:hidden
+                      prose-code:before:hidden prose-code:after:hidden
                       js-toc-content"
                   >
                     {toReactNode(post.content)}

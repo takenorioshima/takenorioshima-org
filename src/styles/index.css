@@ -1,6 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@config '../../tailwind.config.js';
 
 html {
   height: -webkit-fill-available;
@@ -74,7 +74,6 @@ body.home {
 
 .post-header::before {
   backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
 }
 .post-header::after {
   z-index: -2;
@@ -131,7 +130,7 @@ body.home {
 }
 
 .prose p > code {
-  @apply inline-block bg-slate-200 px-1 leading-normal rounded-sm;
+  @apply inline-block bg-slate-200 px-1 leading-normal rounded-xs;
 }
 
 .prose p > code::before,
