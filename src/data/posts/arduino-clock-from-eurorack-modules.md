@@ -15,11 +15,11 @@ tags: ["music"]
 
 エミッタ接地の反転スイッチ回路を使うことで、良い感じに電圧をクランプすることできます。マイクロコントローラとして ATMega328p を使っている [Mutable Instruments - Grids](https://pichenettes.github.io/mutable-instruments-documentation/modules/grids/downloads/grids_v02.pdf) が今回やりたいことの構成に近いので、こちらのクロック入力回路を参考にしました。
 
-![CLOCK IN](/assets/blog/arduino-clock-from-eurorack-modules/schematic_clock_in.png)
+![CLOCK IN](/assets/posts/arduino-clock-from-eurorack-modules/schematic_clock_in.png)
 
 LTspice でシミュレーションもしてみます。-12V から +12V の 200Hz のサイン波を入れて出力を確認してみます。青が入力の電圧、緑がクランプされた電圧です。出力が反転し、0V から 5V の間に収まっていることが確認できました ⚡️
 
-![LTspice - Simulation](/assets/blog/arduino-clock-from-eurorack-modules/simulation.png)
+![LTspice - Simulation](/assets/posts/arduino-clock-from-eurorack-modules/simulation.png)
 
 ## Arduino で GATE を処理してみる
 
@@ -30,7 +30,7 @@ LTspice でシミュレーションもしてみます。-12V から +12V の 200
 
 な実験をしてみます。
 
-![Schematic](/assets/blog/arduino-clock-from-eurorack-modules/schematic.png)
+![Schematic](/assets/posts/arduino-clock-from-eurorack-modules/schematic.png)
 
 ```c showLineNumbers
 const int clockInPin = 2;

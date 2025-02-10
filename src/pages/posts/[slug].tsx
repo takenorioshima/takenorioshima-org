@@ -101,7 +101,7 @@ export default function Post({ post, morePosts, preview }: Props) {
 
   const title = `${post.title} - ${SITE_NAME}`;
 
-  const coverImageSrc = `/assets/blog/${router.query.slug}/cover.jpg`;
+  const coverImageSrc = `/assets/posts/${router.query.slug}/cover.jpg`;
 
   return (
     <Layout preview={preview}>

@@ -102,7 +102,7 @@ Bitnami の htaccess 設定ファイルを編集し、Basic 認証を追加し�
 % sudo /opt/bitnami/ctlscript.sh restart apache
 ```
 
-![Basic Auth](/assets/blog/lightsail-bitnami-basic-auth/basic-auth.jpg)
+![Basic Auth](/assets/posts/lightsail-bitnami-basic-auth/basic-auth.jpg)
 
 ユーザ名/パスワードの入力が求められること・また認証が通ることを確認して、設定は完了です。おつかれさまでした 🙂
 
