@@ -33,15 +33,17 @@ wp_enqueue_style( 'main', get_theme_file_uri('/path/to/main.min.css'), array(), 
 で style.css に記述されたバージョンを `ver` の値として指定できますが、手作業でのバージョン書き換えが必要 + 差分が小さいリリース時には書き換えを忘れそう。漏れが無いようにファイルの更新日時を `YmdHis` の形式で取得して、`ver` に指定します。
 
 ```php
-$css_version = gmdate( 'YmdHis', filemtime( get_theme_file_uri('./path/to/main.min.css') );
-wp_enqueue_style( 'main', get_theme_file_uri('/path/to/main.min.css'), array(), $css_version, 'all' );
+$css_path = 'path/to/main.min.css';
+$css_version = gmdate( 'YmdHis', filemtime( get_theme_file_path( $css_path ) ) );
+wp_enqueue_style( 'main', get_theme_file_uri( $css_path ), array(), $css_version, 'all' );
 ```
 
 JavaScript の読み込みも同様に指定しましょう。
 
 ```php
-$js_version = gmdate( 'YmdHis', filemtime( get_theme_file_uri('./path/to/main.min.js') );
-wp_enqueue_script( 'main', get_theme_file_uri('/path/to/main.min.js'), array(), $js_version, true );
+$js_path = 'path/to/main.min.js';
+$js_version = gmdate( 'YmdHis', filemtime( get_theme_file_path( $js_path ) ) );
+wp_enqueue_script( 'main', get_theme_file_uri( $js_path ), array(), $js_version, true );
 ```
 
 ## 確認
