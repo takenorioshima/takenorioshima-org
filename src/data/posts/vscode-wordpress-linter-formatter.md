@@ -5,6 +5,10 @@ date: "2022-12-21"
 tags: ["programming"]
 ---
 
+<div class="p-5 ring ring-yellow-300 text-yellow-950 bg-yellow-100 mb-8 rounded-md">
+<i class="bi bi-exclamation-triangle-fill"></i> この記事の内容は古く、正しく動作しない可能性があります。VS Code での WordPress のリンター・フォーマッターの導入については、新しくまとめた <a href="/posts/vscode-wordpress-linter-formatter-2025/">2025年版の記事</a> を参照してください。
+</div>
+
 VS Code で WordPress のテーマを快適に開発するために、リンター / フォーマッター / コーディング規約を導入する手順をまとめました。同様の記事はネット上に多くありますが、
 
 - PHP_CodeSniffer や WordPress コーディング規約をグローバル環境に導入するものが多い
