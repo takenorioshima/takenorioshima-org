@@ -15,9 +15,10 @@ tags: ["programming"]
 
 ## WordPress Coding Standard を新規インストール
 
-以前にインストールした `squizlabs/php_codesniffer`・`wp-coding-standards/wpcs` をアンインストールしてから、[公式](https://github.com/WordPress/WordPress-Coding-Standards?tab=readme-ov-file#installation)で案内されている方法で最新のパッケージをインストールします。phpcodesniffer もまとめてインストールされ、便利。
+以前にインストールした `squizlabs/php_codesniffer`・`wp-coding-standards/wpcs` をアンインストールしてから、[公式](https://github.com/WordPress/WordPress-Coding-Standards?tab=readme-ov-file#installation)で案内されている方法で最新のパッケージをインストールします。
 
 ```sh
+❯ composer remove squizlabs/php_codesniffer wp-coding-standards/wpcs
 ❯ composer config allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
 ❯ composer require --dev wp-coding-standards/wpcs:"^3.0"
 ```
