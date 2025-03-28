@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import * as tocbot from "tocbot";
+import tocbot from "tocbot";
 
 const PostHeaderToc = () => {
   useEffect(() => {
@@ -14,6 +14,7 @@ const PostHeaderToc = () => {
       hasInnerContainers: true,
       headingsOffset: 60,
       scrollSmoothOffset: -60,
+      tocScrollingWrapper: null,
     });
     return () => tocbot.destroy();
   }, []);
