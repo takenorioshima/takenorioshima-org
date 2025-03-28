@@ -2,6 +2,7 @@
 title: "WordPress で CSS・JS のキャッシュ読み込みを回避する"
 excerpt: "サイト更新確認時の「スーパーリロードのお願い」にさよならをしよう。"
 date: "2025-01-30"
+modified: "2025-03-17"
 tags: ["Programming"]
 ---
 
