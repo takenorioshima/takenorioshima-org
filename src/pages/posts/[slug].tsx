@@ -15,7 +15,7 @@ import { NextSeo } from "next-seo";
 import rehypeParse from "rehype-parse";
 import rehypeReact from "rehype-react";
 import { unified } from "unified";
-import Image from "next/image";
+import Image from "next-export-optimize-images/image";
 import Link from "next/link";
 import ShareButtons from "../../components/share-butttons";
 

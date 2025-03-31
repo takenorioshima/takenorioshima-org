@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next-export-optimize-images/image";
 import SidebarToc from "./sidebar-toc";
 import { AUTHOR_PROFILES } from "../lib/constants";
 

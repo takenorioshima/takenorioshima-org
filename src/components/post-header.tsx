@@ -1,7 +1,7 @@
 import DateFormatter from "./date-formatter";
 import PostTitle from "./post-title";
 import PostHeaderToc from "./post-header-toc";
-import Image from "next/image";
+import Image from "next-export-optimize-images/image";
 
 type Props = {
   title: string;
