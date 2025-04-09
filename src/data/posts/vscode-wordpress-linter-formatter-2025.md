@@ -2,6 +2,7 @@
 title: "VS Code で WordPress のテーマを快適に開発したい – リンター・フォーマッターの導入(2025年版)"
 excerpt: "VS Code に WordPress のリンター・フォーマッターを導入する。"
 date: "2025-03-28"
+modifiedDate: "2025-04-09"
 tags: ["programming"]
 ---
 
@@ -15,10 +16,9 @@ tags: ["programming"]
 
 ## WordPress Coding Standard を新規インストール
 
-以前にインストールした `squizlabs/php_codesniffer`・`wp-coding-standards/wpcs` をアンインストールしてから、[公式](https://github.com/WordPress/WordPress-Coding-Standards?tab=readme-ov-file#installation)で案内されている方法で最新のパッケージをインストールします。
+[公式](https://github.com/WordPress/WordPress-Coding-Standards?tab=readme-ov-file#installation)で案内されている方法で最新のパッケージをインストールします。プロジェクト単位で GitHub で管理したいので、`--dev` オプションをつけます。
 
 ```sh
-❯ composer remove squizlabs/php_codesniffer wp-coding-standards/wpcs
 ❯ composer config allow-plugins.dealerdirect/phpcodesniffer-composer-installer true
 ❯ composer require --dev wp-coding-standards/wpcs:"^3.0"
 ```
@@ -32,19 +32,19 @@ The installed coding standards are MySource, PEAR, PSR1, PSR2, PSR12, Squiz, Zen
 
 ## VS Code のプラグインを追加
 
-リアルタイムでのエラー表示や、ファイル保存時の自動フォーマットのため、以下のプラグインを追加します。以前に利用していた **PHP Sniffer & Beautifier** (valeryanm.vscode-phpsab) は削除。
+リアルタイムでのエラー表示や、ファイル保存時の自動フォーマットのため、以下のプラグインを追加します。
 
 - **PHP Intelephense** 強力なコード補完やコードジャンプで PHP でのコーディング作業に欠かせない拡張機能。stubs を追加することで WordPress 関数も補完・コードヒントが効くようになります。
 - **phpcs** (shevaua.phpcs) エラーをリアルタイムに表示するため追加。
-- **phpcbf** (persoderlind.vscode-phpcbf) ファイル保存時にコーディングスタンダートに準じたルールで自動整形するために追加。
+- **phpcbf** (simone-baldini.vscode-phpcbf) ファイル保存時にコーディングスタンダートに準じたルールで自動整形するために追加。
 
 ```sh
-❯ code --install-extension bmewburn.vscode-intelephense-client shevaua.phpcs persoderlind.vscode-phpcbf
+❯ code --install-extension bmewburn.vscode-intelephense-client shevaua.phpcs simone-baldini.vscode-phpcbf
 ```
 
 ## phpcs・phpcbf のパスを通す
 
-phpcs は `vendor/bin/phpcs` で通りましたが、phpcbf のパスが `vendor/bin/phpcbf` だとエラーとなり、実行されませんでした。
+phpcs は `vendor/bin/phpcs` で通りましたが、phpcbf は `vendor/bin/phpcbf` だとエラーとなり、実行されませんでした。
 
 ```
 PHPCBF: spawn vendor/bin/phpcbf ENOENT. executablePath not found.
@@ -55,18 +55,11 @@ executablePath not found.
 
 ## 最終的な .vscode/settings.json
 
-こんな感じになりました。(今回の設定分だけ抽出しています)
+こんな感じになりました。
 
 ```json:settings.json
 {
-  "phpcs.executablePath": "vendor/bin/phpcs",
-  "phpcs.standard": "WordPress",
-  "phpcbf.executablePath": "./vendor/bin/phpcbf",
-  "phpcbf.standard": "WordPress",
-  "phpcbf.onsave": true,
-  "[php]": {
-    "editor.defaultFormatter": "persoderlind.vscode-phpcbf"
-  },
+  "editor.formatOnSave": true,
   "intelephense.stubs": [
     "Core",
     "date",
@@ -74,9 +67,17 @@ executablePath not found.
     "mbstring",
     "standard",
     "pcre",
-    "wordpress",
-    "curl"
+    "wordpress"
   ],
+  "[php]": {
+    "editor.defaultFormatter": "simone-baldini.vscode-phpcbf"
+  },
+  "phpcbf.executablePath": "./vendor/bin/phpcbf",
+  "phpcbf.onsave": true,
+  "phpcbf.debug": true,
+  "phpcs.standard": "WordPress",
+  "phpcbf.standard": "WordPress",
+  "phpcs.executablePath": "vendor/bin/phpcs",
 }
 ```
 
