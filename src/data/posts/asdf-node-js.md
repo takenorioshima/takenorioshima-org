@@ -1,8 +1,8 @@
 ---
 title: "asdf で Node.js をインストールする"
 excerpt: "Node.js・Ruby・PHP...いろいろな開発言語のバージョン切り替えを一括管理できる大変便利な asdf 。理解を深めるため、asdf で Node.js をインストールする手順をまとめました。"
-date: "2023-01-02",
-modifiedDate: "2025-04-14
+date: "2023-01-02"
+modifiedDate: "2025-04-14"
 tags: ["Programming"]
 ---
 
