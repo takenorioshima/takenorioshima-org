@@ -71,7 +71,7 @@ export function getTaggedPosts(tag: string) {
 }
 
 export function generateSitemapXml() {
-  const posts = getAllPosts(["slug", "title", "date"]);
+  const posts = getAllPosts(["slug", "title", "date", "modifiedDate"]);
   const url = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
   let xml = '<?xml version="1.0" encoding="UTF-8"?>';
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">';
@@ -80,7 +80,7 @@ export function generateSitemapXml() {
       xml += `
           <url>
             <loc>${url}/posts/${post.slug}/</loc>
-            <lastmod>${post.date}</lastmod>
+            <lastmod>${post.modifiedDate || post.date}</lastmod>
             <changefreq>weekly</changefreq>
           </url>
         `;
