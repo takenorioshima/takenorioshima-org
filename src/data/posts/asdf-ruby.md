@@ -28,7 +28,7 @@ Node.js・Ruby・PHP...いろいろな開発言語のバージョン切り替え
 asdf version 0.16.7
 ```
 
-## asdf の読み込み
+## asdf の Shims のパスを追加
 
 ~/.zshrc に Shims ディレクトリのパスを追加しておきます。
 

@@ -1,109 +1,126 @@
 ---
 title: "asdf で Node.js をインストールする"
 excerpt: "Node.js・Ruby・PHP...いろいろな開発言語のバージョン切り替えを一括管理できる大変便利な asdf 。理解を深めるため、asdf で Node.js をインストールする手順をまとめました。"
-date: "2023-01-02"
+date: "2023-01-02",
+modifiedDate: "2025-04-14
 tags: ["Programming"]
 ---
 
 Node.js・Ruby・PHP...いろいろな開発言語のバージョン切り替えを一括管理できる大変便利な env 系ツール、[asdf](https://asdf-vm.com/)。理解を深めるため、asdf で Node.js をインストールする手順をまとめました。
 
+## 環境
+
+- macOS 15.4
+- zsh
+
 ## GitHub から asdf を Clone
 
-Homebrew 経由でも導入できますが、公式のおすすめに従って`git clone`で導入します。現時点での最新リリースのタグ v0.11.3 を指定しています。
+公式のおすすめに従って Homebrew で導入します。
 
 ```sh
-❯ git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.11.3
+❯ brew install asdf
 ```
 
-## asdf の読み込み
-
-~/.zshrc に以下コマンドを追加します。fig を使っている場合は Dotfiles > Scripts に追加すると、一元管理できて良い感じがします。
+今回はバージョン 0.16.7 がインストールされました。
 
 ```sh
-. $HOME/.asdf/asdf.sh
+❯ asdf -v
+asdf version 0.16.7
 ```
 
-設定ファイルを再読み込みして、asdf のバージョンを確認してみます。
+## asdf の Shims のパスを追加
+
+~/.zshrc に Shims ディレクトリのパスを追加しておきます。
+
+```sh:~/.zshrc
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
+```
+
+## asdf で Node.js を管理できるようにプラグインをインストール
+
+asdf plugin add nodejs 
+
+[プラグインの公式リポジトリ](https://github.com/asdf-vm/asdf-nodejs)の案内に従って Node.js のプラグインをインストールします。
 
 ```sh
-# .zshrc に追加した場合
-❯ source .zshrc
-❯ asdf version
-  v0.11.3-0adc6c1
-```
+❯ asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
 
-```sh
-# fig の Scripts に追加した場合
-❯ fig source
-❯ asdf version
-  v0.11.3-0adc6c1
-```
-
-## asdf で Node.js を管理できるようにプラグインを追加
-
-の前に asdf プラグインが依存するパッケージを Homebrew でインストールします。
-
-```sh
-❯ brew install gpg gawk
-```
-
-Node.js のプラグインを asdf 追加して Shims を更新します。
-
-```sh
-❯ asdf plugin add nodejs
-❯ asdf reshim
-```
+# asdf のプラグイン一覧に nodejs が追加されたことを確認
+❯ asdf plugin list
+nodejs
 
 ## Node.js のインストール
 
-latest オプションをつけて、最新版をインストールしてみます。 19.8.1 がインストールされました。
+今回は 22.14.0 をインストールしてみます。
 
 ```sh
-❯ asdf install nodejs latest
+❯ asdf install nodejs 22.14.0
+
+## インストールされている nodejs のバージョンを確認
 ❯ asdf list nodejs
-  19.8.1
+  22.14.0
 ```
 
-インストール可能なバージョンは `asdf list all nodejs` で確認でき、バージョンを指定してインストールすることもできます。バージョン 18.15.0 を追加してみます。
+インストール可能なバージョンは `asdf list all nodejs` で確認もできます。
 
 ```sh
-❯ asdf install nodejs 18.15.0
+❯ asdf list all nodejs
+0.1.14
+0.1.15
+0.1.16
+0.1.17
+0.1.18
+...
+23.7.0
+23.8.0
+23.9.0
+23.10.0
+23.11.0
+```
+
+試しに別のバージョンも追加してみましょう。
+
+```sh
+❯ asdf install nodejs 20.19.0
+
+## インストールされている nodejs のバージョンを確認
 ❯ asdf list nodejs
-  19.8.1
-  18.15.0
+  20.19.0
+  22.14.0
 ```
 
 ## Node.js のバージョンを指定
 
-使用するバージョンをグローバルで指定してみたら、エラーが出てしまいました。
+グローバルでも・プロジェクト単位でも、バージョンの指定ができます。指定されているバージョンには * が付きます。
 
 ```sh
-❯ asdf global nodejs 18.15.0
-❯ tail: /Users/takenorioshima/.tool-versions: No such file or directory
-```
-
-グローバルのバージョン指定で参照される .tool-versions が存在しないため、エラーとなっているようです。ホームディレクトリに空の .tool-versions を作成します。
-
-```sh
-❯ touch ~/.tool-version
-```
-
-再度指定すると設定ができました。現在グローバルで指定されているバージョンは`asdf list nodejs`の一覧に`*`が付いていることで確認できます。
-
-```sh
-❯ asdf global nodejs 18.15.0
-❯ asdf list nodejs
- *18.15.0
-  19.8.1
+## グローバルなバージョン指定( ~/.tools-versions で指定 )
+❯ asdf set -u nodejs 20.19.0
 ❯ node -v
-v18.15.0
+ *20.19.0
+  22.14.0
+
+## プロジェクト単位のバージョン指定( 現在のディレクトリの .tools-versions で指定)
+❯ adsf set nodejs 22.14.0
+❯ node -v
+  20.19.0
+ *22.14.0
 ```
 
 ## Yarn を有効化する
 
+この状態で `yarn` すると、以下のエラーが表示されました。
+
+```sh
+❯ yarn
+No version is set for command yarn
+Consider adding one of the following versions in your config file at /Users/takenorioshima/Documents/GitHub/takenorioshima-org/.tool-versions
+nodejs 22.14.0
+```
+
 Node.js のバージョンが >= 16.10 の場合は、以下コマンドで `yarn` を有効化できました。簡単！
 
-```
+```sh
 ❯ corepack enable yarn
 ❯ asdf reshim
 ❯ yarn -v
