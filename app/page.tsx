@@ -1,6 +1,6 @@
 import { getAllPosts } from "./lib/api";
-import HeroPost from "../components/hero-post";
-import PostPreview from "../components/post-preview";
+import HeroPost from "@/components/hero-post";
+import PostPreview from "@/components/post-preview";
 
 export default async function Index() {
   const recentPosts = await getAllPosts();

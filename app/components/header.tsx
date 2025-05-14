@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { AUTHOR_PROFILES } from "../app/lib/constants";
+import { AUTHOR_PROFILES } from "@/lib/constants";
 import { usePathname } from "next/navigation";
 
 const Header = () => {

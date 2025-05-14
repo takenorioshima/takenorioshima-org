@@ -7,3 +7,8 @@ export type Post = {
   tags: string[] | null;
   content: string;
 };
+
+export interface CoverImage {
+  title: string;
+  slug: string;
+}

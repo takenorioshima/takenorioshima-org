@@ -1,9 +1,9 @@
 import { SITE_NAME, AUTHOR_PROFILES, HOME_OG_IMAGE_URL } from "./lib/constants";
 import type { Metadata } from "next";
-import Header from "../components/header";
-import Footer from "../components/footer";
-import Container from "../components/container";
-import HeroUnit from "../components/hero-unit";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import Container from "@/components/container";
+import HeroUnit from "@/components/hero-unit";
 import "./globals.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "./prism.css";

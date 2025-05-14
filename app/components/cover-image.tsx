@@ -1,11 +1,7 @@
 import Image from "next-export-optimize-images/image";
+import CoverImageProps from "@/lib/types";
 
-type Props = {
-  title: string;
-  slug?: string;
-};
-
-const CoverImage = ({ title, slug }: Props) => {
+const CoverImage = ({ title, slug }: CoverImageProps) => {
   const image = (
     <Image
       src={"assets/posts/" + slug + "/cover.jpg"}
