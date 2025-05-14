@@ -18,6 +18,7 @@
     "@react-three/drei": "^10.0.7",
     "@react-three/fiber": "^9.1.2",
     "@tailwindcss/postcss": "^4.1.6",
+    "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
@@ -28,6 +29,7 @@
     "gray-matter": "^4.0.3",
     "next-export-optimize-images": "^4.6.2",
     "next-mdx-remote": "^5.0.0",
+    "postcss": "^8.5.3",
     "tailwindcss": "^4.1.6",
     "tocbot": "^4.36.3",
     "typescript": "^5"

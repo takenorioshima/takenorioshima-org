@@ -1,12 +1,11 @@
 import { SITE_NAME, AUTHOR_PROFILES, HOME_OG_IMAGE_URL } from "./lib/constants";
+import "./globals.css";
+import "./prism.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
 import type { Metadata } from "next";
 import Header from "@/components/header";
+import LayoutWrapper from "@/components/layout-wrapper";
 import Footer from "@/components/footer";
-import Container from "@/components/container";
-import HeroUnit from "@/components/hero-unit";
-import "./globals.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
-import "./prism.css";
 
 export const metadata: Metadata = {
   title: SITE_NAME,
@@ -18,12 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ja">
       <body>
         <Header />
-        <div className="min-h-screen">
-          <main>
-            <HeroUnit />
-            {children}
-          </main>
-        </div>
+        <LayoutWrapper>{children}</LayoutWrapper>
         <Footer />
       </body>
     </html>
