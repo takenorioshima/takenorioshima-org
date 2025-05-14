@@ -1,5 +1,6 @@
 import { getAllPosts } from "./lib/api";
 import HeroPost from "@/components/hero-post";
+import Container from "./components/container";
 import PostPreview from "@/components/post-preview";
 
 export default async function Index() {
@@ -8,7 +9,7 @@ export default async function Index() {
   const morePosts = recentPosts.slice(1);
 
   return (
-    <div className="container">
+    <Container>
       <h2 className="text-2xl font-bold tracking-tighter md:pr-8">
         <i className="bi-journals"></i> 最近の投稿
       </h2>
@@ -28,6 +29,6 @@ export default async function Index() {
           ))}
         </div>
       </section>
-    </div>
+    </Container>
   );
 }

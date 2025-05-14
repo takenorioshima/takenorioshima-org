@@ -3,12 +3,7 @@ export type Post = {
   title: string;
   excerpt?: string;
   date: string;
-  coverImage: string | null;
+  modifiedDate?: string;
   tags: string[] | null;
   content: string;
 };
-
-export interface CoverImage {
-  title: string;
-  slug: string;
-}

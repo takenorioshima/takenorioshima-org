@@ -1,11 +1,6 @@
 import type { NextConfig } from "next";
 import withExportImages from "next-export-optimize-images";
 
-const nextConfig: NextConfig = {
-  /* config options here */
-};
+const nextConfig: NextConfig = {};
 
-export default withExportImages({
-  nextConfig,
-  output: "export",
-});
+export default withExportImages(nextConfig);

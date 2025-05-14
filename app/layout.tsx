@@ -21,7 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="min-h-screen">
           <main>
             <HeroUnit />
-            <Container children={children} />
+            {children}
           </main>
         </div>
         <Footer />
