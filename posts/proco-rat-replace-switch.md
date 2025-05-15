@@ -11,7 +11,7 @@ tags: ["music"]
 
 スイッチを押してもカチッとならず、エフェクトの ON / OFF が切り替わらない。
 
-<video controls autoplay loop muted src="/assets/posts/proco-rat-replace-switch/problem_hd.mov" type="video/mp4">
+<video controls autoplay loop muted src="/images/proco-rat-replace-switch/problem_hd.mov" type="video/mp4">
 Sorry, your browser doesn't support embedded videos.
 </video>
 
@@ -19,29 +19,29 @@ Sorry, your browser doesn't support embedded videos.
 
 つまみやナット類を外し、基板を取り外します。時期によって様々なバリエーションがある ProCo Rat2。わたしの個体はこのような PCB・部品配置となっていました、の記録。部品が取り付けられていないパターンがあったり(R16)、パターン面に「CAPTAIN IS SMILING」の文字があったり、眺めて楽しむことができます 😀
 
-![pcb-front](/assets/posts/proco-rat-replace-switch/pcb-front.jpg)
-![pcb-back](/assets/posts/proco-rat-replace-switch/pcb-back.jpg)
+![pcb-front](/images/proco-rat-replace-switch/pcb-front.jpg)
+![pcb-back](/images/proco-rat-replace-switch/pcb-back.jpg)
 
 オリジナルのスイッチは Carling の X ウイングのものが使われていました。基板にナット止めという、独特な固定方法でした。配線を記録し、取り外します。
 
-![broken-switch](/assets/posts/proco-rat-replace-switch/broken-switch.jpg)
+![broken-switch](/images/proco-rat-replace-switch/broken-switch.jpg)
 
 ## 交換するスイッチ
 
 今回は部品箱にストックのあった、Alpha の DPDT(双極双投)・オルタネイトなスイッチに交換します。左が取り外したオリジナルのスイッチ、右が交換するスイッチです。
 
-![switches](/assets/posts/proco-rat-replace-switch/switches.jpg)
+![switches](/images/proco-rat-replace-switch/switches.jpg)
 
 X ウイングなスイッチとのピン配置の比較です。このような配置で 2 回路(ピンクと緑)入っているので、対応するように配線します。
 
-![pins](/assets/posts/proco-rat-replace-switch/pins.png)
+![pins](/images/proco-rat-replace-switch/pins.png)
 
 ## 配線してケースに戻す
 
 趣味の錫メッキ線カクカク配線を行い、完成です。
 
-![solder](/assets/posts/proco-rat-replace-switch/solder.jpg)
+![solder](/images/proco-rat-replace-switch/solder.jpg)
 
 ケースにやさしく戻し、これからの活躍に期待します 🙂
 
-![done](/assets/posts/proco-rat-replace-switch/done.jpg)
+![done](/images/proco-rat-replace-switch/done.jpg)

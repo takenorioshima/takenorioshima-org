@@ -15,7 +15,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     <article className="mb-20">
       <PostHeader
         title={data.title}
-        coverImage={`/assets/posts/${data.slug}/cover.jpg`}
+        coverImage={`/images/${data.slug}/cover.jpg`}
         date={data.date}
         modifiedDate={data.modifiedDate}
       />

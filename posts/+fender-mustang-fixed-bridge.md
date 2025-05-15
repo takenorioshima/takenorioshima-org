@@ -1,7 +1,7 @@
 ---
 title: "Fender Mustang の Dynamic Vibrate を固めたい"
 excerpt: "使わぬなら・固めてしまおう・ダイナミックビブラート"
-coverImage: "/assets/posts/fender-mustang-fixed-bridge/cover.jpg"
+coverImage: "/images/fender-mustang-fixed-bridge/cover.jpg"
 date: "2022-12-28"
 tags: ["music"]
 ---

@@ -10,7 +10,7 @@ Next.js + Markdown なブログで、Tailwind の prose だけだと、`pre` 内
 
 ## やりたいこと
 
-![Before / After](/assets/posts/rehype-prism/before-after.png)
+![Before / After](/images/rehype-prism/before-after.png)
 
 ## rehype-prism-plus・rehype-code-titles の追加
 

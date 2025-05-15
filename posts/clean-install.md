@@ -104,11 +104,11 @@ Installing adobe-creative-cloud
 
 読みやすいターミナル、とっても肝要。デフォルトのさみしいターミナルに、
 
-![default](/assets/posts/clean-install/default.png)
+![default](/images/clean-install/default.png)
 
 Prezto を導入してこのように読みやすく。
 
-![pure](/assets/posts/clean-install/pure.png)
+![pure](/images/clean-install/pure.png)
 
 ## Prezto の導入
 
