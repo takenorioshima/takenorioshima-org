@@ -34,7 +34,7 @@ type GLTFResult = GLTF & {
 };
 
 export default function Model(props: JSX.IntrinsicElements["group"]) {
-  const { nodes, materials } = useGLTF("/assets/models/takenori.glb") as unknown as GLTFResult;
+  const { nodes, materials } = useGLTF("/models/takenori.glb") as unknown as GLTFResult;
 
   const takenoriRef = useRef(null);
   const headRef = useRef(null);
@@ -356,4 +356,4 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
   );
 }
 
-useGLTF.preload("/assets/models/takenori.glb");
+useGLTF.preload("/models/takenori.glb");

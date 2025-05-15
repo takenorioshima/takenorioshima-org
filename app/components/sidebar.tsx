@@ -24,7 +24,7 @@ const Sidebar = () => {
             <Image
               alt="Icon: Takenori Oshima"
               className="rounded-full block w-16 mr-2"
-              src="/assets/posts/authors/takenori.jpg"
+              src="/images/authors/takenori.jpg"
               width="96"
               height="96"
             />

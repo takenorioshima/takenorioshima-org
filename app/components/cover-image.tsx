@@ -8,7 +8,7 @@ type Props = {
 const CoverImage = ({ title, slug }: Props) => {
   const image = (
     <Image
-      src={"assets/posts/" + slug + "/cover.jpg"}
+      src={"images/" + slug + "/cover.jpg"}
       alt={`Cover Image for ${title}`}
       className={"w-full aspect-2/1 object-cover object-center"}
       width={1280}
