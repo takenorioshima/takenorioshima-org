@@ -12,7 +12,6 @@
     "next": "15.3.2",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "rehype-pretty-code": "^0.14.1",
     "shiki": "^3.4.1"
   },
   "devDependencies": {
@@ -31,6 +30,8 @@
     "gray-matter": "^4.0.3",
     "next-export-optimize-images": "^4.6.2",
     "postcss": "^8.5.3",
+    "rehype-code-titles": "^1.2.0",
+    "rehype-prism-plus": "^2.0.1",
     "rehype-stringify": "^10.0.1",
     "remark-parse": "^11.0.0",
     "remark-rehype": "^11.1.2",
