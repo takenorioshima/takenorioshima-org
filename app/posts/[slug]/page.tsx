@@ -1,27 +1,20 @@
 import { getAllPostSlugs, getPostBySlug } from "@/lib/api";
-import { MDXRemote } from "next-mdx-remote/rsc";
 import PostHeader from "@/components/post-header";
 import Container from "@/components/container";
 import Sidebar from "@/components/sidebar";
 import ShareButtons from "@/components/share-butttons";
 
-interface PostPageProps {
-  params: {
-    slug: string;
-  };
-}
-
-export default async function Page({ params }: PostPageProps) {
-  console.log(params);
-  const data = getPostBySlug(params.slug);
+export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const data = await getPostBySlug(slug);
 
   return (
     <article className="mb-20">
       <PostHeader
-        title={(await data).title}
-        coverImage={`/assets/posts/${(await data).slug}/cover.jpg`}
-        date={(await data).date}
-        modifiedDate={(await data).modifiedDate}
+        title={data.title}
+        coverImage={`/assets/posts/${data.slug}/cover.jpg`}
+        date={data.date}
+        modifiedDate={data.modifiedDate}
       />
       <Container>
         <div className="lg:grid grid-cols-7 gap-4">
@@ -34,9 +27,9 @@ export default async function Page({ params }: PostPageProps) {
                 prose-code:before:hidden prose-code:after:hidden
                 js-toc-content"
             >
-              <MDXRemote source={(await data).content} />
+              {data.content}
             </div>
-            <ShareButtons title={(await data).title} slug={(await data).slug} />
+            <ShareButtons title={data.title} slug={data.slug} />
           </div>
           <div className="lg:col-span-2 px-4">
             <Sidebar />
