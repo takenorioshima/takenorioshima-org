@@ -29,7 +29,6 @@ const getAllPosts = async (): Promise<Post[]> => {
         title: data.title,
         excerpt: data.excerpt,
         date: data.date,
-        coverImage: data.coverImage,
         tags: data.tags,
         content: content,
       };
