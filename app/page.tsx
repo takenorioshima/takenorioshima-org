@@ -14,13 +14,7 @@ export default async function Index() {
         <i className="bi-journals"></i> 最近の投稿
       </h2>
       {heroPost && (
-        <HeroPost
-          title={heroPost.title}
-          coverImage={heroPost.coverImage}
-          date={heroPost.date}
-          slug={heroPost.slug}
-          excerpt={heroPost.excerpt}
-        />
+        <HeroPost title={heroPost.title} date={heroPost.date} slug={heroPost.slug} excerpt={heroPost.excerpt} />
       )}
       <section>
         <div className="grid grid-cols-1 lg:grid-cols-6 gap-y-5 lg:gap-10">
