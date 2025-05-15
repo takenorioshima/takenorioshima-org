@@ -38,7 +38,7 @@ const getAllPosts = async (): Promise<Post[]> => {
 };
 
 const getPostBySlug = async (slug: string): Promise<Post> => {
-  const markdown = fs.readFileSync(`${postsDirectory}/${slug}.mdx`, "utf8");
+  const markdown = fs.readFileSync(`${postsDirectory}/${slug}.md`, "utf8");
 
   const { data, content } = matter(markdown);
   return {
