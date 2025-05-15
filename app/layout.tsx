@@ -1,6 +1,5 @@
 import { SITE_NAME, AUTHOR_PROFILES, HOME_OG_IMAGE_URL } from "./lib/constants";
-import "./globals.css";
-import "./prism.css";
+import "./css/globals.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import type { Metadata } from "next";
 import Header from "@/components/header";
