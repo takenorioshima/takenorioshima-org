@@ -10,7 +10,7 @@ const postsDirectory = join(process.cwd(), "posts");
 const getAllPostSlugs = async (): Promise<string[]> => {
   const filenames = fs.readdirSync(postsDirectory);
   return filenames.map((path) => {
-    const slug = path.replace(/\.mdx?$/, "");
+    const slug = path.replace(/\.md?$/, "");
     return slug;
   });
 };
@@ -18,13 +18,14 @@ const getAllPostSlugs = async (): Promise<string[]> => {
 // Get all post data.
 const getAllPosts = async (): Promise<Post[]> => {
   const filenames = fs.readdirSync(postsDirectory);
-  const posts = filenames
+  return filenames
+    .filter((filename) => !/^\+.*\.md$/.test(filename))
     .map((filename) => {
       const filePath = join(postsDirectory, filename);
       const fileContent = fs.readFileSync(filePath);
       const { data, content } = matter(fileContent);
       return {
-        slug: filename.replace(/\.mdx$/, ""),
+        slug: filename.replace(/\.md$/, ""),
         title: data.title,
         excerpt: data.excerpt,
         date: data.date,
@@ -33,24 +34,21 @@ const getAllPosts = async (): Promise<Post[]> => {
         content: content,
       };
     })
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
-  return posts;
+    .sort((a, b) => (a.date > b.date ? -1 : 1));
 };
 
 const getPostBySlug = async (slug: string): Promise<Post> => {
   const markdown = fs.readFileSync(`${postsDirectory}/${slug}.mdx`, "utf8");
 
   const { data, content } = matter(markdown);
-  const post = {
+  return {
     slug: slug,
     title: data.title,
     excerpt: data.excerpt,
     date: data.date,
-    coverImage: data.coverImage,
     tags: data.tags,
     content: content,
   };
-  return post;
 };
 
 export { getAllPostSlugs, getAllPosts, getPostBySlug };
