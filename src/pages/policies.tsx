@@ -16,7 +16,7 @@ export default function Policies() {
           <h2 className="text-2xl font-bold text-center tracking-tighter md:pr-8 py-10 mt-20">
             <i className="bi bi-shield-lock-fill"></i> プライバシーポリシー
           </h2>
-          <div className=" max-w-75 mx-auto prose prose-h2:font-semibold prose-p:leading-7 prose-code:before:hidden prose-code:after:hidden mb-20">
+          <div className="mx-auto prose prose-h2:font-semibold prose-p:leading-7 prose-code:before:hidden prose-code:after:hidden mb-20">
             <h3 className="mt-18 mb-5">Google Analytics について</h3>
             <p>
               当Webサイトではアクセスログの収集・分析に Google Analytics を使用しています。Google Analytics
