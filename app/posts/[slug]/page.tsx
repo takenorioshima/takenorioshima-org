@@ -3,10 +3,13 @@ import PostHeader from "@/components/post-header";
 import Container from "@/components/container";
 import Sidebar from "@/components/sidebar";
 import ShareButtons from "@/components/share-butttons";
+import markdownToHtml from "@/lib/markdown-to-html";
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const data = await getPostBySlug(slug);
+
+  const content = await markdownToHtml(data.content || "");
 
   return (
     <article className="mb-20">
@@ -26,9 +29,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                 prose-p:leading-7
                 prose-code:before:hidden prose-code:after:hidden
                 js-toc-content"
-            >
-              {data.content}
-            </div>
+              dangerouslySetInnerHTML={{ __html: content }}
+            ></div>
             <ShareButtons title={data.title} slug={data.slug} />
           </div>
           <div className="lg:col-span-2 px-4">
