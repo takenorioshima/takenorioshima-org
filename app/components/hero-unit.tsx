@@ -31,7 +31,7 @@ export default function HeroUnit() {
   }, []);
 
   return (
-    <div id="hero-unit" className="hero-unit overflow-hidden">
+    <div id="hero-unit" className="hero-unit overflow-hidden js-header-trigger">
       <div className="relative flex items-center justify-center w-full h-full z-10">
         <div className="flip-titles-container parsed-content">
           <p>大島武宜は</p>

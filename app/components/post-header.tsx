@@ -12,7 +12,7 @@ type Props = {
 
 const PostHeader = ({ title, coverImage, date, modifiedDate }: Props) => {
   return (
-    <div className="post-header relative flex items-center md:min-h-[500px] pt-12">
+    <div className="post-header relative flex items-center md:min-h-[500px] pt-12 js-header-trigger">
       <div className="absolute top-0 left-0 w-full h-full -z-10">
         <Image
           src={coverImage}
