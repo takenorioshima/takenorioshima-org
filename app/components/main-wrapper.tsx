@@ -4,18 +4,11 @@ import { usePathname } from "next/navigation";
 import HeroUnit from "@/components/hero-unit";
 import { useEffect } from "react";
 
-export default function ClientLayoutWrapper({ children }: { children: React.ReactNode }) {
+export default function MainWrapper({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
   const isHome = pathname === "/";
 
   useEffect(() => {
-    if (window.instgrm) {
-      window.instgrm.Embeds.process();
-    }
-    if (window.twttr) {
-      window.twttr.widgets.load();
-    }
-
     // Observe page-header visibility, change background color of global header.
     const globalNav = document.querySelector(".global-nav");
     const options = {

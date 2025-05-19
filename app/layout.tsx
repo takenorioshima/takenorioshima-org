@@ -3,7 +3,8 @@ import "./css/globals.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import type { Metadata } from "next";
 import Header from "@/components/header";
-import LayoutWrapper from "@/components/layout-wrapper";
+import MainWrapper from "@/components/main-wrapper";
+import EmbedScripts from "@/components/embed-scripts";
 import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
@@ -16,7 +17,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="ja">
       <body>
         <Header />
-        <LayoutWrapper>{children}</LayoutWrapper>
+        <MainWrapper>{children}</MainWrapper>
+        <EmbedScripts />
         <Footer />
       </body>
     </html>
