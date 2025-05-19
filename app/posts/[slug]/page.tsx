@@ -1,24 +1,42 @@
 import { getAllPostSlugs, getPostBySlug } from "@/lib/api";
-import PostHeader from "@/components/post-header";
 import Container from "@/components/container";
 import Sidebar from "@/components/sidebar";
 import ShareButtons from "@/components/share-butttons";
 import markdownToHtml from "@/lib/markdown-to-html";
+import Image from "next-export-optimize-images/image";
+import DateFormatter from "@/components/date-formatter";
+import PostHeaderToc from "@/components/post-header-toc";
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const data = await getPostBySlug(slug);
 
+  const coverImage = `/images/${data.slug}/cover.jpg`;
+
   const content = await markdownToHtml(data.content || "");
 
   return (
     <article className="mb-20">
-      <PostHeader
-        title={data.title}
-        coverImage={`/images/${data.slug}/cover.jpg`}
-        date={data.date}
-        modifiedDate={data.modifiedDate}
-      />
+      <div className="post-header relative flex items-center md:min-h-[500px] pt-12 js-header-trigger">
+        <div className="absolute top-0 left-0 w-full h-full -z-10">
+          <Image
+            src={coverImage}
+            alt={`Cover Image for ${data.title}`}
+            className="block w-full h-full object-cover object-center"
+            title={data.title}
+            fill
+          />
+        </div>
+        <div className="container max-w-(--breakpoint-lg) mx-auto flex flex-col h-full justify-center px-4 py-12">
+          <h1 className="text-white text-4xl md:text-7xl lg:text-7xl font-semibold tracking-tighter leading-tight mb-12 md:text-left">
+            {data.title}
+          </h1>
+          <div className="flex justify-between relative">
+            <DateFormatter dateString={data.date} modifiedDateString={data.modifiedDate} className="text-white" />
+            <PostHeaderToc />
+          </div>
+        </div>
+      </div>
       <Container>
         <div className="lg:grid grid-cols-7 gap-4">
           <div className="lg:col-span-5 mb-20 lg:mb-0">
