@@ -9,6 +9,12 @@ export default function MainWrapper({ children }: { children: React.ReactNode })
   const isHome = pathname === "/";
 
   useEffect(() => {
+    // Scroll to top on page loaded
+    if ("scrollRestoration" in history) {
+      history.scrollRestoration = "manual";
+      window.scrollTo(0, 0);
+    }
+
     // Observe page-header visibility, change background color of global header.
     const globalNav = document.querySelector(".global-nav");
     const options = {
