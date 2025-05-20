@@ -8,7 +8,10 @@ import EmbedScripts from "@/components/embed-scripts";
 import Footer from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: SITE_NAME,
+  title: {
+    template: "%s - " + SITE_NAME,
+    default: SITE_NAME, // a default is required when creating a template
+  },
   description: AUTHOR_PROFILES.description,
   openGraph: {
     images: ["/images/ogp.png"],
