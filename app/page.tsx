@@ -19,7 +19,7 @@ export default async function Index() {
       <section>
         <div className="grid grid-cols-1 lg:grid-cols-6 gap-y-5 lg:gap-10">
           {morePosts.map((post, index) => (
-            <PostPreview key={post.slug} post={post} />
+            <PostPreview key={post.slug} post={post} index={index} />
           ))}
         </div>
       </section>
