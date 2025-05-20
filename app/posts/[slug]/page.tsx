@@ -1,5 +1,4 @@
 import { getAllPostSlugs, getPostBySlug } from "@/lib/api";
-import type { Metadata, ResolvingMetadata } from "next";
 import Container from "@/components/container";
 import Sidebar from "@/components/sidebar";
 import ShareButtons from "@/components/share-butttons";
