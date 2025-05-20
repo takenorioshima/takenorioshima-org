@@ -1,4 +1,5 @@
 import { getAllPostSlugs, getPostBySlug } from "@/lib/api";
+import type { Metadata, ResolvingMetadata } from "next";
 import Container from "@/components/container";
 import Sidebar from "@/components/sidebar";
 import ShareButtons from "@/components/share-butttons";
@@ -6,6 +7,19 @@ import markdownToHtml from "@/lib/markdown-to-html";
 import Image from "next-export-optimize-images/image";
 import DateFormatter from "@/components/date-formatter";
 import PostHeaderToc from "@/components/post-header-toc";
+
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const data = await getPostBySlug(slug);
+  const coverImage = `/images/${data.slug}/cover.jpg`;
+  return {
+    title: data.title,
+    description: data.excerpt,
+    openGraph: {
+      images: [coverImage],
+    },
+  };
+}
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;

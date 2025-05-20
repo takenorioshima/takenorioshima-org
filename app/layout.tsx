@@ -10,6 +10,9 @@ import Footer from "@/components/footer";
 export const metadata: Metadata = {
   title: SITE_NAME,
   description: AUTHOR_PROFILES.description,
+  openGraph: {
+    images: ["/images/ogp.png"],
+  },
   icons: {
     icon: [{ url: "/favicon.ico" }, { url: "/favicon.png", type: "image/png" }],
     apple: [{ url: "/apple-icon.png" }],
