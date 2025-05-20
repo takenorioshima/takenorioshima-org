@@ -4,6 +4,7 @@ import remarkRehype from "remark-rehype";
 import rehypeStringify from "rehype-stringify";
 import rehypePrism from "rehype-prism-plus";
 import rehypeRaw from "rehype-raw";
+import rehypeSlug from "rehype-slug";
 import rehypeCodeTitles from "rehype-code-titles";
 
 export default async function markdownToHtml(markdown: string) {
@@ -14,6 +15,7 @@ export default async function markdownToHtml(markdown: string) {
     .use(rehypeCodeTitles)
     .use(rehypePrism)
     .use(rehypeStringify)
+    .use(rehypeSlug)
     .process(markdown);
   return String(result);
 }

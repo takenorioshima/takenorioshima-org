@@ -2,8 +2,11 @@
 
 import { useEffect } from "react";
 import tocbot from "tocbot";
+import { usePathname } from "next/navigation";
 
 const PostHeaderToc = () => {
+  const pathname = usePathname();
+
   useEffect(() => {
     tocbot.init({
       // Where to render the table of contents.
@@ -11,7 +14,7 @@ const PostHeaderToc = () => {
       // Where to grab the headings to build the table of contents.
       contentSelector: ".js-toc-content",
       // Which headings to grab inside of the contentSelector element.
-      headingSelector: "h1, h2, h3",
+      headingSelector: "h2, h3",
       // For headings inside relative or absolute positioned containers within content.
       hasInnerContainers: true,
       headingsOffset: 60,
@@ -19,7 +22,7 @@ const PostHeaderToc = () => {
       tocScrollingWrapper: null,
     });
     return () => tocbot.destroy();
-  }, []);
+  }, [pathname]);
 
   function toggleToc() {
     const toc = document.querySelector(".js-header-toc");
