@@ -6,6 +6,7 @@ import Header from "@/components/header";
 import MainWrapper from "@/components/main-wrapper";
 import EmbedScripts from "@/components/embed-scripts";
 import Footer from "@/components/footer";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: {
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ja">
       <body>
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID as string} />
         <Header />
         <MainWrapper>{children}</MainWrapper>
         <EmbedScripts />
