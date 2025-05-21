@@ -2,16 +2,7 @@ import fs from "fs";
 import { join } from "path";
 import { POSTS_PER_PAGE } from "./constants";
 import matter from "gray-matter";
-
-type Props = {
-  slug: string;
-  title: string;
-  excerpt?: string;
-  date: string;
-  modifiedDate?: string;
-  tags: string[] | null;
-  content: string;
-};
+import { Post } from "./types";
 
 const postsDirectory = join(process.cwd(), "posts");
 
@@ -25,7 +16,7 @@ const getAllPostSlugs = async (): Promise<string[]> => {
 };
 
 // Get all post data.
-const getAllPosts = async (): Promise<Props[]> => {
+const getAllPosts = async (): Promise<Post[]> => {
   const filenames = fs.readdirSync(postsDirectory);
   return filenames
     .filter((filename) => !/^\+.*\.md$/.test(filename))
@@ -45,7 +36,7 @@ const getAllPosts = async (): Promise<Props[]> => {
     .sort((a, b) => (a.date > b.date ? -1 : 1));
 };
 
-const getPostBySlug = async (slug: string): Promise<Props> => {
+const getPostBySlug = async (slug: string): Promise<Post> => {
   const markdown = fs.readFileSync(`${postsDirectory}/${slug}.md`, "utf8");
 
   const { data, content } = matter(markdown);
