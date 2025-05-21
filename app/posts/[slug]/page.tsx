@@ -3,7 +3,7 @@ import Container from "@/components/container";
 import Sidebar from "@/components/sidebar";
 import ShareButtons from "@/components/share-butttons";
 import markdownToHtml from "@/lib/markdown-to-html";
-import Image from "next-export-optimize-images/image";
+import Image from "next/image";
 import DateFormatter from "@/components/date-formatter";
 import PostHeaderToc from "@/components/post-header-toc";
 

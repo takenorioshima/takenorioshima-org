@@ -1,4 +1,4 @@
-import Image from "next-export-optimize-images/image";
+import Image from "next/image";
 
 type Props = {
   title: string;
@@ -8,7 +8,7 @@ type Props = {
 const CoverImage = ({ title, slug }: Props) => {
   const image = (
     <Image
-      src={"images/" + slug + "/cover.jpg"}
+      src={"/images/" + slug + "/cover.jpg"}
       alt={`Cover Image for ${title}`}
       className={"w-full aspect-2/1 object-cover object-center"}
       width={1280}
