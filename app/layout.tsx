@@ -1,4 +1,4 @@
-import { SITE_NAME, AUTHOR_PROFILES, HOME_OG_IMAGE_URL } from "./lib/constants";
+import { SITE_NAME, AUTHOR_PROFILES } from "./lib/constants";
 import "./css/globals.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
 import type { Metadata } from "next";
