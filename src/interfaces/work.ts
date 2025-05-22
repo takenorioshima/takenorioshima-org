@@ -2,7 +2,7 @@ type Work = {
   slug: string;
   title: string;
   date: string;
-  tag?: string[];
+  tags?: string[];
   images?: string[];
 };
 
