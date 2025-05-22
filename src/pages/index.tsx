@@ -41,7 +41,6 @@ export default function Index({ recentPosts }: Props) {
           )}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
         </Container>
-        <Footer />
       </Layout>
     </>
   );
