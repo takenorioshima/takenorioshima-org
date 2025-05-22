@@ -26,7 +26,7 @@ const Header = () => {
 
   return (
     <div className={`${klass} global-nav fixed top-0 left-0 right-0 z-50`}>
-      <nav className="container max-w-(--breakpoint-lg) flex items-center justify-between mx-auto flex-nowrap p-3 h-12">
+      <nav className="container max-w-(--breakpoint-xl) flex items-center justify-between mx-auto flex-nowrap p-3 h-12">
         <Link href={"/"} prefetch={false} className="flex items-center mr-0">
           <svg
             xmlns="http://www.w3.org/2000/svg"
