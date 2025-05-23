@@ -1,5 +1,5 @@
 ---
-title: "宅間守 精神鑑定書――精神医療と刑事司法のはざまで"
+title: "サクッと！科学実験"
 images: ["cover.jpg", "obi.jpg", "hyoushi.jpg"]
 tags: ["ブックデザイン"]
 ---

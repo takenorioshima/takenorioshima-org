@@ -1,5 +1,5 @@
 ---
-title: "宅間守 精神鑑定書――精神医療と刑事司法のはざまで"
+title: "治療のわな"
 images: ["cover.jpg", "obi.jpg", "hyoushi.jpg"]
 tags: ["ブックデザイン"]
 ---
