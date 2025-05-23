@@ -37,7 +37,7 @@ export default function Works({ works }: Props) {
       <Layout>
         <NextSeo />
         <Container>
-          <h2 className="text-5xl text-center font-bold tracking-tighter md:pr-8 my-20">
+          <h2 className="text-7xl text-center font-bold tracking-wider md:pr-8 my-20">
             <ruby>
               <span className="works-header-wrapper relative">
                 <span className="js-works-header-serve works-header active">仕</span>
