@@ -326,6 +326,16 @@ iframe[src*="youtube.com/embed"] {
   transform: perspective(100px) rotateY(-2deg) rotateZ(-5deg);
 }
 
+/* Works */
+.works-header {
+  display: inline-block;
+  transition: 0.2s;
+  transform: rotateX(0);
+}
+.works-header.active {
+  transform: rotateX(270deg);
+}
+
 /* Embla Carousel */
 .works-viewer {
   background: #eee;

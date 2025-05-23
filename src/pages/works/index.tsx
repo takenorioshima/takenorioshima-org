@@ -19,21 +19,39 @@ export const getStaticProps = async () => {
 };
 
 export default function Works({ works }: Props) {
-  useEffect(() => {}, []);
+  useEffect(() => {
+    const headerServe = document.querySelector(".js-works-header-serve");
+    const headerPrivate = document.querySelector(".js-works-header-private");
+
+    setInterval(flipTitle, 1000);
+
+    function flipTitle() {
+      if (!headerServe || !headerPrivate) return;
+      headerServe.classList.toggle("active");
+      headerPrivate.classList.toggle("active");
+    }
+  }, []);
 
   return (
     <>
       <Layout>
         <NextSeo />
         <Container>
-          <h2 className="text-2xl font-bold tracking-tighter md:pr-8">
-            <i className="bi-journals"></i> Works
+          <h2 className="text-5xl text-center font-bold tracking-tighter md:pr-8 my-20">
+            <ruby>
+              <span className="works-header-wrapper relative">
+                <span className="js-works-header-serve works-header active">仕</span>
+                <span className="absolute left-0 js-works-header-private works-header">私</span>
+              </span>
+              事<rt>しごと</rt>
+            </ruby>
           </h2>
-          {works.map((work) => (
-            <WorkPreview title={work.title} slug={work.slug} key={work.slug} />
-          ))}
+          <div className="grid grid-cols-1 lg:grid-cols-6 gap-y-5 lg:gap-10">
+            {works.map((work) => (
+              <WorkPreview title={work.title} slug={work.slug} key={work.slug} images={work.images} tags={work.tags} />
+            ))}
+          </div>
         </Container>
-        <Footer />
       </Layout>
     </>
   );
