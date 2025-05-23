@@ -11,6 +11,8 @@ const Header = () => {
     klass = "page";
   } else if (router.pathname.includes("/posts/[slug]")) {
     klass = "post";
+  } else if (router.pathname.includes("/works")) {
+    klass = "work";
   }
 
   const links = AUTHOR_PROFILES.links;

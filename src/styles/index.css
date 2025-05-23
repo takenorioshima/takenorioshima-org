@@ -28,6 +28,7 @@ body.home {
 .global-nav.home,
 .global-nav.posts,
 .global-nav.page,
+.global-nav.work,
 .global-nav.policies,
 .global-nav.is-scrolled {
   color: black;
@@ -42,6 +43,7 @@ body.home {
 .global-nav.home .logo-o,
 .global-nav.posts .logo-o,
 .global-nav.page .logo-o,
+.global-nav.work .logo-o,
 .global-nav.policies .logo-o,
 .global-nav.is-scrolled .logo-o {
   fill: black;

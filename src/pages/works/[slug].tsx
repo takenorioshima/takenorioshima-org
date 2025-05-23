@@ -30,11 +30,10 @@ export default function Work({ work }: Props) {
             </h1>
           </div>
           {work.tags && (
-            <div className="text-right text-slate-700 text-sm">
-              <i className="bi bi-tag mr-1"></i>
-              {work.tags.map((tag) => {
-                return tag;
-              })}
+            <div className="text-right">
+              {work.tags.map((tag) => (
+                <span className="inline-block rounded bg-slate-300 p-1 px-2 text-xs">{tag}</span>
+              ))}
             </div>
           )}
         </div>
