@@ -4,7 +4,9 @@ type Work = {
   date: string;
   tags?: string[];
   images: string[];
+  cover?: string;
   youtube?: string;
+  appleMusic?: string;
 };
 
 export default Work;

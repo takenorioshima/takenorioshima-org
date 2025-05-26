@@ -6,6 +6,7 @@ import Layout from "../../components/layouts/default";
 import { getWorkBySlug, getAllWorks } from "../../lib/works";
 import WorkViewer from "../../components/work-viewer";
 import YoutubeEmbed from "../../components/youtube-embed";
+import AppleMusicEmbed from "../../components/apple-music-embed";
 import { flipWorksHeader } from "../../lib/flipWorksHeader";
 import { useEffect } from "react";
 
@@ -54,8 +55,9 @@ export default function Work({ work }: Props) {
 
       <div className="overflow-hidden">
         <div className="container max-w-(--breakpoint-xl) mx-auto">
-          {work.images && !work.youtube && <WorkViewer slug={work.slug} images={work.images} />}
+          {work.images && !work.youtube && !work.appleMusic && <WorkViewer slug={work.slug} images={work.images} />}
           {work.youtube && <YoutubeEmbed id={work.youtube} />}
+          {work.appleMusic && <AppleMusicEmbed id={work.appleMusic} />}
         </div>
       </div>
     </Layout>
