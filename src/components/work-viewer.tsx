@@ -20,6 +20,8 @@ export default function WorkViewer({ slug, images }: Props) {
     }
   }, [emblaApi]);
 
+  const hasMultipleImage = images.length > 1 ? true : false;
+
   return (
     <section className="p-10">
       <div className="embla" ref={emblaRef}>
@@ -35,12 +37,14 @@ export default function WorkViewer({ slug, images }: Props) {
             </div>
           ))}
         </div>
-        <div className="embla__controls">
-          <div className="embla__buttons">
-            <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-            <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+        {hasMultipleImage && (
+          <div className="embla__controls">
+            <div className="embla__buttons">
+              <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
+              <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
