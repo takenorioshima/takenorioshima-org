@@ -1,5 +1,6 @@
 ---
 title: "治療のわな"
-images: ["cover.jpg", "obi.jpg", "hyoushi.jpg"]
+cover: "cover.jpg"
+images: ["h1.jpg", "cover.jpg", "obi.jpg", "hyoushi.jpg"]
 tags: ["ブックデザイン"]
 ---
