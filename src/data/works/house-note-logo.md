@@ -1,5 +1,5 @@
 ---
 title: "株式会社ハウスノート ロゴ"
-images: ["cover.jpg"]
+images: ["cover.png"]
 tags: ["ロゴデザイン"]
 ---

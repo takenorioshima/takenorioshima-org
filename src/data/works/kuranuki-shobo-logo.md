@@ -1,5 +1,6 @@
 ---
 title: "倉貫書房 ロゴ"
-images: ["cover.png"]
+images: ["logo.png", "logos.png"]
+cover: "cover.png"
 tags: ["ロゴデザイン"]
 ---
