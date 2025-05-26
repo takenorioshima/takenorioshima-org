@@ -3,7 +3,6 @@ import ErrorPage from "next/error";
 import { useRouter } from "next/router";
 import { SITE_NAME } from "../../lib/constants";
 import Layout from "../../components/layouts/default";
-import Container from "../../components/container";
 import { getWorkBySlug, getAllWorks } from "../../lib/works";
 import WorkViewer from "../../components/work-viewer";
 
@@ -21,7 +20,7 @@ export default function Work({ work }: Props) {
 
   return (
     <Layout>
-      <Container>
+      <div className="container max-w-(--breakpoint-xl) mx-auto mt-20 px-3">
         <div className="py-5 border-b border-slate-300 flex items-center place-content-between">
           <div>
             <div className="mb-2">しごと</div>
@@ -37,8 +36,13 @@ export default function Work({ work }: Props) {
             </div>
           )}
         </div>
-        {work.images && <WorkViewer slug={work.slug} images={work.images} />}
-      </Container>
+      </div>
+
+      <div className="overflow-hidden">
+        <div className="container max-w-(--breakpoint-xl) mx-auto">
+          {work.images && <WorkViewer slug={work.slug} images={work.images} />}
+        </div>
+      </div>
     </Layout>
   );
 }
