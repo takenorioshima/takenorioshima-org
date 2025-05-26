@@ -43,9 +43,9 @@ export default function Work({ work }: Props) {
             </h1>
           </div>
           {work.tags && (
-            <div className="text-right">
+            <div className="text-right text-nowrap">
               {work.tags.map((tag) => (
-                <span className="inline-block rounded bg-slate-300 p-1 px-2 text-xs">{tag}</span>
+                <span className="inline-block rounded bg-slate-300 p-1 px-2 text-xs mr-1">{tag}</span>
               ))}
             </div>
           )}
