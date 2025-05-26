@@ -20,10 +20,15 @@ export default function Work({ work }: Props) {
 
   return (
     <Layout>
-      <div className="container max-w-(--breakpoint-xl) mx-auto mt-20 px-3">
-        <div className="py-5 border-b border-slate-300 flex items-center place-content-between">
+      <div className="container max-w-(--breakpoint-xl) mx-auto px-3">
+        <div className="pt-20 border-b border-slate-300 flex items-center place-content-between">
           <div>
-            <div className="mb-2">しごと</div>
+            <div className="mb-2">
+              わたしの
+              <ruby>
+                仕事・私事<rt>しごと</rt>
+              </ruby>
+            </div>
             <h1 className="text-4xl md:text-5xl lg:text-5xl font-semibold tracking-tighter leading-tight mb-6 md:text-left">
               {work.title}
             </h1>

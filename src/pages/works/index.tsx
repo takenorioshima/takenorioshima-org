@@ -36,8 +36,8 @@ export default function Works({ works }: Props) {
     <>
       <Layout>
         <NextSeo />
-        <Container>
-          <h2 className="text-5xl md:text-7xl text-center my-20">
+        <div className="container max-w-(--breakpoint-xl) mx-auto px-4">
+          <h2 className="text-5xl md:text-7xl text-center pt-30">
             わたしの
             <ruby className="font-bold tracking-wider relative">
               <span className="works-header-wrapper relative">
@@ -47,12 +47,12 @@ export default function Works({ works }: Props) {
               事<rt className="font-light">しごと</rt>
             </ruby>
           </h2>
-          <div className="grid grid-cols-1 lg:grid-cols-6 gap-y-5 lg:gap-10">
+          <div className="grid grid-cols-1 lg:grid-cols-6 gap-y-5 lg:gap-10 py-20">
             {works.map((work) => (
               <WorkPreview title={work.title} slug={work.slug} key={work.slug} images={work.images} tags={work.tags} />
             ))}
           </div>
-        </Container>
+        </div>
       </Layout>
     </>
   );
