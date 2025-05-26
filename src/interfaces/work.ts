@@ -3,7 +3,7 @@ type Work = {
   title: string;
   date: string;
   tags?: string[];
-  images?: string[];
+  images: string[];
   youtube?: string;
 };
 
