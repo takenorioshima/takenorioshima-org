@@ -37,13 +37,14 @@ export default function Works({ works }: Props) {
       <Layout>
         <NextSeo />
         <Container>
-          <h2 className="text-7xl text-center font-bold tracking-wider md:pr-8 my-20">
-            <ruby>
+          <h2 className="text-5xl md:text-7xl text-center my-20">
+            わたしの
+            <ruby className="font-bold tracking-wider relative">
               <span className="works-header-wrapper relative">
                 <span className="js-works-header-serve works-header active">仕</span>
                 <span className="absolute left-0 js-works-header-private works-header">私</span>
               </span>
-              事<rt>しごと</rt>
+              事<rt className="font-light">しごと</rt>
             </ruby>
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-6 gap-y-5 lg:gap-10">
