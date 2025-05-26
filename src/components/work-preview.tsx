@@ -1,14 +1,8 @@
 import Link from "next/link";
 import Image from "next-export-optimize-images/image";
+import Work from "../interfaces/work";
 
-type Props = {
-  title: string;
-  slug: string;
-  images: string[];
-  tags?: string[];
-};
-
-const WorkPreview = ({ title, slug, images, tags }: Props) => {
+const WorkPreview = ({ title, slug, images, tags, youtube }: Work) => {
   return (
     <Link
       as={`/works/${slug}`}
