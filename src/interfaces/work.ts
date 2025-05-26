@@ -4,6 +4,7 @@ type Work = {
   date: string;
   tags?: string[];
   images?: string[];
+  youtube?: string;
 };
 
 export default Work;
