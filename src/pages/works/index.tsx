@@ -50,6 +50,7 @@ export default function Works({ works }: Props) {
                 date={work.date}
                 tags={work.tags}
                 youtube={work.youtube}
+                appleMusic={work.appleMusic}
               />
             ))}
           </div>
