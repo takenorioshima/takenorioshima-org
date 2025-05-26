@@ -4,7 +4,7 @@ import Image from "next-export-optimize-images/image";
 type Props = {
   title: string;
   slug: string;
-  images?: string[];
+  images: string[];
   tags?: string[];
 };
 
@@ -16,7 +16,7 @@ const WorkPreview = ({ title, slug, images, tags }: Props) => {
       className={`col-span-2 rounded-lg bg-white overflow-hidden drop-shadow-sm hover:shadow-xl transition-shadow duration-200`}
     >
       <Image
-        src={"/assets/works/" + slug + "/cover.jpg"}
+        src={`/assets/works/${slug}/${images[0]}`}
         alt={`Cover Image for ${slug}`}
         className={"aspect-square w-full object-cover object-center"}
         width={1200}
