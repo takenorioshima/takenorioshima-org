@@ -17,7 +17,10 @@ const WorkPreview = ({ title, slug, images, tags, youtube }: Work) => {
         height={1200}
       />
       <div className="p-5">
-        <h3 className="text-xl font-semibold leading-tight mb-3">{title}</h3>
+        <h3 className="text-xl font-semibold leading-tight mb-3">
+          {youtube && <i className="bi bi-play-circle-fill mr-1" />}
+          {title}
+        </h3>
         {tags &&
           tags.map((tag) => <span className="inline-block rounded bg-slate-300 p-1 px-2 text-xs mr-1">{tag}</span>)}
       </div>

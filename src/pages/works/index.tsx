@@ -41,7 +41,14 @@ export default function Works({ works }: Props) {
           </h2>
           <div className="grid grid-cols-1 lg:grid-cols-6 gap-y-5 lg:gap-10 py-20">
             {works.map((work) => (
-              <WorkPreview title={work.title} slug={work.slug} key={work.slug} images={work.images} tags={work.tags} />
+              <WorkPreview
+                title={work.title}
+                slug={work.slug}
+                key={work.slug}
+                images={work.images}
+                tags={work.tags}
+                youtube={work.youtube}
+              />
             ))}
           </div>
         </div>
