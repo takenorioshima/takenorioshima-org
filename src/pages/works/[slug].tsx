@@ -5,6 +5,8 @@ import { SITE_NAME } from "../../lib/constants";
 import Layout from "../../components/layouts/default";
 import { getWorkBySlug, getAllWorks } from "../../lib/works";
 import WorkViewer from "../../components/work-viewer";
+import { flipWorksHeader } from "../../lib/flipWorksHeader";
+import { useEffect } from "react";
 
 type Props = {
   work: WorkType;
@@ -16,6 +18,8 @@ export default function Work({ work }: Props) {
     return <ErrorPage statusCode={404} />;
   }
 
+  useEffect(() => flipWorksHeader(), [router.asPath]);
+
   const title = `${work.title} - ${SITE_NAME}`;
 
   return (
@@ -25,8 +29,12 @@ export default function Work({ work }: Props) {
           <div>
             <div className="mb-2">
               わたしの
-              <ruby>
-                仕事・私事<rt>しごと</rt>
+              <ruby className="font-bold tracking-wider relative">
+                <span className="works-header-wrapper relative">
+                  <span className="js-works-header-serve works-header active">仕</span>
+                  <span className="absolute left-0 js-works-header-private works-header">私</span>
+                </span>
+                事<rt className="font-light">しごと</rt>
               </ruby>
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-5xl font-semibold tracking-tighter leading-tight mb-6 md:text-left">

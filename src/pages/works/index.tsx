@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { getAllWorks } from "../../lib/works";
 import Work from "../../interfaces/work";
 import WorkPreview from "../../components/work-preview";
+import { flipWorksHeader } from "../../lib/flipWorksHeader";
 
 type Props = {
   works: Work[];
@@ -20,16 +21,7 @@ export const getStaticProps = async () => {
 
 export default function Works({ works }: Props) {
   useEffect(() => {
-    const headerServe = document.querySelector(".js-works-header-serve");
-    const headerPrivate = document.querySelector(".js-works-header-private");
-
-    setInterval(flipTitle, 1000);
-
-    function flipTitle() {
-      if (!headerServe || !headerPrivate) return;
-      headerServe.classList.toggle("active");
-      headerPrivate.classList.toggle("active");
-    }
+    flipWorksHeader();
   }, []);
 
   return (
