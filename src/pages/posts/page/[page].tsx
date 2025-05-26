@@ -1,6 +1,6 @@
 import { getAllPosts } from "../../../lib/api";
 import type Post from "../../../interfaces/post";
-import Layout from "../../../components/layouts/posts";
+import Layout from "../../../components/layouts/default";
 import { NextSeo } from "next-seo";
 import Container from "../../../components/container";
 import MoreStories from "../../../components/more-stories";
