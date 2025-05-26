@@ -45,7 +45,9 @@ export default function Works({ works }: Props) {
                 title={work.title}
                 slug={work.slug}
                 key={work.slug}
+                cover={work.cover}
                 images={work.images}
+                date={work.date}
                 tags={work.tags}
                 youtube={work.youtube}
               />

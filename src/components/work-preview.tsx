@@ -2,7 +2,8 @@ import Link from "next/link";
 import Image from "next-export-optimize-images/image";
 import Work from "../interfaces/work";
 
-const WorkPreview = ({ title, slug, images, tags, youtube }: Work) => {
+const WorkPreview = ({ title, slug, images, tags, youtube, cover }: Work) => {
+  const imageFile = cover ? cover : images[0];
   return (
     <Link
       as={`/works/${slug}`}
@@ -10,7 +11,7 @@ const WorkPreview = ({ title, slug, images, tags, youtube }: Work) => {
       className={`col-span-2 rounded-lg bg-white overflow-hidden drop-shadow-sm hover:shadow-xl transition-shadow duration-200`}
     >
       <Image
-        src={`/assets/works/${slug}/${images[0]}`}
+        src={`/assets/works/${slug}/${imageFile}`}
         alt={`Cover Image for ${slug}`}
         className={"aspect-square w-full object-cover object-center"}
         width={1200}
