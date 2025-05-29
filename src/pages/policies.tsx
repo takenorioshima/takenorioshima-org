@@ -1,8 +1,8 @@
-import Layout from "../components/layouts/default";
-import { SITE_NAME, AUTHOR_PROFILES } from "../lib/constants";
+import Layout from "@/components/layouts/default";
+import { SITE_NAME, AUTHOR_PROFILES } from "@/lib/constants";
 import React, { Suspense } from "react";
 import Link from "next/link";
-import Container from "../components/container";
+import Container from "@/components/container";
 import { NextSeo } from "next-seo";
 
 export default function Policies() {

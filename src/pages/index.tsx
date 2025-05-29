@@ -1,12 +1,11 @@
-import Container from "../components/container";
-import MoreStories from "../components/more-stories";
-import HeroUnit from "../components/hero-unit";
-import HeroPost from "../components/hero-post";
+import Container from "@/components/container";
+import MoreStories from "@/components/more-stories";
+import HeroUnit from "@/components/hero-unit";
+import HeroPost from "@/components/hero-post";
 import { NextSeo } from "next-seo";
-import Layout from "../components/layouts/default";
-import { getRecentPosts } from "../lib/api";
-import Post from "../interfaces/post";
-import Footer from "../components/footer";
+import Layout from "@/components/layouts/default";
+import { getRecentPosts } from "@/lib/api";
+import Post from "@/interfaces/post";
 import { useEffect } from "react";
 
 type Props = {

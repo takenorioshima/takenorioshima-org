@@ -1,8 +1,8 @@
-import Container from "../components/container";
-import Layout from "../components/layouts/default";
+import Container from "@/components/container";
+import Layout from "@/components/layouts/default";
 import { NextSeo } from "next-seo";
-import { SITE_NAME } from "../lib/constants";
-import PageHeader from "../components/page-header";
+import { SITE_NAME } from "@/lib/constants";
+import PageHeader from "@/components/page-header";
 import { Canvas } from "@react-three/fiber";
 import { useGLTF, Stage, OrbitControls } from "@react-three/drei";
 import { Suspense } from "react";

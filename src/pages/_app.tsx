@@ -1,8 +1,8 @@
 import { AppProps } from "next/app";
 import { GoogleAnalytics } from "nextjs-google-analytics";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import "../styles/index.css";
-import "../styles/prism.css";
+import "@/styles/index.css";
+import "@/styles/prism.css";
 import React from "react";
 import { DefaultSeo } from "next-seo";
 import { SITE_NAME, AUTHOR_PROFILES, HOME_OG_IMAGE_URL } from "../lib/constants";

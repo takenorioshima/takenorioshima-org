@@ -1,7 +1,6 @@
 import Image from "next-export-optimize-images/image";
 import useEmblaCarousel from "embla-carousel-react";
 import { useEffect } from "react";
-import { EmblaOptionsType } from "embla-carousel";
 import { PrevButton, NextButton, usePrevNextButtons } from "./carousel-buttons";
 
 type Props = {

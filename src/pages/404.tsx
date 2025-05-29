@@ -1,9 +1,8 @@
-import Layout from "../components/layouts/default";
-import Head from "next/head";
-import { SITE_NAME } from "../lib/constants";
+import Layout from "@/components/layouts/default";
+import { SITE_NAME } from "@/lib/constants";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import Model from "../components/hero-model";
+import Model from "@/components/hero-model";
 import React, { Suspense } from "react";
 import Link from "next/link";
 import { NextSeo } from "next-seo";
