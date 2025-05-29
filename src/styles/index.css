@@ -371,7 +371,7 @@ iframe[src*="youtube.com/embed"] {
   flex: 0 0 var(--slide-size);
   min-width: 0;
   padding-left: var(--slide-spacing);
-  height: 700px;
+  max-height: 700px;
 }
 .embla__slide__number {
   box-shadow: inset 0 0 0 0.2rem var(--detail-medium-contrast);
