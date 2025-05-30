@@ -13,11 +13,12 @@ export function getWorkSlugs() {
 }
 
 export function getRecentWorks(fields: string[] = []) {
+  const numberOfWorks = 6;
   const slugs = getWorkSlugs();
   const works = slugs
     .map((slug) => getWorkBySlug(slug))
-    // sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+    .sort((a, b) => (a.date > b.date ? -1 : 1))
+    .slice(0, numberOfWorks);
   return works;
 }
 

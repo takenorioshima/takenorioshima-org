@@ -47,6 +47,7 @@ export function getAllPosts(fields: string[] = []) {
 }
 
 export function getRecentPosts(fields: string[] = []) {
+  const numberOfPosts = 6;
   const slugs = getPostSlugs();
   const publishedSlugs = slugs.filter((slug) => {
     return slug.slice(0, 1) !== "+";
@@ -54,7 +55,8 @@ export function getRecentPosts(fields: string[] = []) {
   const posts = publishedSlugs
     .map((slug) => getPostBySlug(slug, fields))
     // sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
+    .sort((a, b) => (a.date > b.date ? -1 : 1))
+    .slice(0, numberOfPosts);
   return posts;
 }
 
