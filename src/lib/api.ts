@@ -47,7 +47,7 @@ export function getAllPosts(fields: string[] = []) {
 }
 
 export function getRecentPosts(fields: string[] = []) {
-  const numberOfPosts = 6;
+  const numberOfPosts = 99;
   const slugs = getPostSlugs();
   const publishedSlugs = slugs.filter((slug) => {
     return slug.slice(0, 1) !== "+";

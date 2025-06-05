@@ -40,16 +40,16 @@ export default function Index({ posts, works }: Props) {
             <HeroPost title={heroPost.title} date={heroPost.date} slug={heroPost.slug} excerpt={heroPost.excerpt} />
           )}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-          <div className="py-10 text-right">
+          {/* <div className="py-10 text-right">
             <Link
               href="/posts"
               className="rounded-full whitespace-nowrap bg-white p-3 px-5 shadow-sm transition hover:opacity-70"
             >
               <i className="bi bi-chevron-right"></i> もっと見る
             </Link>
-          </div>
+          </div> */}
         </Container>
-        <section className="bg-graph border-top">
+        {/* <section className="bg-graph border-top">
           <div className="container max-w-(--breakpoint-xl) mx-auto px-3">
             <div className="flex pt-30 items-center justify-between">
               <h2 className="text-4xl">
@@ -85,7 +85,7 @@ export default function Index({ posts, works }: Props) {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
       </Layout>
     </>
   );
