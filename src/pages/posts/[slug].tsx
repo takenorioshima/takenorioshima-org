@@ -59,7 +59,7 @@ const CustomLink: FC<AnchorHTMLAttributes<HTMLAnchorElement>> = ({ href, childre
 };
 
 const CustomImage: FC<ImgHTMLAttributes<HTMLImageElement>> = ({ src = "", alt = "" }) => {
-  return <Image className="rounded-sm shadow-sm" src={src} alt={alt} width="704" height="470" />;
+  return <Image className="rounded-sm shadow-sm w-full h-auto" src={src} alt={alt} width="704" height="470" />;
 };
 
 export default function Post({ post, morePosts, preview }: Props) {
@@ -129,7 +129,7 @@ export default function Post({ post, morePosts, preview }: Props) {
               date={post.date}
               modifiedDate={post.modifiedDate}
             />
-            <Container>
+            <Container isSinglePost>
               <div className="lg:grid grid-cols-7 gap-4">
                 <div className="lg:col-span-5 mb-20 lg:mb-0">
                   <div
