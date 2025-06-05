@@ -4,7 +4,7 @@ import Script from "next/script";
 import ErrorPage from "next/error";
 import Container from "@/components/container";
 import PostHeader from "@/components/post-header";
-import Layout from "@/components/layouts/default";
+import Layout from "@/layouts/default";
 import Sidebar from "@/components/sidebar";
 import { getPostBySlug, getAllPosts } from "@/lib/api";
 import PostTitle from "@/components/post-title";

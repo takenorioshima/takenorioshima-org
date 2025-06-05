@@ -1,4 +1,4 @@
-import Layout from "@/components/layouts/default";
+import Layout from "@/layouts/default";
 import { SITE_NAME, AUTHOR_PROFILES } from "@/lib/constants";
 import React, { Suspense } from "react";
 import Link from "next/link";

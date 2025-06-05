@@ -1,4 +1,4 @@
-import Layout from "@/components/layouts/default";
+import Layout from "@/layouts/default";
 import { SITE_NAME } from "@/lib/constants";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
