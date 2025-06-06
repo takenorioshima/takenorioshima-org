@@ -4,21 +4,19 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "@/styles/index.css";
 import "@/styles/prism.css";
 import "@/styles/lenis.css";
-import React, { useEffect } from "react";
 import { DefaultSeo } from "next-seo";
 import { SITE_NAME, AUTHOR_PROFILES, HOME_OG_IMAGE_URL } from "../lib/constants";
 import Lenis from "lenis";
+import { useEffect } from "react";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const description = AUTHOR_PROFILES.description;
 
   useEffect(() => {
-    const lenis = new Lenis({
-      autoRaf: true,
-    });
-    lenis.on("scroll", () => {
-      console.log("scroll");
-    });
+    const lenis = new Lenis({ autoRaf: true });
+    return () => {
+      lenis.destroy();
+    };
   }, []);
 
   return (

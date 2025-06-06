@@ -1,14 +1,18 @@
-import React, { Suspense, useEffect } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import Model from "./hero-model";
 
 export default function HeroUnit() {
+  const [scale, setScale] = useState(13);
+
   useEffect(() => {
     const titles = document.querySelectorAll(".flip-titles > div");
     let index = 0;
     let index_inactive = 0;
-    setInterval(addActiveClass, 1000);
+
+    const intervalId = setInterval(addActiveClass, 1000);
+
     function addActiveClass() {
       titles.forEach((element) => {
         element.classList.remove("active", "inactive");
@@ -26,6 +30,26 @@ export default function HeroUnit() {
         index = 0;
       }
     }
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
+
+  useEffect(() => {
+    function updateScale() {
+      const width = window.innerWidth;
+      if (width < 640) {
+        setScale(8);
+      } else if (width < 1024) {
+        setScale(10);
+      } else {
+        setScale(13);
+      }
+    }
+    updateScale();
+    window.addEventListener("resize", updateScale);
+    return () => window.removeEventListener("resize", updateScale);
   }, []);
 
   return (
@@ -49,12 +73,12 @@ export default function HeroUnit() {
       </div>
 
       <div className="absolute top-0 left-0 w-full h-full">
-        <Canvas orthographic={true} camera={{ zoom: 100, position: [10, 5, 0] }}>
+        <Canvas orthographic={true} camera={{ zoom: 100, position: [100, 10, 100] }}>
           <OrbitControls autoRotate={true} enableZoom={false} />
-          <ambientLight intensity={0.1} />
-          <directionalLight color="white" position={[0, 0, 5]} />
+          <ambientLight intensity={1} />
+          <directionalLight color="white" position={[5, 5, 5]} />
           <Suspense fallback={null}>
-            <Model scale={13} />
+            <Model scale={scale} />
           </Suspense>
         </Canvas>
       </div>

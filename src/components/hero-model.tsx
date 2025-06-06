@@ -32,9 +32,7 @@ type GLTFResult = GLTF & {
 };
 
 export default function Model(props: JSX.IntrinsicElements["group"]) {
-  const { nodes, materials } = useGLTF(
-    "/assets/models/takenori.glb"
-  ) as unknown as GLTFResult;
+  const { nodes, materials } = useGLTF("/assets/models/takenori.glb") as unknown as GLTFResult;
 
   const takenoriRef = useRef(null);
   const headRef = useRef(null);
@@ -88,9 +86,14 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
     });
 
     takenori.userData.initialScale = takenori.scale.clone();
+    takenori.rotation.y = Math.PI;
 
-    setInterval(animateRandomly, 2000);
-  }, [props]);
+    const intervalId = setInterval(animateRandomly, 2000);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
 
   useFrame(() => {
     TWEEN.update();
@@ -174,16 +177,7 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
 
       takenori.userData.dissolved = true;
     } else {
-      const meshesToReset = [
-        glassL,
-        glassR,
-        lipTop,
-        lipBottom,
-        cap,
-        brim,
-        head,
-        nose,
-      ];
+      const meshesToReset = [glassL, glassR, lipTop, lipBottom, cap, brim, head, nose];
 
       meshesToReset.forEach((target) => {
         let positionTo;
@@ -239,11 +233,7 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
     }
   }
 
-  function tween(
-    target: THREE.Vector3 | THREE.Euler,
-    to: object,
-    duration: number = durationBase
-  ) {
+  function tween(target: THREE.Vector3 | THREE.Euler, to: object, duration: number = durationBase) {
     new TWEEN.Tween(target).to(to, duration).easing(easing).start();
   }
 
@@ -319,14 +309,7 @@ export default function Model(props: JSX.IntrinsicElements["group"]) {
         material={materials.brim}
         ref={brimRef}
       />
-      <mesh
-        name="cap"
-        castShadow
-        receiveShadow
-        geometry={nodes.cap.geometry}
-        material={materials.cap}
-        ref={capRef}
-      />
+      <mesh name="cap" castShadow receiveShadow geometry={nodes.cap.geometry} material={materials.cap} ref={capRef} />
       <mesh
         name="lipTop"
         castShadow
