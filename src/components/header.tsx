@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { AUTHOR_PROFILES } from "../lib/constants";
+import { AUTHOR_PROFILES } from "@/lib/constants";
 import { useRouter } from "next/router";
 
 const Header = () => {

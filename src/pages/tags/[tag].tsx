@@ -1,11 +1,11 @@
 import { join } from "path";
-import Layout from "../../components/layouts/default";
+import Layout from "@/layouts/default";
 import { NextSeo } from "next-seo";
-import { SITE_NAME } from "../../lib/constants";
-import MoreStories from "../../components/more-stories";
-import Container from "../../components/container";
-import Post from "../../interfaces/post";
-import { getAllPosts, getTaggedPosts } from "../../lib/api";
+import { SITE_NAME } from "@/lib/constants";
+import MoreStories from "@/components/more-stories";
+import Container from "@/components/container";
+import Post from "@/interfaces/post";
+import { getAllPosts, getTaggedPosts } from "@/lib/api";
 
 type Props = {
   posts: Post[];

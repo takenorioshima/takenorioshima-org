@@ -1,12 +1,10 @@
-import Container from "../../components/container";
 import { NextSeo } from "next-seo";
-import Layout from "../../components/layouts/default";
-import Footer from "../../components/footer";
+import Layout from "@/layouts/default";
 import { useEffect } from "react";
-import { getAllWorks } from "../../lib/works";
-import Work from "../../interfaces/work";
-import WorkPreview from "../../components/work-preview";
-import { flipWorksHeader } from "../../lib/flipWorksHeader";
+import { getAllWorks } from "@/lib/works";
+import Work from "@/interfaces/work";
+import WorkPreview from "@/components/work-preview";
+import { flipWorksHeader } from "@/lib/flipWorksHeader";
 
 type Props = {
   works: Work[];

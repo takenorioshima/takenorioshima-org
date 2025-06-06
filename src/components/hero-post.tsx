@@ -4,7 +4,6 @@ import Link from "next/link";
 
 type Props = {
   title: string;
-  coverImage: string;
   date: string;
   excerpt: string;
   slug: string;

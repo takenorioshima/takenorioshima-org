@@ -1,11 +1,12 @@
 import { AppProps } from "next/app";
 import { GoogleAnalytics } from "nextjs-google-analytics";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import "../styles/index.css";
-import "../styles/prism.css";
-import React from "react";
+import "@/styles/index.css";
+import "@/styles/prism.css";
+import "@/styles/lenis.css";
 import { DefaultSeo } from "next-seo";
 import { SITE_NAME, AUTHOR_PROFILES, HOME_OG_IMAGE_URL } from "../lib/constants";
+import { LenisProvider } from "@/components/lenis-provider";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const description = AUTHOR_PROFILES.description;
@@ -36,7 +37,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         ]}
       />
       <GoogleAnalytics trackPageViews />
-      <Component {...pageProps} />
+      <LenisProvider>
+        <Component {...pageProps} />
+      </LenisProvider>
     </>
   );
 }

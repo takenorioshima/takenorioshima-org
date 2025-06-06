@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next-export-optimize-images/image";
-import Work from "../interfaces/work";
+import Work from "@/interfaces/work";
 
 const WorkPreview = ({ title, slug, images, tags, youtube, cover, appleMusic }: Work) => {
   const imageFile = cover ? cover : images[0];

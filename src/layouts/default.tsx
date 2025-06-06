@@ -1,6 +1,6 @@
-import Header from "../header";
-import Footer from "../footer";
-import Meta from "../meta";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
+import Meta from "@/components/meta";
 import { useRouter } from "next/router";
 
 type Props = {

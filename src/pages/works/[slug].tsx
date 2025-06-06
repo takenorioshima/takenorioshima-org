@@ -1,13 +1,13 @@
-import WorkType from "../../interfaces/work";
+import WorkType from "@/interfaces/work";
 import ErrorPage from "next/error";
 import { useRouter } from "next/router";
-import { SITE_NAME } from "../../lib/constants";
-import Layout from "../../components/layouts/default";
-import { getWorkBySlug, getAllWorks } from "../../lib/works";
-import WorkViewer from "../../components/work-viewer";
-import YoutubeEmbed from "../../components/youtube-embed";
-import AppleMusicEmbed from "../../components/apple-music-embed";
-import { flipWorksHeader } from "../../lib/flipWorksHeader";
+import { SITE_NAME } from "@/lib/constants";
+import Layout from "@/layouts/default";
+import { getWorkBySlug, getAllWorks } from "@/lib/works";
+import WorkViewer from "@/components/work-viewer";
+import YoutubeEmbed from "@/components/youtube-embed";
+import AppleMusicEmbed from "@/components/apple-music-embed";
+import { flipWorksHeader } from "@/lib/flipWorksHeader";
 import { useEffect } from "react";
 
 type Props = {

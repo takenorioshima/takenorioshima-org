@@ -2,22 +2,22 @@ import { useRouter } from "next/router";
 import { FC, ImgHTMLAttributes, Fragment, createElement, useEffect, AnchorHTMLAttributes } from "react";
 import Script from "next/script";
 import ErrorPage from "next/error";
-import Container from "../../components/container";
-import PostHeader from "../../components/post-header";
-import Layout from "../../components/layouts/default";
-import Sidebar from "../../components/sidebar";
-import { getPostBySlug, getAllPosts } from "../../lib/api";
-import PostTitle from "../../components/post-title";
-import markdownToHtml from "../../lib/markdownToHtml";
-import type PostType from "../../interfaces/post";
-import { SITE_NAME } from "../../lib/constants";
+import Container from "@/components/container";
+import PostHeader from "@/components/post-header";
+import Layout from "@/layouts/default";
+import Sidebar from "@/components/sidebar";
+import { getPostBySlug, getAllPosts } from "@/lib/api";
+import PostTitle from "@/components/post-title";
+import markdownToHtml from "@/lib/markdownToHtml";
+import type PostType from "@/interfaces/post";
+import { SITE_NAME } from "@/lib/constants";
 import { NextSeo } from "next-seo";
 import rehypeParse from "rehype-parse";
 import rehypeReact from "rehype-react";
 import { unified } from "unified";
 import Image from "next-export-optimize-images/image";
 import Link from "next/link";
-import ShareButtons from "../../components/share-butttons";
+import ShareButtons from "@/components/share-butttons";
 
 type Props = {
   post: PostType;
@@ -59,7 +59,7 @@ const CustomLink: FC<AnchorHTMLAttributes<HTMLAnchorElement>> = ({ href, childre
 };
 
 const CustomImage: FC<ImgHTMLAttributes<HTMLImageElement>> = ({ src = "", alt = "" }) => {
-  return <Image className="rounded-sm shadow-sm" src={src} alt={alt} width="704" height="470" />;
+  return <Image className="rounded-sm shadow-sm w-full h-auto" src={src} alt={alt} width="704" height="470" />;
 };
 
 export default function Post({ post, morePosts, preview }: Props) {
@@ -129,7 +129,7 @@ export default function Post({ post, morePosts, preview }: Props) {
               date={post.date}
               modifiedDate={post.modifiedDate}
             />
-            <Container>
+            <Container isSinglePost>
               <div className="lg:grid grid-cols-7 gap-4">
                 <div className="lg:col-span-5 mb-20 lg:mb-0">
                   <div
