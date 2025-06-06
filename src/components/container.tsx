@@ -5,7 +5,7 @@ type Props = {
 
 const Container = ({ children, isSinglePost }: Props) => {
   const maxWidth = isSinglePost ? "max-w-(--breakpoint-lg)" : "max-w-(--breakpoint-xl)";
-  return <div className={`container ${maxWidth} mx-auto mt-[48px] mb-10 lg:my-16 px-4`}>{children}</div>;
+  return <div className={`container ${maxWidth} mx-auto mt-[48px] mb-10 lg:my-16 px-4 relative z-10`}>{children}</div>;
 };
 
 export default Container;

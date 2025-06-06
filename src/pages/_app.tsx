@@ -6,18 +6,10 @@ import "@/styles/prism.css";
 import "@/styles/lenis.css";
 import { DefaultSeo } from "next-seo";
 import { SITE_NAME, AUTHOR_PROFILES, HOME_OG_IMAGE_URL } from "../lib/constants";
-import Lenis from "lenis";
-import { useEffect } from "react";
+import { LenisProvider } from "@/components/lenis-provider";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const description = AUTHOR_PROFILES.description;
-
-  useEffect(() => {
-    const lenis = new Lenis({ autoRaf: true });
-    return () => {
-      lenis.destroy();
-    };
-  }, []);
 
   return (
     <>
@@ -45,7 +37,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         ]}
       />
       <GoogleAnalytics trackPageViews />
-      <Component {...pageProps} />
+      <LenisProvider>
+        <Component {...pageProps} />
+      </LenisProvider>
     </>
   );
 }
