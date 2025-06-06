@@ -5,9 +5,10 @@ import type { LenisScrollEvent } from "../../@types/lenis";
 type LenisContextType = {
   scrollY: number;
   windowHeight: number;
+  lenis: Lenis | null;
 };
 
-const LenisContext = createContext<LenisContextType>({ scrollY: 0, windowHeight: 0 });
+const LenisContext = createContext<LenisContextType>({ scrollY: 0, windowHeight: 0, lenis: null });
 
 export const useLenisScroll = () => useContext(LenisContext);
 
@@ -45,5 +46,7 @@ export const LenisProvider = ({ children }: { children: React.ReactNode }) => {
     };
   }, []);
 
-  return <LenisContext.Provider value={{ scrollY, windowHeight }}>{children}</LenisContext.Provider>;
+  return (
+    <LenisContext.Provider value={{ scrollY, windowHeight, lenis: lenisRef.current }}>{children}</LenisContext.Provider>
+  );
 };
