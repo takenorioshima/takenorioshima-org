@@ -4,12 +4,28 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import "@/styles/index.css";
 import "@/styles/prism.css";
 import "@/styles/lenis.css";
+import "@/../node_modules/aos/dist/aos.css";
 import { DefaultSeo } from "next-seo";
 import { SITE_NAME, AUTHOR_PROFILES, HOME_OG_IMAGE_URL } from "../lib/constants";
 import { LenisProvider } from "@/components/lenis-provider";
+import { useEffect } from "react";
+import { useRouter } from "next/router";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const description = AUTHOR_PROFILES.description;
+
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = () => {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    };
+    console.log("change!");
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router]);
 
   return (
     <>

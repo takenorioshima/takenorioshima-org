@@ -17,8 +17,9 @@ const PostPreview = ({ title, date, excerpt, slug, index }: Props) => {
       as={`/posts/${slug}`}
       href="/posts/[slug]"
       className={`${colClass} rounded-lg overflow-hidden bg-white drop-shadow-sm hover:shadow-xl transition-shadow duration-200`}
+      data-aos="fade-in"
     >
-      <div className="">
+      <div>
         <CoverImage slug={slug} title={title} />
       </div>
       <div className="p-5">
