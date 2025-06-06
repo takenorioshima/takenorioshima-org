@@ -12,6 +12,7 @@ import Link from "next/link";
 import { getRecentWorks } from "@/lib/works";
 import { flipWorksHeader } from "@/lib/flipWorksHeader";
 import WorkPreview from "@/components/work-preview";
+import AOS from "aos";
 
 type Props = {
   posts: Post[];
@@ -25,6 +26,8 @@ export default function Index({ posts, works }: Props) {
   useEffect(() => {
     document.querySelector("body")?.classList.add("home");
     flipWorksHeader();
+
+    AOS.init();
   }, []);
 
   return (
