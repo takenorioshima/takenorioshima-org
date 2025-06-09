@@ -9,6 +9,7 @@ const WorkPreview = ({ title, slug, images, tags, youtube, cover, appleMusic }: 
       as={`/works/${slug}`}
       href="/works/[slug]"
       className={`col-span-2 rounded-lg bg-white overflow-hidden drop-shadow-sm hover:shadow-xl transition-shadow duration-200`}
+      data-aos="fade-in"
     >
       <Image
         src={`/assets/works/${slug}/${imageFile}`}

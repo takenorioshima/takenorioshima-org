@@ -64,7 +64,7 @@ export default function HeroUnit() {
   }, [scrollProgress]);
 
   return (
-    <div id="hero-unit" className="hero-unit overflow-hidden relative">
+    <div id="hero-unit" className="hero-unit overflow-hidden relative" data-aos="fade-in">
       <div className="relative flex items-center justify-center w-full h-full z-10">
         <div className="flip-titles-container parsed-content">
           <p>大島武宜は</p>

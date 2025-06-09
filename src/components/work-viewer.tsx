@@ -22,7 +22,7 @@ export default function WorkViewer({ slug, images }: Props) {
   const hasMultipleImage = images.length > 1 ? true : false;
 
   return (
-    <section className="p-10">
+    <section className="p-10" data-aos="fade-in">
       <div className="embla" ref={emblaRef}>
         <div className="embla__container">
           {images.map((image) => (
