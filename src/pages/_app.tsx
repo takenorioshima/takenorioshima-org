@@ -8,26 +8,9 @@ import "@/../node_modules/aos/dist/aos.css";
 import { DefaultSeo } from "next-seo";
 import { SITE_NAME, AUTHOR_PROFILES, HOME_OG_IMAGE_URL } from "../lib/constants";
 import { LenisProvider } from "@/components/lenis-provider";
-import { useEffect } from "react";
-import { useRouter } from "next/router";
-import { useLenisScroll } from "@/components/lenis-provider";
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   const description = AUTHOR_PROFILES.description;
-
-  const router = useRouter();
-  const { lenis } = useLenisScroll();
-
-  useEffect(() => {
-    const handleRouteChange = () => {
-      lenis?.scrollTo(0, { immediate: true });
-    };
-    console.log("change!");
-    router.events.on("routeChangeComplete", handleRouteChange);
-    return () => {
-      router.events.off("routeChangeComplete", handleRouteChange);
-    };
-  }, [router, lenis]);
 
   return (
     <>
