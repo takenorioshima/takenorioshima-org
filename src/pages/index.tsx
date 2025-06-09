@@ -50,8 +50,8 @@ export default function Index({ posts, works }: Props) {
             </Link>
           </div> */}
         </Container>
-        {/* <section className="bg-graph border-top">
-          <div className="container max-w-(--breakpoint-xl) mx-auto px-3">
+        <section className="bg-graph border-top">
+          <div className="container max-w-(--breakpoint-xl) mx-auto px-3 relative z-10">
             <div className="flex pt-30 items-center justify-between">
               <h2 className="text-4xl">
                 わたしの
@@ -86,7 +86,7 @@ export default function Index({ posts, works }: Props) {
               ))}
             </div>
           </div>
-        </section> */}
+        </section>
       </Layout>
     </>
   );
