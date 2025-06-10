@@ -1,6 +1,5 @@
 import Image from "next-export-optimize-images/image";
 import useEmblaCarousel from "embla-carousel-react";
-import { useEffect } from "react";
 import { PrevButton, NextButton, usePrevNextButtons } from "./carousel-buttons";
 
 type Props = {
@@ -12,12 +11,6 @@ export default function WorkViewer({ slug, images }: Props) {
   const [emblaRef, emblaApi] = useEmblaCarousel();
 
   const { prevBtnDisabled, nextBtnDisabled, onPrevButtonClick, onNextButtonClick } = usePrevNextButtons(emblaApi);
-
-  useEffect(() => {
-    if (emblaApi) {
-      console.log(emblaApi.slideNodes()); // Access API
-    }
-  }, [emblaApi]);
 
   const hasMultipleImage = images.length > 1 ? true : false;
 
