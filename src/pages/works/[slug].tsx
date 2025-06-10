@@ -45,7 +45,7 @@ export default function Work({ work }: Props) {
         }}
       />
       <div className="container max-w-(--breakpoint-xl) mx-auto px-3">
-        <div className="pt-20 border-b border-slate-300 flex items-center place-content-between">
+        <div className="pt-20 border-b border-slate-300 md:flex items-center place-content-between">
           <div>
             <div className="mb-2">
               わたしの
@@ -57,12 +57,12 @@ export default function Work({ work }: Props) {
                 事<rt className="font-light">しごと</rt>
               </ruby>
             </div>
-            <h1 className="text-4xl md:text-5xl lg:text-5xl font-semibold tracking-tighter leading-tight mb-6 md:text-left">
+            <h1 className="text-4xl md:text-5xl lg:text-5xl font-semibold tracking-tighter leading-tight mb-3 lg:mb-6 md:text-left">
               {work.title}
             </h1>
           </div>
           {work.tags && (
-            <div className="text-right text-nowrap">
+            <div className="lg:text-right text-nowrap mb-4 lg:mb-0">
               {work.tags.map((tag) => (
                 <span className="inline-block rounded bg-slate-300 p-1 px-2 text-xs mr-1">{tag}</span>
               ))}
