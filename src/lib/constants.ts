@@ -1,5 +1,5 @@
 export const HOME_OG_IMAGE_URL = "/images/ogp.png";
-export const SITE_NAME = "大島 武宜 | Takenori Oshima";
+export const SITE_NAME = "大島 武宜 (おおしま・たけのり)";
 export const AUTHOR_PROFILES = {
   name: {
     ja: "大島武宜",
