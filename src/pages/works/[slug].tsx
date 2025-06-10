@@ -71,7 +71,7 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  const work = getWorkBySlug(params.slug);
+  const work = getWorkBySlug(params.slug, ["slug", "date", "cover", "images", "title", "tags"]);
 
   return {
     props: {
@@ -82,11 +82,9 @@ export async function getStaticProps({ params }: Params) {
   };
 }
 
-export async function getStaticPaths({ params }: Params) {
-  const works = getAllWorks();
-
+export async function getStaticPaths() {
   return {
-    paths: works.map((work) => {
+    paths: getAllWorks(["slug"]).map((work) => {
       return {
         params: {
           slug: work.slug,

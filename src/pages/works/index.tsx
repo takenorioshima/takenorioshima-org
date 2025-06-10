@@ -11,7 +11,7 @@ type Props = {
 };
 
 export const getStaticProps = async () => {
-  const works = getAllWorks();
+  const works = getAllWorks(["slug", "date", "images", "cover", "date", "title", "tags"]);
   return {
     props: { works },
   };

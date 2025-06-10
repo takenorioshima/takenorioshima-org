@@ -13,29 +13,41 @@ export function getWorkSlugs() {
 }
 
 export function getRecentWorks(fields: string[] = []) {
-  const numberOfWorks = 6;
-  const slugs = getWorkSlugs();
-  const works = slugs
-    .map((slug) => getWorkBySlug(slug))
-    .sort((a, b) => (a.date > b.date ? -1 : 1))
-    .slice(0, numberOfWorks);
-  return works;
+  return getAllWorks(fields).slice(0, 6);
 }
 
-export function getAllWorks() {
+export function getAllWorks(fields: string[] = []) {
   const slugs = getWorkSlugs();
-  const works = slugs.map((slug) => getWorkBySlug(slug)).sort((a, b) => (a.date > b.date ? -1 : 1));
-  return works;
+  return slugs
+    .map((slug) => getWorkBySlug(slug, fields))
+    .sort((a, b) => {
+      const dateA = new Date(a.date || "1970-01-01").getTime();
+      const dateB = new Date(b.date || "1970-01-01").getTime();
+      return dateB - dateA;
+    });
 }
 
 type Items = {
   [key: string]: any;
 };
 
-export function getWorkBySlug(slug: string): Items {
-  const fullPath = join(worksDirectory, `${slug}.md`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
+export function getWorkBySlug(slug: string, fields: string[]): Items {
+  const realSlug = slug.replace(/\.md$/, "");
+  const fullPath = join(worksDirectory, `${realSlug}.md`);
+
+  let fileContents = "";
+  try {
+    fileContents = fs.readFileSync(fullPath, "utf8");
+  } catch (err) {
+    console.log("Failed to read file:", fullPath);
+  }
+
   const { data } = matter(fileContents);
 
-  return { slug, ...data };
+  const items: Items = {};
+  fields.forEach((field) => {
+    if (field === "slug") items[field] = realSlug;
+    if (typeof data[field] !== "undefined") items[field] = data[field];
+  });
+  return items;
 }

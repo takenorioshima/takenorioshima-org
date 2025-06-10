@@ -94,7 +94,7 @@ export default function Index({ posts, works }: Props) {
 
 export const getStaticProps = async () => {
   const posts = getRecentPosts(["title", "date", "slug", "coverImage", "excerpt"]);
-  const works = getRecentWorks(["title", "date", "slug", "excerpt"]);
+  const works = getRecentWorks(["title", "date", "slug", "excerpt", "images", "tags"]);
 
   return {
     props: { posts, works },
