@@ -5,7 +5,7 @@ import { SITE_NAME } from "@/lib/constants";
 import MoreStories from "@/components/more-stories";
 import Container from "@/components/container";
 import Post from "@/interfaces/post";
-import { getAllPosts, getTaggedPosts } from "@/lib/api";
+import { getAllPosts, getTaggedPosts } from "@/lib/post";
 
 type Props = {
   posts: Post[];

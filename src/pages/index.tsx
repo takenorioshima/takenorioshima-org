@@ -4,7 +4,7 @@ import HeroUnit from "@/components/hero-unit";
 import HeroPost from "@/components/hero-post";
 import { NextSeo } from "next-seo";
 import Layout from "@/layouts/default";
-import { getRecentPosts } from "@/lib/api";
+import { getRecentPosts } from "@/lib/post";
 import Post from "@/interfaces/post";
 import Work from "@/interfaces/work";
 import { useEffect } from "react";

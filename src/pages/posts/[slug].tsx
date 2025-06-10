@@ -6,7 +6,7 @@ import Container from "@/components/container";
 import PostHeader from "@/components/post-header";
 import Layout from "@/layouts/default";
 import Sidebar from "@/components/sidebar";
-import { getPostBySlug, getAllPosts } from "@/lib/api";
+import { getPostBySlug, getAllPosts } from "@/lib/post";
 import PostTitle from "@/components/post-title";
 import markdownToHtml from "@/lib/markdownToHtml";
 import type PostType from "@/interfaces/post";

@@ -1,4 +1,4 @@
-import { generateSitemapXml } from "../lib/api";
+import { generateSitemapXml } from "../lib/post";
 
 export default function Sitemap() {
   return null;
