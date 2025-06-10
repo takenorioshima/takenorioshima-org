@@ -1,4 +1,4 @@
-import { getAllPosts } from "@/lib/api";
+import { getAllPosts } from "@/lib/post";
 import type Post from "@/interfaces/post";
 import Layout from "@/layouts/default";
 import { NextSeo } from "next-seo";
