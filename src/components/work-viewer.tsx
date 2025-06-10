@@ -26,7 +26,7 @@ export default function WorkViewer({ slug, images, youTubeId, carouselDisabled }
                 className="rounded-lg"
                 width={560}
                 height={315}
-                src={`https://www.youtube.com/embed/${youTubeId}?si=moxbfUAPMiN2598a`}
+                src={`https://www.youtube.com/embed/${youTubeId}`}
                 allowFullScreen
               />
             </div>
