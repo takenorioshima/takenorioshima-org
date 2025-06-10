@@ -2,62 +2,48 @@ import fs from "fs";
 import { join } from "path";
 import matter from "gray-matter";
 
+type Items = {
+  [key: string]: any;
+};
+
 const postsDirectory = join(process.cwd(), "src/data/posts");
 
 export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory);
+  const filenames = fs.readdirSync(postsDirectory);
+  return filenames.map((filename) => {
+    return filename.replace(/\.md$/, "");
+  });
 }
 
 export function getPostBySlug(slug: string, fields: string[] = []) {
   const realSlug = slug.replace(/\.md$/, "");
   const fullPath = join(postsDirectory, `${realSlug}.md`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
+
+  let fileContents = "";
+  try {
+    fileContents = fs.readFileSync(fullPath, "utf8");
+  } catch (err) {
+    console.log("Failed to read file:", fullPath);
+  }
+
   const { data, content } = matter(fileContents);
 
-  type Items = {
-    [key: string]: any;
-  };
-
   const items: Items = {};
-
-  // Ensure only the minimal needed data is exposed
   fields.forEach((field) => {
-    if (field === "slug") {
-      items[field] = realSlug;
-    }
-    if (field === "content") {
-      items[field] = content;
-    }
-
-    if (typeof data[field] !== "undefined") {
-      items[field] = data[field];
-    }
+    if (field === "slug") items[field] = realSlug;
+    if (field === "content") items[field] = content;
+    if (typeof data[field] !== "undefined") items[field] = data[field];
   });
-
   return items;
 }
 
 export function getAllPosts(fields: string[] = []) {
   const slugs = getPostSlugs();
-  const posts = slugs
-    .map((slug) => getPostBySlug(slug, fields))
-    // sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
-  return posts;
+  return slugs.map((slug) => getPostBySlug(slug, fields)).sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
 }
 
 export function getRecentPosts(fields: string[] = []) {
-  const numberOfPosts = 99;
-  const slugs = getPostSlugs();
-  const publishedSlugs = slugs.filter((slug) => {
-    return slug.slice(0, 1) !== "+";
-  });
-  const posts = publishedSlugs
-    .map((slug) => getPostBySlug(slug, fields))
-    // sort posts by date in descending order
-    .sort((a, b) => (a.date > b.date ? -1 : 1))
-    .slice(0, numberOfPosts);
-  return posts;
+  return getAllPosts(fields);
 }
 
 export function getTaggedPosts(tag: string) {
