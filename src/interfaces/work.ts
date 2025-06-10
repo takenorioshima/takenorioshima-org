@@ -7,6 +7,7 @@ type Work = {
   cover?: string;
   youtube?: string;
   appleMusic?: string;
+  excerpt?: string;
 };
 
 export default Work;

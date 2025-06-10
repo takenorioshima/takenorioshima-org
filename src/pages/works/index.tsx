@@ -5,6 +5,7 @@ import { getAllWorks } from "@/lib/works";
 import Work from "@/interfaces/work";
 import WorkPreview from "@/components/work-preview";
 import { flipWorksHeader } from "@/lib/flipWorksHeader";
+import { SITE_NAME } from "@/lib/constants";
 
 type Props = {
   works: Work[];
@@ -25,10 +26,12 @@ export default function Works({ works }: Props) {
     };
   }, []);
 
+  const title = `わたしの仕事 - ${SITE_NAME}`;
+
   return (
     <>
       <Layout>
-        <NextSeo />
+        <NextSeo title={title} />
         <div className="container max-w-(--breakpoint-xl) mx-auto px-4">
           <h2 className="text-5xl md:text-7xl text-center pt-30">
             わたしの

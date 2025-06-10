@@ -9,6 +9,7 @@ import YoutubeEmbed from "@/components/youtube-embed";
 import AppleMusicEmbed from "@/components/apple-music-embed";
 import { flipWorksHeader } from "@/lib/flipWorksHeader";
 import { useEffect } from "react";
+import { NextSeo } from "next-seo";
 
 type Props = {
   work: WorkType;
@@ -28,9 +29,21 @@ export default function Work({ work }: Props) {
   }, [router.asPath]);
 
   const title = `${work.title} - ${SITE_NAME}`;
+  const ogImage = work.cover ? work.cover : work.images[0];
 
   return (
     <Layout>
+      <NextSeo
+        title={title}
+        description={work.excerpt}
+        openGraph={{
+          images: [
+            {
+              url: `/assets/posts/${work.slug}/${ogImage}`,
+            },
+          ],
+        }}
+      />
       <div className="container max-w-(--breakpoint-xl) mx-auto px-3">
         <div className="pt-20 border-b border-slate-300 flex items-center place-content-between">
           <div>
