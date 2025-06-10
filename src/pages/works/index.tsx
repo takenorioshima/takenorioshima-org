@@ -19,7 +19,10 @@ export const getStaticProps = async () => {
 
 export default function Works({ works }: Props) {
   useEffect(() => {
-    flipWorksHeader();
+    const intervalId = flipWorksHeader();
+    return () => {
+      clearInterval(intervalId);
+    };
   }, []);
 
   return (

@@ -20,7 +20,12 @@ export default function Work({ work }: Props) {
     return <ErrorPage statusCode={404} />;
   }
 
-  useEffect(() => flipWorksHeader(), [router.asPath]);
+  useEffect(() => {
+    const intervalId = flipWorksHeader();
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [router.asPath]);
 
   const title = `${work.title} - ${SITE_NAME}`;
 

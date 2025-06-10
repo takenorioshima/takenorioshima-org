@@ -25,7 +25,13 @@ export default function Index({ posts, works }: Props) {
 
   useEffect(() => {
     document.querySelector("body")?.classList.add("home");
-    flipWorksHeader();
+
+    const intervalId = flipWorksHeader();
+
+    return () => {
+      clearInterval(intervalId);
+      document.querySelector("body")?.classList.remove("home");
+    };
   }, []);
 
   return (
