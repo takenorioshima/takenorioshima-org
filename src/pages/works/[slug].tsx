@@ -39,7 +39,7 @@ export default function Work({ work }: Props) {
         openGraph={{
           images: [
             {
-              url: `/assets/posts/${work.slug}/${ogImage}`,
+              url: `/assets/works/${work.slug}/${ogImage}`,
             },
           ],
         }}
