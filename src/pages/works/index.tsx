@@ -53,7 +53,7 @@ export default function Works({ works }: Props) {
                 images={work.images}
                 date={work.date}
                 tags={work.tags}
-                youtube={work.youtube}
+                youTubeId={work.youTubeId}
                 appleMusic={work.appleMusic}
               />
             ))}

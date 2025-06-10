@@ -2,7 +2,7 @@ import Link from "next/link";
 import Image from "next-export-optimize-images/image";
 import Work from "@/interfaces/work";
 
-const WorkPreview = ({ title, slug, images, tags, youtube, cover, appleMusic }: Work) => {
+const WorkPreview = ({ title, slug, images, tags, youTubeId, cover, appleMusic }: Work) => {
   const imageFile = cover ? cover : images[0];
   return (
     <Link
@@ -20,7 +20,7 @@ const WorkPreview = ({ title, slug, images, tags, youtube, cover, appleMusic }: 
       />
       <div className="p-5">
         <h3 className="text-xl font-semibold leading-tight mb-3">
-          {youtube && <i className="bi bi-play-circle-fill mr-1" />}
+          {youTubeId && <i className="bi bi-play-circle-fill mr-1" />}
           {appleMusic && <i className="bi bi-music-note-beamed mr-1" />}
           {title}
         </h3>

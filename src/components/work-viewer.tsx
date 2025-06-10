@@ -5,9 +5,11 @@ import { PrevButton, NextButton, usePrevNextButtons } from "./carousel-buttons";
 type Props = {
   slug: string;
   images: string[];
+  youTubeId?: string;
+  carouselDisabled?: boolean;
 };
 
-export default function WorkViewer({ slug, images }: Props) {
+export default function WorkViewer({ slug, images, youTubeId, carouselDisabled }: Props) {
   const [emblaRef, emblaApi] = useEmblaCarousel();
 
   const { prevBtnDisabled, nextBtnDisabled, onPrevButtonClick, onNextButtonClick } = usePrevNextButtons(emblaApi);
@@ -18,16 +20,28 @@ export default function WorkViewer({ slug, images }: Props) {
     <section className="p-10" data-aos="fade-in">
       <div className="embla" ref={emblaRef}>
         <div className="embla__container">
-          {images.map((image) => (
+          {youTubeId && (
             <div className="embla__slide">
-              <Image
-                src={"/assets/works/" + slug + "/" + image}
-                alt={`Cover Image for ${slug}`}
-                className={"relative! w-full object-contain object-center"}
-                fill
+              <iframe
+                className="rounded-lg"
+                width={560}
+                height={315}
+                src={`https://www.youtube.com/embed/${youTubeId}?si=moxbfUAPMiN2598a`}
+                allowFullScreen
               />
             </div>
-          ))}
+          )}
+          {!carouselDisabled &&
+            images.map((image) => (
+              <div className="embla__slide">
+                <Image
+                  src={"/assets/works/" + slug + "/" + image}
+                  alt={`Cover Image for ${slug}`}
+                  className={"relative! w-full object-contain object-center"}
+                  fill
+                />
+              </div>
+            ))}
         </div>
         {hasMultipleImage && (
           <div className="embla__controls">

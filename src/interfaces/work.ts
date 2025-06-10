@@ -5,9 +5,10 @@ type Work = {
   tags?: string[];
   images: string[];
   cover?: string;
-  youtube?: string;
+  youTubeId?: string;
   appleMusic?: string;
   excerpt?: string;
+  carouselDisabled?: boolean;
 };
 
 export default Work;
