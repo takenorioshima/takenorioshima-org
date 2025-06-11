@@ -2,7 +2,7 @@ type Work = {
   slug: string;
   title: string;
   date: string;
-  tags?: string[];
+  tags: string[];
   images: string[];
   cover?: string;
   youTubeId?: string;

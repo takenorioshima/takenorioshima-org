@@ -1,11 +1,15 @@
 export const flipWorksHeader = () => {
-  const headerServe = document.querySelector(".js-works-header-serve");
-  const headerPrivate = document.querySelector(".js-works-header-private");
+  const headerServe = document.querySelectorAll(".js-works-header-serve");
+  const headerPrivate = document.querySelectorAll(".js-works-header-private");
 
   function flipTitle() {
     if (!headerServe || !headerPrivate) return;
-    headerServe.classList.toggle("active");
-    headerPrivate.classList.toggle("active");
+    headerServe.forEach((e) => {
+      e.classList.toggle("active");
+    });
+    headerPrivate.forEach((e) => {
+      e.classList.toggle("active");
+    });
   }
 
   return setInterval(flipTitle, 1000);
