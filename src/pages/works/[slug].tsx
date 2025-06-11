@@ -67,7 +67,9 @@ export default function Work({ work, relatedWorks }: Props) {
           <div className="container max-w-(--breakpoint-xl) mx-auto px-3">
             <h3 className="text-xl font-bold mb-10">
               {work.tags.map((tag) => (
-                <span className="inline-block rounded bg-slate-300 p-1 px-2 mx-1">{tag}</span>
+                <span className="inline-block rounded bg-slate-300 p-1 px-2 mx-1" key={tag}>
+                  {tag}
+                </span>
               ))}
               な
               <ruby className="font-bold tracking-wider relative">
@@ -89,6 +91,7 @@ export default function Work({ work, relatedWorks }: Props) {
                   appleMusic={w.appleMusic}
                   tags={w.tags}
                   date={w.date}
+                  key={w.slug}
                 />
               ))}
             </div>

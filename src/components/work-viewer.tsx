@@ -33,7 +33,7 @@ export default function WorkViewer({ slug, images, youTubeId, carouselDisabled }
           )}
           {!carouselDisabled &&
             images.map((image) => (
-              <div className="embla__slide">
+              <div className="embla__slide" key={image}>
                 <Image
                   src={"/assets/works/" + slug + "/" + image}
                   alt={`Cover Image for ${slug}`}

@@ -25,7 +25,9 @@ export const WorkHeader = ({ title, tags }: Props) => {
         {tags && (
           <div className="lg:text-right text-nowrap mb-4 lg:mb-0">
             {tags.map((tag) => (
-              <span className="inline-block rounded bg-slate-300 p-1 px-2 text-xs mr-1">{tag}</span>
+              <span className="inline-block rounded bg-slate-300 p-1 px-2 text-xs mr-1" key={tag}>
+                {tag}
+              </span>
             ))}
           </div>
         )}
