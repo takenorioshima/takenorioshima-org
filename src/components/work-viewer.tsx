@@ -1,6 +1,7 @@
 import Image from "next-export-optimize-images/image";
 import useEmblaCarousel from "embla-carousel-react";
 import { PrevButton, NextButton, usePrevNextButtons } from "./carousel-buttons";
+import { useEffect } from "react";
 
 type Props = {
   slug: string;
@@ -11,14 +12,18 @@ type Props = {
 
 export default function WorkViewer({ slug, images, youTubeId, carouselDisabled }: Props) {
   const [emblaRef, emblaApi] = useEmblaCarousel();
-
   const { prevBtnDisabled, nextBtnDisabled, onPrevButtonClick, onNextButtonClick } = usePrevNextButtons(emblaApi);
-
   const hasMultipleImage = images.length > 1 ? true : false;
 
+  useEffect(() => {
+    if (emblaApi) {
+      emblaApi.scrollTo(0);
+    }
+  }, [emblaApi, slug]);
+
   return (
-    <section className="p-10" data-aos="fade-in">
-      <div className="embla" ref={emblaRef}>
+    <section className="p-10">
+      <div className="embla pacity-0" data-aos="fade-in" ref={emblaRef}>
         <div className="embla__container">
           {youTubeId && (
             <div className="embla__slide">
