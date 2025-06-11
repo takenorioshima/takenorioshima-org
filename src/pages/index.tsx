@@ -59,7 +59,7 @@ export default function Index({ posts, works }: Props) {
         <section className="bg-graph border-top">
           <div className="container max-w-(--breakpoint-xl) mx-auto px-3 relative z-10">
             <div className="flex pt-30 items-center justify-between">
-              <h2 className="text-4xl">
+              <h2 className="text-4xl lg:text-6xl">
                 わたしの
                 <ruby className="font-bold tracking-wider relative">
                   <span className="works-header-wrapper relative">
