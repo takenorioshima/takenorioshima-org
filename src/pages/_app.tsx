@@ -18,7 +18,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
 
   useEffect(() => {
-    AOS.init({ delay: 50 });
+    AOS.init({ delay: 300 });
   }, [router]);
 
   return (

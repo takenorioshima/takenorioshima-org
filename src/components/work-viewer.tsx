@@ -23,7 +23,7 @@ export default function WorkViewer({ slug, images, youTubeId, carouselDisabled }
 
   return (
     <section className="p-10">
-      <div className="embla pacity-0" data-aos="fade-in" ref={emblaRef}>
+      <div className="embla pacity-0" data-aos="fade-in" key={slug} ref={emblaRef}>
         <div className="embla__container">
           {youTubeId && (
             <div className="embla__slide">
