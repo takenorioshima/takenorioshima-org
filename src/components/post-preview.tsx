@@ -13,23 +13,24 @@ type Props = {
 const PostPreview = ({ title, date, excerpt, slug, index }: Props) => {
   const colClass = index < 2 ? "col-span-3" : "col-span-2";
   return (
-    <Link
-      as={`/posts/${slug}`}
-      href="/posts/[slug]"
-      className={`${colClass} rounded-lg overflow-hidden bg-white drop-shadow-sm hover:shadow-xl transition-shadow duration-200`}
-      data-aos="fade-in"
-    >
-      <div>
-        <CoverImage slug={slug} title={title} />
-      </div>
-      <div className="p-5">
-        <h3 className="mb-2 text-xl lg:text-2xl font-semibold leading-tight">{title}</h3>
-        <div className="text-xs text-gray-500 mb-3">
-          <DateFormatter dateString={date} />
+    <div className={colClass} data-aos="fade-in">
+      <Link
+        as={`/posts/${slug}`}
+        href="/posts/[slug]"
+        className="block h-full rounded-lg overflow-hidden bg-white drop-shadow-sm hover:shadow-xl transition-shadow duration-200"
+      >
+        <div>
+          <CoverImage slug={slug} title={title} />
         </div>
-        <p className="text-sm">{excerpt}</p>
-      </div>
-    </Link>
+        <div className="p-5">
+          <h3 className="mb-2 text-xl lg:text-2xl font-semibold leading-tight">{title}</h3>
+          <div className="text-xs text-gray-500 mb-3">
+            <DateFormatter dateString={date} />
+          </div>
+          <p className="text-sm">{excerpt}</p>
+        </div>
+      </Link>
+    </div>
   );
 };
 
