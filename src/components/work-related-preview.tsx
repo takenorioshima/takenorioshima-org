@@ -1,9 +1,20 @@
 import Link from "next/link";
 import Image from "next-export-optimize-images/image";
 import Work from "@/interfaces/work";
+import { useEffect } from "react";
+import AOS from "aos";
 
 const WorkRelatedPreview = ({ title, slug, images, youTubeId, cover, appleMusic }: Work) => {
   const imageFile = cover ? cover : images[0];
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      AOS.refresh();
+    }, 300);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
   return (
     <div className="col-span-1 lg:col-span-2 opacity-0" data-aos="fade-in">
       <Link
