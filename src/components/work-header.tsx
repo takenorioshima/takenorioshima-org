@@ -1,5 +1,3 @@
-import { useFlippingTitle } from "@/hooks/useFlippingTitle";
-
 type Props = {
   title: string;
   tags?: string[];
