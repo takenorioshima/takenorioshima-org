@@ -56,10 +56,10 @@ export default function Index({ posts, works }: Props) {
             </Link>
           </div> */}
         </Container>
-        <section className="bg-graph border-top">
+        <section className="bg-graph border-top py-20">
           <div className="container max-w-(--breakpoint-xl) mx-auto px-3 relative z-10">
-            <div className="flex pt-30 items-center justify-between">
-              <h2 className="text-4xl lg:text-6xl">
+            <div className="flex items-center justify-between">
+              <h2 className="text-4xl lg:text-6xl mb-20">
                 わたしの
                 <ruby className="font-bold tracking-wider relative">
                   <span className="works-header-wrapper relative">
@@ -76,7 +76,7 @@ export default function Index({ posts, works }: Props) {
                 <i className="bi bi-chevron-right"></i> 一覧を見る
               </Link>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-6 gap-y-5 lg:gap-10 py-20">
+            <div className="grid grid-cols-1 lg:grid-cols-6 gap-y-5 lg:gap-10">
               {works.map((work) => (
                 <WorkPreview
                   title={work.title}
