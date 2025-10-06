@@ -37,7 +37,6 @@ const int clockInPin = 2;
 const int ledPin = 13;
 
 bool gateState = LOW;
-bool lastGateState = LOW;
 
 void setup() {
   pinMode(clockInPin, INPUT);
@@ -45,22 +44,16 @@ void setup() {
 }
 
 void loop() {
-  int readClock = gateRead(clockInPin);
+  bool readClock = gateRead(clockInPin);
 
   if (readClock != gateState) {
     gateState = readClock;
-    if (gateState) {  // GATE is HIGH
-      digitalWrite(ledPin, HIGH);
-    } else {  // GATE is LOW
-      digitalWrite(ledPin, LOW);
-    }
+    digitalWrite(ledPin, gateState ? HIGH : LOW);
   }
-
-  lastGateState = readClock;
 }
 
-int gateRead(int pin) {
-  if (!pin) return;
+bool gateRead(int pin) {
+  // 反転して返す
   return !digitalRead(pin);
 }
 ```
